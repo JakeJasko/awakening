@@ -1,0 +1,294 @@
+/* Design System: Classical Scholarly Editorial for Awakening from the Meaning Crisis */
+/* Inspired by Dr. John Vervaeke's intellectual odyssey & classical Greek/Roman aesthetics */
+
+:root {
+  /* Fonts */
+  --font-serif: 'Newsreader', Georgia, Cambria, serif;
+  --font-roman: 'Cinzel', 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Light Theme (Parchment & Iron Gall Ink) */
+  --bg-canvas: #FAF7F2;
+  --bg-surface: #FFFDF9;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-subtle: #F3EFE8;
+  --border-subtle: #E8E2D7;
+  --border-strong: #D5CCC0;
+  
+  --text-primary: #231F1C;
+  --text-secondary: #5C554E;
+  --text-muted: #867E75;
+  --text-on-accent: #FFFFFF;
+
+  /* Primary Brand Accents */
+  --color-terracotta: #B84A39;
+  --color-terracotta-light: #FDF1EE;
+  --color-terracotta-border: #F3C4BC;
+  --color-terracotta-subtle: #FFF9F8;
+  --color-terracotta-dark: #8C2F20;
+
+  /* Arc Colors */
+  --arc-1-color: #B84A39; /* Axial Revolution: Terracotta */
+  --arc-1-bg: #FDF1EE;
+  --arc-1-border: #F3C4BC;
+
+  --arc-2-color: #2B4E7A; /* Medieval Synthesis: Lapis */
+  --arc-2-bg: #EDF3F9;
+  --arc-2-border: #BCD0E5;
+
+  --arc-3-color: #62407E; /* Modern Alienation: Royal Slate */
+  --arc-3-bg: #F5EDF9;
+  --arc-3-border: #D8BFE8;
+
+  --arc-4-color: #266A48; /* Cognitive Science: Forest/Verdant */
+  --arc-4-bg: #EAF4EE;
+  --arc-4-border: #B7DECA;
+
+  --arc-5-color: #A86214; /* Wisdom & Awakening: Gold/Ochre */
+  --arc-5-bg: #FAF3E8;
+  --arc-5-border: #E8CFA6;
+
+  /* State Colors */
+  --color-success: #2D6A4F;
+  --color-success-bg: #EBF5F0;
+  --color-error: #B83A3A;
+  --color-error-bg: #FDF1F1;
+  --color-gold: #C28222;
+
+  /* Shadows */
+  --shadow-subtle: 0 1px 3px rgba(35, 31, 28, 0.04), 0 4px 12px rgba(35, 31, 28, 0.03);
+  --shadow-card: 0 2px 8px rgba(35, 31, 28, 0.06), 0 12px 28px rgba(35, 31, 28, 0.05);
+  --shadow-float: 0 8px 32px rgba(35, 31, 28, 0.1);
+
+  /* Layout */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+  --max-content-width: 680px;
+  --max-wide-width: 960px;
+}
+
+[data-theme='dark'] {
+  --bg-canvas: #141312;
+  --bg-surface: #1E1C1A;
+  --bg-surface-elevated: #262421;
+  --bg-subtle: #2A2724;
+  --border-subtle: #36322D;
+  --border-strong: #4A453F;
+
+  --text-primary: #F5F1EB;
+  --text-secondary: #B8B0A5;
+  --text-muted: #857D73;
+  --text-on-accent: #FFFFFF;
+
+  --color-terracotta: #D96552;
+  --color-terracotta-light: #34201D;
+  --color-terracotta-border: #5E322A;
+  --color-terracotta-subtle: #251B19;
+  --color-terracotta-dark: #F5A394;
+
+  --arc-1-color: #D96552;
+  --arc-1-bg: #2E1A17;
+  --arc-1-border: #5E322A;
+
+  --arc-2-color: #5B84C4;
+  --arc-2-bg: #182333;
+  --arc-2-border: #2C4263;
+
+  --arc-3-color: #A477CF;
+  --arc-3-bg: #271A33;
+  --arc-3-border: #4D2D68;
+
+  --arc-4-color: #48A87D;
+  --arc-4-bg: #172B20;
+  --arc-4-border: #2B573F;
+
+  --arc-5-color: #DE9334;
+  --arc-5-bg: #302011;
+  --arc-5-border: #5C3C1B;
+
+  --color-success: #48A87D;
+  --color-success-bg: #172B20;
+  --color-error: #D95454;
+  --color-error-bg: #331A1A;
+  --color-gold: #DE9334;
+
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-float: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(184, 74, 57, 0.04) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(43, 78, 122, 0.03) 0%, transparent 60%);
+  background-attachment: fixed;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* Typography Utility Classes */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-roman {
+  font-family: var(--font-roman);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideNext {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slidePrev {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 16px rgba(184, 74, 57, 0.35);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-next {
+  animation: slideNext 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-prev {
+  animation: slidePrev 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Tactile mobile tap states */
+.touch-active {
+  transition: transform 0.12s cubic-bezier(0.2, 0, 0, 1), background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.touch-active:active {
+  transform: scale(0.982);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Audio Companion Soundwave Animation */
+@keyframes soundwave {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 14px;
+  }
+}
+
+.wave-bar {
+  width: 2.5px;
+  background-color: var(--color-terracotta);
+  border-radius: 2px;
+  display: inline-block;
+  transition: height 0.2s ease;
+}
+
+.wave-bar.wave-1 {
+  animation: soundwave 0.8s ease-in-out infinite;
+}
+
+.wave-bar.wave-2 {
+  animation: soundwave 0.8s ease-in-out 0.2s infinite;
+}
+
+.wave-bar.wave-3 {
+  animation: soundwave 0.8s ease-in-out 0.4s infinite;
+}
+
+.wave-bar.static {
+  height: 4px;
+  opacity: 0.4;
+}
