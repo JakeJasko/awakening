@@ -20,33 +20,31 @@ test.describe('Dr. John Vervaeke Official Website Links', () => {
     await expect(footerLink).toHaveAttribute('target', '_blank');
   });
 
-  test('Syllabus modal references official website', async ({ page }) => {
+  test('Syllabus modal has clean headers without external website links', async ({ page }) => {
     await page.goto('/');
 
     // Open Syllabus
     await page.click('button:has-text("Syllabus")');
     await expect(page.locator('text=50-EPISODE MASTER SYLLABUS')).toBeVisible();
 
-    // Verify official series site link in header
-    const syllabusLink = page.locator(`a[href="${TARGET_URL}"]`);
-    await expect(syllabusLink.first()).toBeVisible();
-    await expect(syllabusLink.first()).toHaveAttribute('target', '_blank');
+    // Verify no external link in header
+    const syllabusLink = page.locator(`.modal-sheet a[href*="johnvervaeke.com"]`);
+    await expect(syllabusLink).toHaveCount(0);
 
     // Close modal
     await page.locator('.modal-header button').first().click();
   });
 
-  test('Cognitive Lexicon modal references official website', async ({ page }) => {
+  test('Cognitive Lexicon modal has clean headers without external website links', async ({ page }) => {
     await page.goto('/');
 
     // Open Lexicon
     await page.click('button:has-text("Lexicon")');
     await expect(page.locator('text=COGNITIVE LEXICON & CONCEPTS')).toBeVisible();
 
-    // Verify official series link in header
-    const lexiconLink = page.locator(`a[href="${TARGET_URL}"]`);
-    await expect(lexiconLink.first()).toBeVisible();
-    await expect(lexiconLink.first()).toHaveAttribute('target', '_blank');
+    // Verify no external link in header
+    const lexiconLink = page.locator(`.modal-sheet a[href*="johnvervaeke.com"]`);
+    await expect(lexiconLink).toHaveCount(0);
 
     // Close modal
     await page.locator('.modal-header button').first().click();
