@@ -37,14 +37,37 @@ export default function SyllabusModal({
               }}>
                 50-EPISODE MASTER SYLLABUS
               </h3>
-              <p style={{
+              <div style={{
                 fontFamily: 'var(--font-serif)',
                 fontStyle: 'italic',
                 fontSize: '11px',
-                color: 'var(--text-muted)'
+                color: 'var(--text-muted)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                flexWrap: 'wrap'
               }}>
-                Dr. John Vervaeke’s Complete Curriculum
-              </p>
+                <span>Dr. John Vervaeke’s Complete Curriculum</span>
+                <span>•</span>
+                <a
+                  href="https://johnvervaeke.com/series/awakening-from-the-meaning-crisis/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="touch-active"
+                  style={{
+                    color: 'var(--color-terracotta)',
+                    textDecoration: 'underline',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.2rem',
+                    fontWeight: 600
+                  }}
+                  title="Visit Dr. John Vervaeke's official series website on johnvervaeke.com"
+                >
+                  <span>Official Series Site</span>
+                  <ExternalLink size={10} />
+                </a>
+              </div>
             </div>
           </div>
 

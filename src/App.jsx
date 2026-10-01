@@ -6,9 +6,11 @@ import GlossaryModal from './components/GlossaryModal';
 import SyllabusModal from './components/SyllabusModal';
 import { EPISODES_DATA } from './data/episodesData';
 import { getStoredProgress, saveEpisodeProgress } from './utils/storage';
+import { usePWAInstallPrompt } from './utils/pwa';
 import './App.css';
 
 export default function App() {
+  const pwa = usePWAInstallPrompt();
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('awakening_theme') || 'light';
   });
@@ -138,6 +140,7 @@ export default function App() {
         onPlayPauseAudio={handlePlayPauseAudio}
         onToggleAudioVideo={handleToggleAudioVideo}
         onCloseAudio={handleCloseAudio}
+        pwa={pwa}
       />
 
       <main className="main-content">

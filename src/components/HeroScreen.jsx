@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, BookOpen, Award, ArrowRight, Play, Sparkles, CheckCircle } from 'lucide-react';
+import { Compass, BookOpen, Award, ArrowRight, Play, Sparkles, CheckCircle, ExternalLink } from 'lucide-react';
 import ArcFilterBar from './ArcFilterBar';
 import EpisodeCard from './EpisodeCard';
 import { EPISODES_DATA } from '../data/episodesData';
@@ -42,24 +42,36 @@ export default function HeroScreen({
     <div className="animate-fade-in content-container">
       {/* Top Epigraph & Header */}
       <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.4rem',
-          padding: '0.35rem 0.85rem',
-          borderRadius: 'var(--radius-pill)',
-          backgroundColor: 'var(--color-terracotta-light)',
-          border: '1px solid var(--color-terracotta-border)',
-          color: 'var(--color-terracotta)',
-          fontFamily: 'var(--font-roman)',
-          fontSize: '11px',
-          fontWeight: 800,
-          letterSpacing: '0.12em',
-          marginBottom: '0.75rem'
-        }}>
+        {/* Odyssey Badge Bubble linking to Dr. John Vervaeke's official series page */}
+        <a
+          href="https://johnvervaeke.com/series/awakening-from-the-meaning-crisis/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="touch-active hero-odyssey-bubble"
+          title="Visit Dr. John Vervaeke's official series website on johnvervaeke.com (opens in new tab)"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.45rem',
+            padding: '0.35rem 0.85rem',
+            borderRadius: 'var(--radius-pill)',
+            backgroundColor: 'var(--color-terracotta-light)',
+            border: '1px solid var(--color-terracotta-border)',
+            color: 'var(--color-terracotta)',
+            fontFamily: 'var(--font-roman)',
+            fontSize: '11px',
+            fontWeight: 800,
+            letterSpacing: '0.12em',
+            marginBottom: '0.75rem',
+            textDecoration: 'none',
+            cursor: 'pointer',
+            transition: 'all 0.15s ease'
+          }}
+        >
           <Sparkles size={12} />
           <span>DR. JOHN VERVAEKE’S 50-PART ODYSSEY</span>
-        </div>
+          <ExternalLink size={11} style={{ opacity: 0.85 }} />
+        </a>
 
         <h1 style={{
           fontFamily: 'var(--font-serif)',
@@ -333,6 +345,26 @@ export default function HeroScreen({
           >
             Explore Complete 50-Episode Curriculum
           </button>
+
+          <a
+            href="https://johnvervaeke.com/series/awakening-from-the-meaning-crisis/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="touch-active"
+            style={{
+              fontSize: '13px',
+              color: 'var(--color-terracotta)',
+              textDecoration: 'underline',
+              fontWeight: 600,
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.3rem'
+            }}
+            title="Visit Dr. John Vervaeke's official Awakening series guide on johnvervaeke.com"
+          >
+            <span>Official Series on johnvervaeke.com</span>
+            <ExternalLink size={12} />
+          </a>
         </div>
 
         <p style={{

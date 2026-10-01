@@ -90,31 +90,57 @@ export default function EpisodeHub({
           <span>All Episodes</span>
         </button>
 
-        <button
-          onClick={() => onToggleAudioCompanion(episode)}
-          className="touch-active"
-          title={audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number) ? (audioState?.isPlaying ? 'Pause audio companion' : 'Resume audio companion') : 'Launch audio companion in header'}
-          aria-label="Audio companion"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.4rem',
-            padding: '0.4rem 0.85rem',
-            borderRadius: 'var(--radius-pill)',
-            border: '1px solid var(--color-terracotta)',
-            backgroundColor: (audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number)) ? 'var(--color-terracotta)' : 'var(--color-terracotta-light)',
-            color: (audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number)) ? 'white' : 'var(--color-terracotta)',
-            fontSize: '12.5px',
-            fontWeight: 700
-          }}
-        >
-          <Headphones size={15} />
-          <span>
-            {audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number)
-              ? (audioState?.isPlaying ? 'Audio Playing' : 'Audio Paused')
-              : 'Audio Companion'}
-          </span>
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <a
+            href="https://johnvervaeke.com/series/awakening-from-the-meaning-crisis/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="touch-active"
+            title="Visit Dr. John Vervaeke's official series page on johnvervaeke.com"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.35rem',
+              padding: '0.4rem 0.75rem',
+              borderRadius: 'var(--radius-pill)',
+              border: '1px solid var(--border-subtle)',
+              backgroundColor: 'var(--bg-surface)',
+              color: 'var(--text-secondary)',
+              fontSize: '12px',
+              fontWeight: 600,
+              textDecoration: 'none'
+            }}
+          >
+            <span className="hide-on-mobile">Official Series Site</span>
+            <ExternalLink size={12} color="var(--color-terracotta)" />
+          </a>
+
+          <button
+            onClick={() => onToggleAudioCompanion(episode)}
+            className="touch-active"
+            title={audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number) ? (audioState?.isPlaying ? 'Pause audio companion' : 'Resume audio companion') : 'Launch audio companion in header'}
+            aria-label="Audio companion"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              padding: '0.4rem 0.85rem',
+              borderRadius: 'var(--radius-pill)',
+              border: '1px solid var(--color-terracotta)',
+              backgroundColor: (audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number)) ? 'var(--color-terracotta)' : 'var(--color-terracotta-light)',
+              color: (audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number)) ? 'white' : 'var(--color-terracotta)',
+              fontSize: '12.5px',
+              fontWeight: 700
+            }}
+          >
+            <Headphones size={15} />
+            <span>
+              {audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number)
+                ? (audioState?.isPlaying ? 'Audio Playing' : 'Audio Paused')
+                : 'Audio Companion'}
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* Hero Banner for Episode */}
@@ -327,6 +353,36 @@ export default function EpisodeHub({
               {(episode.thesis || episode.summary).split('\n\n').map((paragraph, pIdx) => (
                 <p key={pIdx}>{paragraph}</p>
               ))}
+            </div>
+
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              marginTop: '0.85rem',
+              paddingTop: '0.65rem',
+              borderTop: '1px dashed var(--border-subtle)'
+            }}>
+              <a
+                href="https://johnvervaeke.com/series/awakening-from-the-meaning-crisis/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="touch-active"
+                style={{
+                  fontSize: '11.5px',
+                  fontStyle: 'italic',
+                  color: 'var(--color-terracotta)',
+                  textDecoration: 'underline',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.25rem',
+                  fontWeight: 600
+                }}
+                title="View series overview on Dr. John Vervaeke's official website"
+              >
+                <span>Dr. John Vervaeke’s Series Archive</span>
+                <ExternalLink size={10} />
+              </a>
             </div>
           </div>
 

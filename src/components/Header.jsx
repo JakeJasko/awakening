@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon, BookOpen, Compass, Award } from 'lucide-react';
+import { Sun, Moon, BookOpen, Compass, Award, Download } from 'lucide-react';
 import AudioCompanionHeader from './AudioCompanionHeader';
 
 export default function Header({
@@ -13,7 +13,8 @@ export default function Header({
   audioState,
   onPlayPauseAudio,
   onToggleAudioVideo,
-  onCloseAudio
+  onCloseAudio,
+  pwa
 }) {
   return (
     <header style={{
@@ -168,6 +169,33 @@ export default function Header({
           <Compass size={14} color="var(--arc-2-color)" />
           <span className="hide-on-mobile">Syllabus</span>
         </button>
+
+        {/* PWA Install Trigger (Chrome / Supported Browsers) */}
+        {pwa?.isInstallable && (
+          <button
+            type="button"
+            onClick={pwa.promptInstall}
+            className="touch-active pwa-install-btn"
+            title="Install Awakening Epistemic Companion as a desktop or mobile app"
+            aria-label="Install Awakening Epistemic Companion as a desktop or mobile app"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.35rem',
+              padding: '0.45rem 0.75rem',
+              borderRadius: 'var(--radius-pill)',
+              border: '1px solid var(--color-terracotta)',
+              backgroundColor: 'rgba(226, 125, 96, 0.12)',
+              color: 'var(--color-terracotta)',
+              fontSize: '12px',
+              fontWeight: 700,
+              cursor: 'pointer'
+            }}
+          >
+            <Download size={14} />
+            <span className="hide-on-mobile">Install App</span>
+          </button>
+        )}
 
         {/* Theme Toggle */}
         <button
