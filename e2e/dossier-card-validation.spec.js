@@ -36,10 +36,31 @@ test.describe('Dossier Card Bubble Validation', () => {
     // Q5
     await page.click('button:has-text("That material comfort and subjective hedonic pleasure do not satisfy the fundamental cognitive need for meaning.")');
     await page.click('button:has-text("Submit & Examine Reason")');
+
+    // Verify Q5 had scrolled down to explanation
+    await page.waitForTimeout(600);
+    const beforeAnalyzeScrollY = await page.evaluate(() => window.scrollY);
+    expect(beforeAnalyzeScrollY).toBeGreaterThanOrEqual(300);
+
+    // Click Analyze Mastery Results
     await page.click('button:has-text("Analyze Mastery Results")');
 
     // Score Modal is visible
+    const dossierModal = page.locator('[data-testid="dossier-modal"]');
+    await expect(dossierModal).toBeVisible();
     await expect(page.locator('text=EPISTEMIC MASTERY DOSSIER')).toBeVisible();
+
+    // Verify window scrolled up to top (<= 50px)
+    await page.waitForTimeout(600);
+    const afterAnalyzeScrollY = await page.evaluate(() => window.scrollY);
+    expect(afterAnalyzeScrollY).toBeLessThanOrEqual(50);
+
+    // Verify dossier modal is vertically and horizontally centered in viewport
+    const modalBox = await dossierModal.boundingBox();
+    expect(modalBox).not.toBeNull();
+    // In an 800px viewport, a centered modal (~545px high) has y = (800 - 545) / 2 ≈ 127.5px
+    expect(modalBox.y).toBeGreaterThanOrEqual(100);
+    expect(modalBox.y).toBeLessThanOrEqual(145);
 
     // Click "Share Dossier" to open ShareCardModal
     await page.click('button:has-text("Share Dossier")');

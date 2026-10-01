@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Download, Copy, Check, X, Share2, Sparkles } from 'lucide-react';
 import { generateEpisodeCard } from '../utils/cardRenderer';
 
@@ -61,7 +62,7 @@ export default function ShareCardModal({
     }
   };
 
-  return (
+  const modalContent = (
     <div className="modal-backdrop animate-fade-in" onClick={onClose}>
       <div 
         className="modal-sheet" 
@@ -179,4 +180,8 @@ export default function ShareCardModal({
       </div>
     </div>
   );
+
+  return typeof document !== 'undefined'
+    ? createPortal(modalContent, document.body)
+    : modalContent;
 }

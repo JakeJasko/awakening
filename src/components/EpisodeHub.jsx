@@ -47,6 +47,7 @@ export default function EpisodeHub({
     setLatestResults(results);
     onSaveQuizResult(episode.id || episode.number, results);
     setIsScoreModalOpen(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSaveReflection = () => {

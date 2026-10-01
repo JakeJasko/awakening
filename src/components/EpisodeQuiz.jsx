@@ -139,6 +139,9 @@ export default function EpisodeQuiz({
         setIsSubmitted(false);
       }
     } else {
+      // Smoothly scroll to top so the mastery dossier modal is centered in viewport
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
       // Calculate score and finish using merged answers
       const allAnswers = { ...userAnswers, [currentQ.id]: selectedOption };
       let score = 0;

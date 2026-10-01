@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import confetti from 'canvas-confetti';
 import { 
   Award, RotateCcw, Share2, ArrowRight, CheckCircle2, XCircle, 
@@ -16,6 +17,13 @@ export default function EpisodeScoreModal({
   onNextEpisode
 }) {
   const [showReview, setShowReview] = useState(false);
+
+  // Smoothly scroll window to top to center the dossier modal in viewport
+  useEffect(() => {
+    if (isOpen) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen && results) {
@@ -40,10 +48,11 @@ export default function EpisodeScoreModal({
   const mastery = getMasteryTitle(percentage);
   const questions = episode.questions || [];
 
-  return (
+  const modalContent = (
     <div className="modal-backdrop animate-fade-in" onClick={onClose}>
       <div 
         className="modal-sheet" 
+        data-testid="dossier-modal"
         onClick={(e) => e.stopPropagation()}
         style={{ maxWidth: '580px' }}
       >
@@ -311,4 +320,8 @@ export default function EpisodeScoreModal({
       </div>
     </div>
   );
+
+  return typeof document !== 'undefined'
+    ? createPortal(modalContent, document.body)
+    : modalContent;
 }
