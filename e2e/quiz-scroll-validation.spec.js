@@ -49,21 +49,48 @@ test.describe('Quiz Answer Scroll-Down Validation', () => {
 
     // Advance to Question II
     await proceedBtn.click();
-    await expect(page.locator('text=QUESTION II OF V')).toBeVisible();
+    const progressHeaderQ2 = page.locator('[data-testid="quiz-progress-header"]');
+    await expect(progressHeaderQ2).toBeVisible();
+    await expect(progressHeaderQ2).toContainText('QUESTION II OF V');
 
-    // Smooth scroll back to top of question 2
+    // Smooth scroll down to QUESTION II OF V progress bar bubble
     await page.waitForTimeout(600);
     const q2TopScrollY = await page.evaluate(() => window.scrollY);
-    expect(q2TopScrollY).toBeLessThanOrEqual(150);
+    expect(q2TopScrollY).toBeGreaterThanOrEqual(300);
+
+    // Verify progress bar bubble is comfortably aligned below sticky header
+    const progressRect = await progressHeaderQ2.boundingBox();
+    expect(progressRect).not.toBeNull();
+    expect(progressRect.y).toBeGreaterThanOrEqual(50);
+    expect(progressRect.y).toBeLessThanOrEqual(100);
+
+    // Verify Question 2 options are immediately visible in view without scrolling
+    const q2Option = page.locator('button:has-text("It was the sense that the laws of the cosmos, the laws of morality, and human cognition were coherently fitted to one another.")');
+    await expect(q2Option).toBeVisible();
 
     // Answer Q2
-    await page.click('button:has-text("It was the sense that the laws of the cosmos, the laws of morality, and human cognition were coherently fitted to one another.")');
+    await q2Option.click();
     await page.click('button:has-text("Submit & Examine Reason")');
     await expect(page.locator('[data-testid="quiz-explanation-box"]')).toBeVisible();
 
-    // Wait for scroll down
+    // Advance to Question III
+    const proceedBtn2 = page.locator('button:has-text("Proceed to Next Inquiry")');
+    await expect(proceedBtn2).toBeVisible();
+    await proceedBtn2.click();
+
+    // Verify QUESTION III OF V progress bubble
+    const progressHeaderQ3 = page.locator('[data-testid="quiz-progress-header"]');
+    await expect(progressHeaderQ3).toBeVisible();
+    await expect(progressHeaderQ3).toContainText('QUESTION III OF V');
+
+    // Smooth scroll down to QUESTION III OF V progress bar bubble
     await page.waitForTimeout(600);
-    const q2ScrolledY = await page.evaluate(() => window.scrollY);
-    expect(q2ScrolledY).toBeGreaterThan(q2TopScrollY + 100);
+    const q3TopScrollY = await page.evaluate(() => window.scrollY);
+    expect(q3TopScrollY).toBeGreaterThanOrEqual(300);
+
+    const progressRectQ3 = await progressHeaderQ3.boundingBox();
+    expect(progressRectQ3).not.toBeNull();
+    expect(progressRectQ3.y).toBeGreaterThanOrEqual(50);
+    expect(progressRectQ3.y).toBeLessThanOrEqual(100);
   });
 });

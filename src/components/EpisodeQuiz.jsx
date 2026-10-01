@@ -14,8 +14,10 @@ export default function EpisodeQuiz({
   const [userAnswers, setUserAnswers] = useState({}); // questionId -> selectedIndex
   const [slideDirection, setSlideDirection] = useState('next');
   const cardRef = useRef(null);
+  const progressBarRef = useRef(null);
   const explanationRef = useRef(null);
   const shouldScrollToExplanation = useRef(false);
+  const shouldScrollToProgress = useRef(false);
 
   const questions = episode.questions || [];
   const currentQ = questions[currentIndex];
@@ -45,6 +47,22 @@ export default function EpisodeQuiz({
   const isCorrect = isCurrentSubmitted && selectedOption === currentQ.correctIndex;
   const progressPercent = Math.round(((currentIndex + 1) / totalQuestions) * 100);
 
+  const scrollToProgressHeader = () => {
+    if (!progressBarRef.current) return;
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.getBoundingClientRect().height : 60;
+    const offset = headerHeight + 14;
+    const rect = progressBarRef.current.getBoundingClientRect();
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const absoluteElementTop = rect.top + currentScrollY;
+    const targetScrollY = Math.max(0, absoluteElementTop - offset);
+
+    window.scrollTo({
+      top: targetScrollY,
+      behavior: 'smooth'
+    });
+  };
+
   const handleSelectOption = (idx) => {
     if (isSubmitted) return; // locked once checked
     setSelectedOption(idx);
@@ -70,7 +88,8 @@ export default function EpisodeQuiz({
         const headerHeight = header ? header.getBoundingClientRect().height : 60;
         const offset = headerHeight + 20;
         const rect = explanationRef.current.getBoundingClientRect();
-        const absoluteElementTop = rect.top + window.pageYOffset;
+        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const absoluteElementTop = rect.top + currentScrollY;
         const targetScrollY = Math.max(0, absoluteElementTop - offset);
 
         window.scrollTo({
@@ -83,11 +102,32 @@ export default function EpisodeQuiz({
     }
   }, [isSubmitted]);
 
+  // Scroll down smoothly to QUESTION X OF X progress bar when advancing/navigating questions
+  useEffect(() => {
+    if (shouldScrollToProgress.current) {
+      shouldScrollToProgress.current = false;
+      const timer = setTimeout(() => {
+        scrollToProgressHeader();
+      }, 50);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex]);
+
+  // Align progress bar into view when quiz component mounts
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      scrollToProgressHeader();
+    }, 80);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleNext = () => {
     if (currentIndex < totalQuestions - 1) {
       setSlideDirection('next');
       const nextIndex = currentIndex + 1;
       const nextQ = questions[nextIndex];
+      shouldScrollToProgress.current = true;
       setCurrentIndex(nextIndex);
       // If user had already answered nextQ in a previous traversal
       const existingAnswer = userAnswers[nextQ.id];
@@ -98,7 +138,6 @@ export default function EpisodeQuiz({
         setSelectedOption(null);
         setIsSubmitted(false);
       }
-      window.scrollTo({ top: 120, behavior: 'smooth' });
     } else {
       // Calculate score and finish using merged answers
       const allAnswers = { ...userAnswers, [currentQ.id]: selectedOption };
@@ -123,23 +162,27 @@ export default function EpisodeQuiz({
       setSlideDirection('prev');
       const prevIndex = currentIndex - 1;
       const prevQ = questions[prevIndex];
+      shouldScrollToProgress.current = true;
       setCurrentIndex(prevIndex);
       setSelectedOption(userAnswers[prevQ.id] !== undefined ? userAnswers[prevQ.id] : null);
       setIsSubmitted(userAnswers[prevQ.id] !== undefined);
-      window.scrollTo({ top: 120, behavior: 'smooth' });
     }
   };
 
   return (
     <div className="animate-fade-in" style={{ paddingBottom: '7.5rem' }}>
       {/* Quiz Progress Header */}
-      <div style={{
-        marginBottom: '1.25rem',
-        backgroundColor: 'var(--bg-surface)',
-        padding: '0.85rem 1.15rem',
-        borderRadius: 'var(--radius-md)',
-        border: '1px solid var(--border-subtle)'
-      }}>
+      <div 
+        ref={progressBarRef}
+        data-testid="quiz-progress-header"
+        style={{
+          marginBottom: '1.25rem',
+          backgroundColor: 'var(--bg-surface)',
+          padding: '0.85rem 1.15rem',
+          borderRadius: 'var(--radius-md)',
+          border: '1px solid var(--border-subtle)'
+        }}
+      >
         <div style={{
           display: 'flex',
           alignItems: 'center',

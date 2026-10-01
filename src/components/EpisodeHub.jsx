@@ -58,7 +58,6 @@ export default function EpisodeHub({
   const handleRetakeQuiz = () => {
     setIsScoreModalOpen(false);
     setActiveTab('quiz');
-    window.scrollTo({ top: 120, behavior: 'smooth' });
   };
 
   return (
@@ -501,7 +500,6 @@ export default function EpisodeHub({
           <button
             onClick={() => {
               setActiveTab('quiz');
-              window.scrollTo({ top: 120, behavior: 'smooth' });
             }}
             className="touch-active"
             style={{
