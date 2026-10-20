@@ -1,0 +1,10 @@
+#!/bin/sh
+# Auto-increment package.json patch version and sync Service Worker cache version on commit
+
+if git diff --cached -- package.json | grep -q '"version"'; then
+  node scripts/bump-version.mjs sync
+else
+  node scripts/bump-version.mjs patch
+fi
+
+git add package.json public/sw.js

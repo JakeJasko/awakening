@@ -29,5 +29,12 @@ test('Verify GitHub Pages public deployment URL', async ({ page }) => {
   await page.locator('.modal-header button').first().click();
   await expect(page.locator('text=COGNITIVE LEXICON & CONCEPTS')).not.toBeVisible();
 
+  // Verify discreet version badge in footer
+  const versionBadge = page.getByTestId('app-version');
+  await expect(versionBadge).toBeVisible();
+  const versionText = await versionBadge.textContent();
+  console.log('Live GitHub Pages Version Footer:', versionText);
+  expect(versionText).toMatch(/^v\d+\.\d+\.\d+/);
+
   console.log('GitHub Pages deployment fully verified and operational!');
 });

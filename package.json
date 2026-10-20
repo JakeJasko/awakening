@@ -1,11 +1,14 @@
 {
   "name": "awakening-quiz",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/bump-version.mjs sync",
     "build": "vite build",
+    "version:bump": "node scripts/bump-version.mjs patch",
+    "prepare": "git config core.hooksPath .githooks || true",
     "lint": "oxlint",
     "preview": "vite preview"
   },

@@ -229,6 +229,28 @@ export default function App() {
         )}
       </main>
 
+      <footer
+        data-testid="app-footer"
+        style={{
+          padding: '0.75rem 1rem 1.5rem',
+          textAlign: 'center',
+          fontSize: '11px',
+          color: 'var(--text-muted)',
+          opacity: 0.75,
+          fontFamily: 'var(--font-sans)',
+          letterSpacing: '0.04em'
+        }}
+      >
+        <span
+          data-testid="app-version"
+          title={`Awakening Companion v${typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : '1.1.0'} · Build #${typeof __APP_BUILD_NUMBER__ !== 'undefined' ? __APP_BUILD_NUMBER__ : '1'} (${typeof __APP_COMMIT__ !== 'undefined' ? __APP_COMMIT__ : 'dev'})`}
+        >
+          v{typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : '1.1.0'}
+          {typeof __APP_BUILD_NUMBER__ !== 'undefined' ? ` · #${__APP_BUILD_NUMBER__}` : ''}
+          {typeof __APP_COMMIT__ !== 'undefined' ? ` (${__APP_COMMIT__})` : ''}
+        </span>
+      </footer>
+
       {/* Global Modals */}
       <GlossaryModal
         isOpen={isGlossaryOpen}
