@@ -72,8 +72,11 @@ export default function App() {
     }
   };
 
-  const handleSeekAudioTimestamp = (ep, seconds) => {
-    const targetEp = normalizeEpisode(ep || activeEpisode || EPISODES_DATA[0]);
+  const handleSeekAudioTimestamp = (ep, seconds, overrideYoutubeId) => {
+    const baseEp = normalizeEpisode(ep || activeEpisode || EPISODES_DATA[0]);
+    const targetEp = overrideYoutubeId
+      ? { ...baseEp, youtubeId: overrideYoutubeId }
+      : baseEp;
     setAudioState((prev) => ({
       isOpen: true,
       episode: targetEp,

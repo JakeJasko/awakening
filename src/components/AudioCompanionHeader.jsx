@@ -13,6 +13,16 @@ export default function AudioCompanionHeader({
   onClose
 }) {
   const iframeRef = useRef(null);
+  const loadedVideoRef = useRef({ youtubeId: null, startSeconds: 0 });
+
+  if (episode?.youtubeId && loadedVideoRef.current.youtubeId !== episode.youtubeId) {
+    loadedVideoRef.current = {
+      youtubeId: episode.youtubeId,
+      startSeconds: typeof seekSeconds === 'number' && seekSeconds > 0 ? Math.floor(seekSeconds) : 0
+    };
+  } else if (!isOpen) {
+    loadedVideoRef.current = { youtubeId: null, startSeconds: 0 };
+  }
 
   const sendPlayerCommand = (func, args = '') => {
     if (!iframeRef.current) return;
@@ -38,23 +48,35 @@ export default function AudioCompanionHeader({
     if (!iframeRef.current || !isOpen || typeof seekSeconds !== 'number') return;
     sendPlayerCommand('seekTo', [seekSeconds, true]);
     sendPlayerCommand('playVideo', '');
-    const timer = setTimeout(() => {
+    const t1 = setTimeout(() => {
       sendPlayerCommand('seekTo', [seekSeconds, true]);
       sendPlayerCommand('playVideo', '');
     }, 350);
-    return () => clearTimeout(timer);
+    const t2 = setTimeout(() => {
+      sendPlayerCommand('seekTo', [seekSeconds, true]);
+      sendPlayerCommand('playVideo', '');
+    }, 900);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
   }, [seekKey, seekSeconds, isOpen, episode?.youtubeId]);
 
   const handleIframeLoad = () => {
     if (typeof seekSeconds === 'number' && seekSeconds > 0) {
-      setTimeout(() => {
-        sendPlayerCommand('seekTo', [seekSeconds, true]);
-        sendPlayerCommand('playVideo', '');
-      }, 300);
+      [300, 800, 1500].forEach((delay) => {
+        setTimeout(() => {
+          sendPlayerCommand('seekTo', [seekSeconds, true]);
+          sendPlayerCommand('playVideo', '');
+        }, delay);
+      });
     }
   };
 
   if (!isOpen || !episode || !episode.youtubeId) return null;
+
+  const startParam = loadedVideoRef.current.startSeconds > 0 ? `&start=${loadedVideoRef.current.startSeconds}` : '';
+  const embedSrc = `https://www.youtube.com/embed/${episode.youtubeId}?enablejsapi=1&autoplay=1&rel=0${startParam}`;
 
   const playlistUrl = `https://www.youtube.com/watch?v=${episode.youtubeId}&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=${episode.number || episode.id}`;
 
@@ -267,7 +289,7 @@ export default function AudioCompanionHeader({
             <iframe
               ref={iframeRef}
               onLoad={handleIframeLoad}
-              src={`https://www.youtube.com/embed/${episode.youtubeId}?enablejsapi=1&autoplay=1&rel=0`}
+              src={embedSrc}
               title={`Awakening from the Meaning Crisis - Episode ${episode.id || episode.number}`}
               style={{
                 position: 'absolute',
@@ -295,7 +317,7 @@ export default function AudioCompanionHeader({
           <iframe
             ref={iframeRef}
             onLoad={handleIframeLoad}
-            src={`https://www.youtube.com/embed/${episode.youtubeId}?enablejsapi=1&autoplay=1&rel=0`}
+            src={embedSrc}
             title={`Awakening from the Meaning Crisis - Audio ${episode.id || episode.number}`}
             style={{ width: '1px', height: '1px', border: 'none' }}
             allow="autoplay; encrypted-media"

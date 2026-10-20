@@ -1,6 +1,5 @@
-// Rich Interactive Quiz and Companion Data for Awakening from the Meaning Crisis
-// Authored with cognitive-scientific and philosophical precision to Dr. John Vervaeke's series
-// 20 Milestone Episodes across all 5 Arcs with balanced answer key & option length distribution
+// Complete 20-Episode Master Dataset for Awakening from the Meaning Crisis
+// Grounded in Dr. John Vervaeke's 50-lecture cognitive science & philosophy series
 
 export const EPISODES_DATA = [
   {
@@ -40,13 +39,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Vervaeke stresses that meaning in life is not about subjective pleasure or holding correct propositions. It is an existential, participatory relationship—being properly fitted as an agent to an arena that affords genuine flourishing.",
           "commonTrap": "Confusing \"meaning\" with propositional knowledge or emotional happiness. You can have all the right beliefs and wealth while remaining completely disconnected in your participatory knowing.",
-          "timestampRef": "Lecture Section: 14:20 – What is Meaning?",
+          "timestampRef": "Lecture Section: 19:00 – What is Meaning?",
           "optionTraps": [
             "This reflects propositional reductionism—mistaking an intellectual system of true statements for existential connectedness.",
             null,
             "This reduces a historical-epistemic crisis of worldviews to deterministic evolutionary mismatch theory.",
             "This confuses existential meaning with transient hedonic pleasure and neurochemical novelty."
-          ]
+          ],
+          "youtubeId": "54l8_ewcOlY"
         }
       },
       {
@@ -63,13 +63,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The Nomological Order was the cosmological framework where reality is lawful, intelligible, and intrinsically connected to human normative values. Its disintegration severed reality from human meaning.",
           "commonTrap": "Reducing \"nomological\" to modern legislative law rather than cosmic intelligibility (Nomos = law/order of reality).",
-          "timestampRef": "Lecture Section: 28:45 – The Threefold Order",
+          "timestampRef": "Lecture Section: 38:58 – The Nomological Order (Ep. 7)",
           "optionTraps": [
             "This conflates the cosmic Nomological Order with positive civic jurisprudence and political history.",
             "This dismisses pre-modern cosmic intelligibility as mere anthropomorphic projection rather than an integrated epistemic framework.",
             null,
             "This confuses normative cosmic fittedness with astrological fatalism that negates human moral agency."
-          ]
+          ],
+          "youtubeId": "yy47YzvGniQ"
         }
       },
       {
@@ -86,13 +87,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Vervaeke defines psychotechnologies as cultural inventions (like literacy, numeracy, double-entry bookkeeping, logic, or meditation) that systematically augment and restructure our raw biological cognition.",
           "commonTrap": "Assuming \"technology\" must mean electronic chips or medical hardware rather than cognitive tools invented by culture.",
-          "timestampRef": "Lecture Section: 37:10 – Psychotechnologies Explained",
+          "timestampRef": "Lecture Section: 46:10 – Psychotechnologies Explained",
           "optionTraps": [
             null,
             "This restricts technology to external physical hardware, overlooking internalized cultural software like literacy and mindfulness.",
             "This narrows psychotechnology to remedial clinical therapy rather than civilization-wide cognitive augmentation.",
             "This mistakes culturally invented, socially transmitted practices for genetically hardwired biological modules."
-          ]
+          ],
+          "youtubeId": "54l8_ewcOlY"
         }
       },
       {
@@ -109,13 +111,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "We cannot simply will ourselves into pre-Cartesian innocence. Re-adopting dead dogmas requires willful ignorance of modern science and results in fragile fundamentalism rather than authentic wisdom.",
           "commonTrap": "Thinking Vervaeke is dismissive of religion; he deeply respects ancient traditions, but insists on legitimate scientific integration rather than reactionary regression.",
-          "timestampRef": "Lecture Section: 48:30 – Nostalgia vs Genuine Awakening",
+          "timestampRef": "Lecture Section: 22:15 – Nostalgia vs Genuine Awakening",
           "optionTraps": [
             "This adopts a New Atheist propositional caricature, treating religious traditions as crude physics textbooks rather than wisdom ecologies.",
             "This reflects modern expressive individualism, missing the deeper cosmological incompatibility between pre-modern myth and modern science.",
             "This frames the problem as a logistical scaling issue rather than an epistemic rupture in our worldview.",
             null
-          ]
+          ],
+          "youtubeId": "54l8_ewcOlY"
         }
       },
       {
@@ -132,13 +135,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Hedonic satisfaction and safety do not equal existential meaning. Meaning is rooted in mattering, intelligibility, and fittedness to reality—dimensions left starved by modern consumer society.",
           "commonTrap": "Assuming subjective happiness and existential meaning are identical metrics.",
-          "timestampRef": "Lecture Section: 52:15 – The Crisis of Despair",
+          "timestampRef": "Lecture Section: 05:31 – The Crisis of Despair",
           "optionTraps": [
             null,
             "This reduces an existential crisis of mattering and cosmic connectedness to a narrow cognitive load bottleneck.",
             "This treats existential despair as a purely neurochemical deficit of evolutionary competition.",
             "This attributes the crisis to critical reason itself rather than the loss of psychotechnologies that cultivate participatory wisdom."
-          ]
+          ],
+          "youtubeId": "54l8_ewcOlY"
         }
       }
     ],
@@ -185,13 +189,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "In flow, the cognitive system achieves an \"optimal grip\" where attention, feedback, and action are in profound harmony. It feels meaningful because it is the state of highest cognitive efficiency and contact with reality.",
           "commonTrap": "Viewing flow merely as a pleasurable dopamine hit rather than an optimal state of cognitive attunement.",
-          "timestampRef": "Lecture Section: 18:30 – Flow & Optimal Grip",
+          "timestampRef": "Lecture Section: 13:51 – Flow & Optimal Grip",
           "optionTraps": [
             "This confuses flow with escapist dissociation; flow actually deepens contact with the environment rather than retreating from it.",
             "This confuses flow with mindless autopilot; flow requires active, dynamic edge-of-competence adaptation, not static routine.",
             null,
             "This reduces the epistemic significance of flow to a hedonic neurochemical analgesic."
-          ]
+          ],
+          "youtubeId": "aF9HeXg65AE"
         }
       },
       {
@@ -208,13 +213,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Shamanic altered states disrupted rigid, automated perceptual habits, allowing the brain to detect subtle animal migration cues, ecological shifts, and creative survival strategies.",
           "commonTrap": "Dismissing shamanism as primitive superstition without recognizing its functional psychotechnological role in cognitive enhancement.",
-          "timestampRef": "Lecture Section: 08:45 – Shamanic Cognition",
+          "timestampRef": "Lecture Section: 31:55 – Shamanic Cognition",
           "optionTraps": [
             "This reduces shamanism to sociological costly-signaling theory, missing its internal cognitive role in insight and pattern detection.",
             null,
             "This projects propositional, taxonomic science backward onto a participatory, state-altering psychotechnology.",
             "This treats shamanism as passive emotional soothing rather than an active cognitive disruption of rigid framing."
-          ]
+          ],
+          "youtubeId": "aF9HeXg65AE"
         }
       },
       {
@@ -231,13 +237,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Second-order thinking is meta-cognition: not just having beliefs, but examining how we form beliefs, realizing that we are prone to self-deception and delusion.",
           "commonTrap": "Equating second-order thinking with raw IQ or having more facts, rather than meta-cognitive reflection.",
-          "timestampRef": "Lecture Section: 33:15 – The Axial Breakthrough",
+          "timestampRef": "Lecture Section: 51:45 – The Axial Breakthrough",
           "optionTraps": [
             "This describes theoretical scientific modeling of the external world rather than reflexive meta-cognitive critique of self-deception.",
             "This describes general human episodic foresight, which existed long before the Axial Age.",
             "This confuses administrative statecraft (which existed in Bronze Age empires) with the Axial breakthrough in reflexive wisdom.",
             null
-          ]
+          ],
+          "youtubeId": "aF9HeXg65AE"
         }
       },
       {
@@ -254,13 +261,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Alphabetic literacy externalized cognitive memory into compact phonetic symbols, while coinage standardized abstract quantitative value across disparate goods. Both trained the human mind in powerful abstract reasoning.",
           "commonTrap": "Viewing writing and coins merely as physical economic artifacts rather than mind-altering cognitive software.",
-          "timestampRef": "Lecture Section: 41:00 – Literacy and Coinage",
+          "timestampRef": "Lecture Section: 53:03 – Literacy and Coinage",
           "optionTraps": [
             null,
             "This treats literacy and coinage merely as external economic preconditions for leisure rather than cognitive tools that rewire thought itself.",
             "This focuses on political administration rather than the reflexive, second-order cognitive abstraction enabled by phonetic scripts and coinage.",
             "This reduces alphabetic literacy to static archival storage, missing how seeing one’s own thoughts externalized enables meta-cognitive critique."
-          ]
+          ],
+          "youtubeId": "aF9HeXg65AE"
         }
       },
       {
@@ -277,13 +285,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Drawing on cognitive linguists Lakoff & Johnson, Vervaeke emphasizes that metaphor is not poetic fluff, but the engine of insight. We understand abstract concepts (like time, love, or mind) by mapping concrete sensorimotor experience.",
           "commonTrap": "Treating metaphor as merely literary rather than a core mechanism of conceptual blending and insight.",
-          "timestampRef": "Lecture Section: 24:10 – Metaphor as Cognitive Machinery",
+          "timestampRef": "Lecture Section: 35:45 – Metaphor as Cognitive Machinery",
           "optionTraps": [
             "This still assumes literal propositional logic is self-sufficient and treats metaphor as a disposable social scaffold.",
             null,
             "This relies on an outdated pop-psychology dichotomy that segregates metaphor from core rational problem-solving.",
             "This ignores embodied cognitive linguistics, which demonstrates that metaphor is grounded in sensorimotor experience, not arbitrary convention."
-          ]
+          ],
+          "youtubeId": "aF9HeXg65AE"
         }
       }
     ],
@@ -334,13 +343,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "In the continuous cosmos, there is no separation between the natural world and divine power. Human ritual action was seen as an active, continuous participant in keeping cosmic reality functioning.",
           "commonTrap": "Viewing ancient rituals as modern political theater rather than an earnest metaphysical belief in cosmic continuity.",
-          "timestampRef": "Lecture Section: 12:45 – The Continuous Cosmos",
+          "timestampRef": "Lecture Section: 05:52 – The Continuous Cosmos",
           "optionTraps": [
             "This projects cynical modern realpolitik onto Bronze Age rulers who were themselves immersed in the Continuous Cosmos.",
             null,
             "This confuses the pre-Axial Continuous Cosmos with post-Axial dualism and early modern mechanistic deism.",
             "This mistakes participatory mythic ritual for an early version of detached empirical natural science."
-          ]
+          ],
+          "youtubeId": "C1AaqD8t3pk"
         }
       },
       {
@@ -357,13 +367,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The Hebrew prophets severed the continuous cosmos: God does not need ritual sacrifices to keep the cosmos turning. Instead, human action in linear history matters, and moral justice for the vulnerable is the supreme transcendent demand.",
           "commonTrap": "Thinking the prophets were merely conservative religious ritualists; they were radical Axial revolutionaries attacking the magical continuous cosmos.",
-          "timestampRef": "Lecture Section: 29:30 – The Prophetic Revolution",
+          "timestampRef": "Lecture Section: 38:20 – The Prophetic Revolution",
           "optionTraps": [
             "The Hebrew prophets did not retreat into private apolitical mysticism; they demanded ethical transformation within communal history.",
             "Prophetic linear time heightens human moral responsibility (\"turning/teshuvah\") rather than erasing it through fatalism.",
             null,
             "The prophets grounded justice in a transcendent divine covenant, not a modern secular social contract."
-          ]
+          ],
+          "youtubeId": "C1AaqD8t3pk"
         }
       },
       {
@@ -380,13 +391,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The Two-Worlds model posits a lower world of everyday confusion, bias, and suffering vs. a higher transcendent world of truth, wisdom, and flourishing. It provided an Archimedean point to critique our own lives.",
           "commonTrap": "Confusing Two-Worlds mythology with escapist fantasy; it was designed to empower ethical self-correction in this world.",
-          "timestampRef": "Lecture Section: 41:15 – Two-Worlds Mythology",
+          "timestampRef": "Lecture Section: 11:03 – Two-Worlds Mythology",
           "optionTraps": [
             null,
             "The Continuous Cosmos is the pre-Axial Bronze Age worldview that lacked a transcendent second world from which to critique illusion.",
             "Modern World Grammar is Charles Taylor’s term for our contemporary secular framework, not the ancient Axial breakthrough.",
             "Immanent monism collapses the normative gap between everyday delusion and transcendent truth that defines the Axial revolution."
-          ]
+          ],
+          "youtubeId": "C1AaqD8t3pk"
         }
       },
       {
@@ -403,13 +415,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "As Julian Jaynes and Bruno Snell observed, pre-Axial heroes experienced motivations as external forces or divine invasions. The Axial revolution created our modern sense of internalized, reflective moral agency.",
           "commonTrap": "Believing human subjective psychology has remained completely static across tens of thousands of years.",
-          "timestampRef": "Lecture Section: 22:10 – The Pre-Axial Mind",
+          "timestampRef": "Lecture Section: 02:51 – The Pre-Axial Mind vs Axial Agency",
           "optionTraps": [
             "Homeric heroes possessed immense thymotic resolve and battlefield bravery; what they lacked was reflexive inward self-critique.",
             "Pre-Axial epics like the Iliad vividly portray deep grief and kinship loyalty (e.g., Achilles and Priam).",
             null,
             "Homeric figures like Odysseus excelled at tactical cunning (metis), even prior to Axial meta-cognitive agency."
-          ]
+          ],
+          "youtubeId": "C1AaqD8t3pk"
         }
       },
       {
@@ -426,13 +439,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Once psychotechnologies like literacy, second-order reflection, and moral critique are embedded in human culture, the innocence of unreflective immersion is irrevocably lost. Trying to pretend otherwise leads to pathological regression.",
           "commonTrap": "Falling for the \"noble savage\" romantic fantasy that unreflective existence is viable for modern minds.",
-          "timestampRef": "Lecture Section: 51:40 – You Cannot Go Back",
+          "timestampRef": "Lecture Section: 18:35 – You Cannot Go Back",
           "optionTraps": [
             null,
             "This treats the Continuous Cosmos as a matter of physical geography rather than an internalized cognitive-epistemic architecture.",
             "The shift from the Bronze Age to the Axial Age occurred over centuries via cultural psychotechnologies, not genetic brain speciation.",
             "This reduces an irreversible cognitive transformation in human consciousness to external socio-economic regulation."
-          ]
+          ],
+          "youtubeId": "C1AaqD8t3pk"
         }
       }
     ],
@@ -480,13 +494,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Aporia (literally \"pathlessness\") is the collapse of illusory certainty. Socrates considered it essential because until you realize you do not know, you cannot genuinely search for wisdom.",
           "commonTrap": "Viewing Aporia as negative embarrassment or humiliation rather than an essential therapeutic clearing of illusion.",
-          "timestampRef": "Lecture Section: 21:15 – Socratic Aporia",
+          "timestampRef": "Lecture Section: 46:34 – Socratic Aporia",
           "optionTraps": [
             "Epoché is the later Pyrrhonian Skeptic suspension of judgment aimed at quietude, whereas Socratic Aporia ignites an urgent quest for truth.",
             null,
             "Catharsis is Aristotle’s aesthetic concept of emotional cleansing in tragedy, not the epistemic collapse of false certainty.",
             "Ataraxia is the Hellenistic goal of untroubled peace, whereas Aporia is an intensely unsettling awakening from illusion."
-          ]
+          ],
+          "youtubeId": "Lhl51bZQlM8"
         }
       },
       {
@@ -503,13 +518,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Sophists trained people in rhetoric to manipulate what is salient and persuade others regardless of truth. Socrates saw this as weaponized self-deception, insisting that caring for the soul requires seeking what is truly real.",
           "commonTrap": "Thinking Socrates was just a better debater, rather than someone operating with a completely different orientation toward truth.",
-          "timestampRef": "Lecture Section: 12:40 – Socrates vs The Sophists",
+          "timestampRef": "Lecture Section: 32:19 – Socrates vs The Sophists",
           "optionTraps": [
             null,
             "Neither the Sophists nor Socrates focused on natural science; their dispute centered on rhetoric and salience manipulation versus truth.",
             "This reverses their positions: the Sophists pandered to conventional opinion and status, while Socrates pursued transcendent virtue.",
             "This inverts history: the Sophists championed moral relativism (\"man is the measure\"), while Socrates sought universal definitions of virtue."
-          ]
+          ],
+          "youtubeId": "Lhl51bZQlM8"
         }
       },
       {
@@ -526,13 +542,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Socratic wisdom (human wisdom) is second-order: recognizing the limits of one’s own knowledge and actively resisting the illusion of mastery.",
           "commonTrap": "Assuming Socrates claimed to possess secret esoteric truths, rather than epistemic humility.",
-          "timestampRef": "Lecture Section: 31:00 – The Oracle at Delphi",
+          "timestampRef": "Lecture Section: 49:30 – The Oracle at Delphi",
           "optionTraps": [
             "Socrates did not abandon reason for blind fideism; he tested the Oracle’s claim through rigorous rational cross-examination.",
             "Socrates explicitly denied possessing superior propositional doctrine; his wisdom was epistemic humility regarding what he did not know.",
             null,
             "Socrates treated the Oracle’s pronouncement as a call to examine human self-deception, not to construct a speculative natural theology."
-          ]
+          ],
+          "youtubeId": "Lhl51bZQlM8"
         }
       },
       {
@@ -549,13 +566,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Ta Erotika is the art of what to care about. Socrates understood how desire and salience work, teaching how to re-educate desire away from vanity and toward the flourishing of the soul.",
           "commonTrap": "Equating Eros with mere physical sexual attraction rather than the deep, transformative longing for truth and beauty.",
-          "timestampRef": "Lecture Section: 39:20 – Ta Erotika",
+          "timestampRef": "Lecture Section: 52:15 – Ta Erotika",
           "optionTraps": [
             "Socrates did not advocate extinguishing Eros; he sought to educate and redirect desire toward the Good.",
             "This reduces Socratic Eros to cultic interpersonal charisma rather than the participatory longing for truth and wisdom.",
             "For Socrates and Plato, beauty is an objective window into the Good that awakens philosophical ascent, not a mere sensory distraction.",
             null
-          ]
+          ],
+          "youtubeId": "Lhl51bZQlM8"
         }
       },
       {
@@ -572,13 +590,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Winning an argument has no necessary relation to truth. Perfecting the art of winning without examining truth makes you the primary victim of your own bullshit (Frankfurt/Socrates).",
           "commonTrap": "Equating argumentative prowess with intellectual wisdom.",
-          "timestampRef": "Lecture Section: 47:15 – The Peril of Bullshitting Oneself",
+          "timestampRef": "Lecture Section: 41:43 – The Peril of Bullshitting Oneself",
           "optionTraps": [
             "While social trust matters, Socrates’ primary warning is internal: the sophist corrupts their own soul by becoming blind to truth.",
             null,
             "The Socratic danger is not a mechanical memory deficit, but existential alienation from truth through self-reinforcing bullshit.",
             "Socrates practiced philosophy openly in the marketplace (agora) with all citizens, never restricting inquiry to an esoteric elite."
-          ]
+          ],
+          "youtubeId": "Lhl51bZQlM8"
         }
       }
     ],
@@ -626,13 +645,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Plato showed that reason alone is weak if it cannot train Thumos to help regulate Appetite. When immediate sensory salience overwhelms the psyche, the appetitive horse bolts.",
           "commonTrap": "Believing akrasia is purely a lack of intellectual information, rather than a failure of internal structural-functional harmony.",
-          "timestampRef": "Lecture Section: 16:20 – Plato on Akrasia",
+          "timestampRef": "Lecture Section: 11:13 – Plato on Inner Conflict & Appetite",
           "optionTraps": [
             null,
             "Plato explicitly critiqued the view that propositional knowledge alone prevents akrasia, introducing the Tripartite Psyche to explain inner conflict.",
             "Plato did not view reason as a helpless epiphenomenon; through educating Thumos, the Charioteer can harmonize the psyche.",
             "Akrasia is acting against one’s own considered judgment due to salience hijacking, not a calm utilitarian calculation."
-          ]
+          ],
+          "youtubeId": "neDutbcedUY"
         }
       },
       {
@@ -649,13 +669,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The cave is an allegory for our default cognitive state: trapped in unexamined second-hand narratives and salience landscapes that we mistake for fundamental reality.",
           "commonTrap": "Interpreting the cave as merely a political conspiracy rather than an existential description of human cognitive delusion.",
-          "timestampRef": "Lecture Section: 29:10 – The Anatomy of the Cave",
+          "timestampRef": "Lecture Section: 42:38 – The Anatomy of the Cave",
           "optionTraps": [
             "The cave is not about peripheral sensory hardware limits, but about cognitive framing and existential self-deception.",
             "Reducing the cave to state censorship misses Plato’s deeper point that we actively cling to our own salience illusions.",
             null,
             "Unlike Cartesian solipsism, Plato’s allegory insists that genuine liberation and direct contact with the real (Anagoge) are possible."
-          ]
+          ],
+          "youtubeId": "neDutbcedUY"
         }
       },
       {
@@ -672,13 +693,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Anagoge (the upward climb) is intrinsically disorienting. Moving to higher states of understanding shatters your existing cognitive equilibrium (accommodation before assimilation).",
           "commonTrap": "Expecting intellectual or spiritual growth to feel effortless and comfortable.",
-          "timestampRef": "Lecture Section: 38:40 – The Pain of Anagoge",
+          "timestampRef": "Lecture Section: 44:05 – The Pain of Anagoge",
           "optionTraps": [
             "For Plato, the ascent leads into a richer, more intelligible reality illuminated by the Good, not a bleak materialistic void.",
             null,
             "The dazzlement of Anagoge is an ontological restructuring of identity and salience, not mere informational fatigue.",
             "Plato views the temporary blindness as a necessary threshold of awakening toward wisdom, not a cautionary tale against transcendence."
-          ]
+          ],
+          "youtubeId": "neDutbcedUY"
         }
       },
       {
@@ -695,13 +717,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Just as sunlight makes physical vision possible, the Good is the principle of intelligibility that enables minds to know and realities to be known. It is the condition for relevance realization itself.",
           "commonTrap": "Treating the Good as just another item on a list of virtues, rather than the ground of intelligibility itself.",
-          "timestampRef": "Lecture Section: 44:15 – The Sun and the Good",
+          "timestampRef": "Lecture Section: 45:06 – The Sun and the Good",
           "optionTraps": [
             "Plato’s Form of the Good is a non-anthropomorphic ontological principle of intelligibility and being, not a mythic sky-god.",
             "This reduces the Form of the Good to a propositional premise in ethical logic rather than the condition for all knowing and being.",
             "While dazzling at first, the Good is the ultimate source of rational intelligibility (Nous), not an anti-rational mystery.",
             null
-          ]
+          ],
+          "youtubeId": "neDutbcedUY"
         }
       },
       {
@@ -718,13 +741,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Plato is memorializing the murder of Socrates: people whose identities are fused with the shadows of the cave will react with hostile defensiveness when their worldview is threatened.",
           "commonTrap": "Thinking that truth will be welcomed with open arms by dogmatic cultures.",
-          "timestampRef": "Lecture Section: 51:30 – The Fate of the Liberator",
+          "timestampRef": "Lecture Section: 45:45 – The Fate of the Liberator",
           "optionTraps": [
             "Plato insists the philosopher must descend back into the cave to serve the polis, despite the danger.",
             null,
             "The returning philosopher’s disorientation is temporary; once readjusted, they see the shadows far more clearly than the prisoners do.",
             "Plato’s Republic is fundamentally a project of paideia (transformative education of the soul), not cynical tyranny."
-          ]
+          ],
+          "youtubeId": "neDutbcedUY"
         }
       }
     ],
@@ -771,13 +795,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Entelechy (having one’s purpose within) is the immanent realization of potential into actuality. It is not an external plan, but the self-organizing drive of the living form.",
           "commonTrap": "Assuming teleology must mean a conscious human intention rather than an intrinsic biological dynamic.",
-          "timestampRef": "Lecture Section: 16:40 – Entelechy and Living Forms",
+          "timestampRef": "Lecture Section: 09:02 – Entelechy and Living Forms",
           "optionTraps": [
             "This confuses Aristotelian structural-functional organization with 19th-century substance vitalism (\"élan vital\").",
             "This confuses Aristotle’s immanent natural teleology with an external Paleyan watchmaker design.",
             null,
             "For Aristotle (and modern autopoietic biology), self-organizing teleology is ontologically real in organisms, not just a viewer heuristic."
-          ]
+          ],
+          "youtubeId": "A_gH5VIZO0Q"
         }
       },
       {
@@ -794,13 +819,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Hylomorphism (hyle = matter, morphé = form) asserts that every physical entity is a compound of underlying matter and organizing structural form.",
           "commonTrap": "Thinking form can float freely in empty space without matter (Aristotle’s departure from Plato).",
-          "timestampRef": "Lecture Section: 24:15 – Hylomorphism Explained",
+          "timestampRef": "Lecture Section: 07:13 – Hylomorphism Explained",
           "optionTraps": [
             null,
             "This reflects modern corpuscularian materialism and nominalism, which deny the objective reality of structural form (morphé).",
             "This describes extreme Platonic two-worlds dualism rather than Aristotle’s immanent hylomorphic synthesis.",
             "Matter and form are not two separate Cartesian substances glued together; matter is potentiality and form is its structural actualization."
-          ]
+          ],
+          "youtubeId": "A_gH5VIZO0Q"
         }
       },
       {
@@ -817,13 +843,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Aristotle sharply distinguished Hedonia (subjective pleasure) from Eudaimonia (objective flourishing). A well-fed couch potato is pleased, but their human entelechy is completely dormant.",
           "commonTrap": "Translating Eudaimonia merely as \"happiness\" in the modern shallow emotional sense.",
-          "timestampRef": "Lecture Section: 37:50 – Eudaimonia vs Hedonia",
+          "timestampRef": "Lecture Section: 49:42 – Eudaimonia vs Hedonia",
           "optionTraps": [
             "Aristotle did not preach joyless asceticism; he held that genuine pleasure naturally accompanies virtuous activity.",
             null,
             "Aristotle grounded Eudaimonia in embodied ethical and rational actualization within the polis, not escape from the physical world.",
             "Utilitarianism still reduces the good to hedonic pleasure (aggregated), whereas Eudaimonia is about developmental excellence (virtue)."
-          ]
+          ],
+          "youtubeId": "A_gH5VIZO0Q"
         }
       },
       {
@@ -840,13 +867,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "When modern science stripped nature of formal and final causes, nature became inert mechanism. Meaning, purpose, and value were no longer real features of being, creating modern existential alienation.",
           "commonTrap": "Believing that abandoning teleology had zero existential consequences for human psychology.",
-          "timestampRef": "Lecture Section: 46:30 – The Banishment of Purpose",
+          "timestampRef": "Lecture Section: 19:01 – The Banishment of Purpose",
           "optionTraps": [
             "Excluding final causes actually accelerated mathematical mechanics (Galileo, Newton), even while creating a deeper meaning crisis.",
             "Modern philosophy did not revert to polytheism; it tried to invent secular ethical systems (Kantianism, utilitarianism) to fill the void.",
             null,
             "Morphological classification continued under mechanism, but living purpose and existential value were exiled from objective reality."
-          ]
+          ],
+          "youtubeId": "A_gH5VIZO0Q"
         }
       },
       {
@@ -863,13 +891,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "4E Cognitive Science (Embodied, Embedded, Enactive, Extended) resurrects Aristotle’s insight: the mind is the living form of an organism dynamically adapting and making sense of its arena.",
           "commonTrap": "Treating the mind as an abstract software program running on disposable biological hardware.",
-          "timestampRef": "Lecture Section: 52:10 – Aristotle and Enactive Cognitive Science",
+          "timestampRef": "Lecture Section: 46:32 – Aristotle and Enactive Cognitive Science",
           "optionTraps": [
             null,
             "This describes classical computationalism (GOFAI), which 4E cognitive science and Aristotelian autopoiesis explicitly reject.",
             "Enactive cognition emphasizes real dynamic coupling between organism and arena, not solipsistic transcendental idealism.",
             "4E cognitive science emphasizes dynamic developmental coupling (autopoiesis), not static pre-programmed genetic nativism."
-          ]
+          ],
+          "youtubeId": "A_gH5VIZO0Q"
         }
       }
     ],
@@ -918,13 +947,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Conformity theory asserts that knowing is direct contact: the same form that makes the tree a tree informs the mind in the act of knowing. It is not an inner picture; it is communion of form.",
           "commonTrap": "Projecting modern Cartesian representationalism (the mind as an inner movie screen) back onto ancient epistemology.",
-          "timestampRef": "Lecture Section: 18:20 – Conformity Theory of Knowing",
+          "timestampRef": "Lecture Section: 12:27 – Conformity Theory of Knowing",
           "optionTraps": [
             "This describes modern indirect realism (Locke/Descartes), which traps the mind behind a veil of internal representations.",
             "This is Plato’s doctrine of Anamnesis (recollection), whereas Aristotle grounded knowing in immanent hylomorphic contact.",
             "This reflects postmodern linguistic constructivism and nominalism, which deny that real forms exist in nature.",
             null
-          ]
+          ],
+          "youtubeId": "yy47YzvGniQ"
         }
       },
       {
@@ -941,13 +971,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The ancient cosmos was an organized home (oikos). Everything had a natural place, purpose, and direction, providing humans with deep participatory belonging.",
           "commonTrap": "Mocking ancient physics as merely incorrect science without understanding its psychological and existential coherence.",
-          "timestampRef": "Lecture Section: 29:40 – The Geocentric Cosmos as a Home",
+          "timestampRef": "Lecture Section: 22:40 – The Geocentric Cosmos as a Home",
           "optionTraps": [
             "Natural teleology did not create fatalism; it gave human virtue a meaningful direction and telos within the cosmic order.",
             null,
             "Medieval cosmology experienced the nested celestial spheres as an intelligible cathedral of belonging, not claustrophobic surveillance.",
             "In the pre-modern geocentric cosmos, the center was the humblest realm beneath the heavens, inspiring reverence rather than industrial domination."
-          ]
+          ],
+          "youtubeId": "yy47YzvGniQ"
         }
       },
       {
@@ -964,13 +995,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "When the cosmic canopy collapsed, humans were displaced from being participants in an intelligible home to being isolated spectators in a dead void—existential homelessness.",
           "commonTrap": "Thinking scientific discoveries only provided technical benefits without exacting any existential or psychological cost.",
-          "timestampRef": "Lecture Section: 44:10 – Existential Homelessness",
+          "timestampRef": "Lecture Section: 37:57 – Existential Homelessness",
           "optionTraps": [
             "While Enlightenment optimism celebrated autonomy, the severing of mind from a mechanistic cosmos ultimately fueled the Meaning Crisis.",
             "Mathematical science flourished after Galileo and Newton; the crisis was existential and participatory, not a halt in physics.",
             null,
             "Intellectuals rapidly adopted the mechanistic worldview; the tragedy was that its success left human meaning ungrounded."
-          ]
+          ],
+          "youtubeId": "yy47YzvGniQ"
         }
       },
       {
@@ -987,13 +1019,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Modern ecological psychology (J.J. Gibson) and 4E cognitive science rediscover Aristotle: cognition is not an isolated mind making inferences about external objects, but a dynamic contact and coupling with real affordances.",
           "commonTrap": "Assuming that modern ecological psychology has no historical roots in classical Greek thought.",
-          "timestampRef": "Lecture Section: 51:30 – Reconnecting to Contact Epistemology",
+          "timestampRef": "Lecture Section: 31:37 – Reconnecting to Contact Epistemology",
           "optionTraps": [
             null,
             "Cartesian representationalism is the exact dualistic framework that Gibsonian affordances and 4E cognitive science seek to overcome.",
             "Nominalism severs structural form from reality, whereas ecological affordances restore real relational structure between organism and world.",
             "Pyrrhonian skepticism denies reliable contact with reality, whereas ecological psychology grounds cognition in direct sensorimotor coupling."
-          ]
+          ],
+          "youtubeId": "yy47YzvGniQ"
         }
       },
       {
@@ -1010,13 +1043,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Meaning is not an objective rock, nor is it a subjective fiction. Meaning is transjective—existing in the real relational fittedness between agent and arena, exactly like an organism’s living adaptation.",
           "commonTrap": "Falling into the false binary: either meaning is an objective physical particle or it is a pure mental hallucination.",
-          "timestampRef": "Lecture Section: 56:00 – Transjectivity vs Subjective Fiction",
+          "timestampRef": "Lecture Section: 34:55 – Transjectivity vs Subjective Fiction",
           "optionTraps": [
             "This is romantic existentialism (Sartre/Camus), which accepts the false Cartesian premise that meaning is merely an arbitrary subjective projection.",
             null,
             "This treats meaning as a static physical substance (\"having\") rather than a relational, enactive fittedness between agent and arena.",
             "This reduces meaning to postmodern social constructivism, ignoring its deep roots in biological autopoiesis and cognitive relevance realization."
-          ]
+          ],
+          "youtubeId": "yy47YzvGniQ"
         }
       }
     ],
@@ -1062,13 +1096,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Dukkha is not just physical pain; it is the chronic structural mismatch (off-center axle) caused by trying to fixate and freeze dynamic, impermanent reality.",
           "commonTrap": "Translating Dukkha simplistically as \"sadness\" rather than an existential-cognitive misalignment.",
-          "timestampRef": "Lecture Section: 17:35 – The True Meaning of Dukkha",
+          "timestampRef": "Lecture Section: 08:54 – The True Meaning of Dukkha",
           "optionTraps": [
             "The Buddha analyzed Dukkha as an immanent cognitive-existential dynamic of grasping (Tanha), not a moralistic punishment for working.",
             "This confuses Dukkha (structural existential friction/ill-fittedness) with raw physical pain signals (vedana).",
             null,
             "While consumerism amplifies craving, the Buddha diagnosed Dukkha as a universal human cognitive vulnerability rooted in relevance realization."
-          ]
+          ],
+          "youtubeId": "EWumJSBqXa8"
         }
       },
       {
@@ -1085,13 +1120,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Normally, we look THROUGH our cognitive framing and project it onto reality. Mindfulness (Sati) steps back to look AT the framing itself, exposing how attention is constructing salience.",
           "commonTrap": "Thinking mindfulness is empty relaxation rather than meta-cognitive attentional recalibration.",
-          "timestampRef": "Lecture Section: 29:50 – Looking AT vs Looking THROUGH",
+          "timestampRef": "Lecture Section: 10:53 – Looking AT vs Looking THROUGH",
           "optionTraps": [
             null,
             "Cognition always requires framing to avoid combinatorial explosion; mindfulness recalibrates our relationship to framing rather than abolishing it.",
             "Looking AT the lens is an experiential, meta-attentional shift in participatory awareness, not adopting a propositional theory.",
             "Mindfulness deconstructs narrative ego-fabrication rather than elaborating a fuller autobiographical story."
-          ]
+          ],
+          "youtubeId": "jkWNBdBDyoE"
         }
       },
       {
@@ -1108,13 +1144,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Anatta (non-self) reveals that the \"ego\" is not a static soul-pellet inside the head, but a dynamic, self-organizing process. Realizing this frees one from compulsive ego-defense.",
           "commonTrap": "Confusing Anatta (liberation from self-clutching) with depressing existential nihilism.",
-          "timestampRef": "Lecture Section: 36:15 – Anatta and Cognitive Science",
+          "timestampRef": "Lecture Section: 31:30 – Anatta and Cognitive Science",
           "optionTraps": [
             "Anatta does not deny conscious experience or reduce it to dead matter; it reveals the self as a dynamic, relational process.",
             "This describes an immutable transcendent witness (Atman/Purusha), which is precisely the static self-concept that Anatta deconstructs.",
             "In Buddhism and 4E cognitive science, dissolving the static ego liberates compassionate responsiveness rather than negating responsibility.",
             null
-          ]
+          ],
+          "youtubeId": "EWumJSBqXa8"
         }
       },
       {
@@ -1131,13 +1168,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Mindfulness is attentional agility—the capacity to zoom in (concentrate), zoom out (decenter), and realize relevance with clarity, not a lobotomized trance.",
           "commonTrap": "Equating mindfulness with passive spacing out or dissociation.",
-          "timestampRef": "Lecture Section: 44:20 – Mindfulness as Attentional Optimization",
+          "timestampRef": "Lecture Section: 43:57 – Mindfulness as Attentional Optimization",
           "optionTraps": [
             "Mindfulness is meta-attentional awareness of framing (Sati) and insight (Vipassana), not discursive syllogistic debate.",
             null,
             "Vervaeke’s critique is epistemological: catatonic blankness shuts down relevance realization rather than awakening insight.",
             "Chasing ecstatic visions is another form of craving (Tanha); mindfulness cultivates clear, equanimous insight into reality."
-          ]
+          ],
+          "youtubeId": "EWumJSBqXa8"
         }
       },
       {
@@ -1154,13 +1192,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Both hedonistic addiction and starvation hijack the salience landscape, trapping cognition in tunnel vision. The Middle Way frees attentional bandwidth for second-order spiritual awakening.",
           "commonTrap": "Seeing the Middle Way as lukewarm compromise rather than an optimal state of cognitive freedom.",
-          "timestampRef": "Lecture Section: 51:10 – The Middle Way and Optimal Grip",
+          "timestampRef": "Lecture Section: 17:35 – The Middle Way and Optimal Grip",
           "optionTraps": [
             "The Middle Way is a rigorous cognitive-existential calibration for awakening, not a diplomatic social compromise.",
             "This reduces the Middle Way to hedonic neurochemical management rather than freeing attention from reciprocal narrowing.",
             null,
             "This confuses the Buddhist Middle Way with the classical Vedic ashrama (stages of life) system."
-          ]
+          ],
+          "youtubeId": "EWumJSBqXa8"
         }
       }
     ],
@@ -1207,13 +1246,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Combinatorial explosion guarantees that checking all possibilities will cause an infinite loop. The essence of human intelligence is Relevance Realization: effortlessly filtering out the near-infinite irrelevant options.",
           "commonTrap": "Assuming computers or brains solve complex real-world problems by checking every possible branch.",
-          "timestampRef": "Lecture Section: 19:25 – Combinatorial Explosion",
+          "timestampRef": "Lecture Section: 16:28 – Combinatorial Explosion",
           "optionTraps": [
             "Even parallel biological hardware cannot exhaustively search a combinatorially exploding space ($10^{120}$ chess games); it must pre-filter via relevance.",
             "Grandmasters do not just look up static memorized boards; they perceive dynamic Gestalt salience landscapes and affordances.",
             null,
             "Expert intuition is not random emotional guessing; it is highly calibrated, non-propositional relevance realization."
-          ]
+          ],
+          "youtubeId": "jkWNBdBDyoE"
         }
       },
       {
@@ -1230,13 +1270,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The participants frame the problem as a \"square box\", automatically treating the empty space outside as irrelevant. Insight requires breaking this framing and extending the lines beyond the dots.",
           "commonTrap": "Thinking insight is trying harder with your existing assumptions, rather than dissolving the assumption itself.",
-          "timestampRef": "Lecture Section: 09:15 – The Nine-Dot Problem",
+          "timestampRef": "Lecture Section: 27:55 – The Nine-Dot Problem",
           "optionTraps": [
             "Holding four lines is well within working memory limits; the obstacle is the implicit Gestalt boundary projected onto the dots.",
             null,
             "Applying more deductive logic within the assumed square box only deepens the impasse; solving it requires reframing the space.",
             "Participants fail from the very first attempt due to Gestalt framing constraints, not metabolic exhaustion."
-          ]
+          ],
+          "youtubeId": "jkWNBdBDyoE"
         }
       },
       {
@@ -1253,13 +1294,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Insight is a Gestalt restructuring. You stopped framing the key merely under the concept \"door unlocker\" (functional fixedness) and recognized its structural affordance as a serrated wedge.",
           "commonTrap": "Thinking intelligence is knowing static definitions rather than dynamic affordance perception.",
-          "timestampRef": "Lecture Section: 32:40 – Gestalt Shifts & Affordances",
+          "timestampRef": "Lecture Section: 29:17 – Gestalt Shifts & Affordances",
           "optionTraps": [
             "Overcoming functional fixedness is a perceptual-motor reframing of salience, not a formal deductive syllogism about metallurgy.",
             "Recalling a locksmith reinforces the key’s conventional function (unlocking doors) rather than breaking functional fixedness.",
             null,
             "The \"Aha!\" insight happens instantaneously by restructuring salience, not by brute-force testing every object in the room."
-          ]
+          ],
+          "youtubeId": "jkWNBdBDyoE"
         }
       },
       {
@@ -1276,13 +1318,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The Frame Problem is the fundamental challenge of relevance: how does a system determine what is relevant to attend to without checking all non-relevant data? Relevance Realization is nature’s solution.",
           "commonTrap": "Believing that giving a computer more processing power automatically solves the Frame Problem.",
-          "timestampRef": "Lecture Section: 41:10 – The Frame Problem in AI",
+          "timestampRef": "Lecture Section: 09:07 – The Frame Problem in AI",
           "optionTraps": [
             null,
             "Searle/Harnad’s Symbol Grounding Problem concerns semantic meaning of symbols, whereas the robot’s paralysis is McCarthy/Pylyshyn’s Frame Problem of relevance.",
             "Chalmers’ Hard Problem concerns phenomenal qualia, whereas this scenario illustrates the computational intractability of relevance.",
             "Gödel’s theorem concerns formal mathematical completeness, not an embodied agent’s real-time filtering of irrelevant environmental facts."
-          ]
+          ],
+          "youtubeId": "dRzm_wSR1RU"
         }
       },
       {
@@ -1299,13 +1342,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Relevance Realization works by ignoring 99.999% of reality to act efficiently. The very heuristics that enable rapid, brilliant insight are the exact same machinery that misdirects us when our framing is skewed.",
           "commonTrap": "Believing intelligence is an armor against delusion. Highly intelligent people are simply better at rationalizing their biases.",
-          "timestampRef": "Lecture Section: 49:50 – The Engine of Insight and Error",
+          "timestampRef": "Lecture Section: 32:04 – The Engine of Insight and Error",
           "optionTraps": [
             "Self-deception is not merely a moral failing of arrogance; it is structurally built into the adaptive economy of heuristic cognition.",
             "Affective processing is integral to relevance realization, not an ancient error detector suppressed by reason.",
             "While verbal rationalization plays a role, the deepest root of self-deception lies in pre-linguistic attentional framing and salience.",
             null
-          ]
+          ],
+          "youtubeId": "jkWNBdBDyoE"
         }
       }
     ],
@@ -1352,13 +1396,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Automated procedural routines handle routine tasks unconsciously. Consciousness is recruited precisely when novel, complex relevance realization is needed to resolve a crisis.",
           "commonTrap": "Believing consciousness is running every routine motor action in the body.",
-          "timestampRef": "Lecture Section: 17:15 – When Consciousness Awakens",
+          "timestampRef": "Lecture Section: 16:52 – When Consciousness Awakens",
           "optionTraps": [
             "Routine driving is handled by unconscious procedural modules; conscious micromanagement of routine skills actually degrades performance.",
             null,
             "This is epiphenomenalism; Vervaeke shows that consciousness plays a real causal role in reconfiguring salience for novel problems.",
             "Non-verbal organisms and pre-linguistic tasks still recruit conscious global workspace integration during novel environmental challenges."
-          ]
+          ],
+          "youtubeId": "dRzm_wSR1RU"
         }
       },
       {
@@ -1375,13 +1420,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Global Workspace Theory describes consciousness as a blackboard or stage where localized modular specialists pool information to achieve distributed cognitive synergy.",
           "commonTrap": "Assuming there is a single \"Cartesian theater\" screen where a little homunculus sits watching reality.",
-          "timestampRef": "Lecture Section: 28:40 – Global Workspace Theory",
+          "timestampRef": "Lecture Section: 07:55 – Global Workspace Theory",
           "optionTraps": [
             null,
             "This falls into the Cartesian Theater fallacy (a central homunculus), which Global Workspace Theory replaces with distributed broadcasting.",
             "Strict Fodorian encapsulation prevents cross-domain synergy; the Global Workspace exists precisely to integrate across specialized modules.",
             "Cross-modal integration occurs via rapid, non-propositional salience broadcasting, not slow deductive translation into sentences."
-          ]
+          ],
+          "youtubeId": "dRzm_wSR1RU"
         }
       },
       {
@@ -1398,13 +1444,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "If working memory was infinite, we would be paralyzed by combinatorial explosion. The narrow capacity constraint forces the brain to abstract, chunk, and realize relevance at high speed.",
           "commonTrap": "Viewing working memory limits purely as an unfortunate engineering flaw.",
-          "timestampRef": "Lecture Section: 36:50 – The Bottleneck as Adaptive Filter",
+          "timestampRef": "Lecture Section: 12:16 – The Bottleneck as Adaptive Filter",
           "optionTraps": [
             "While brain tissue is metabolically expensive, the functional advantage of the 4-chunk limit is computational: avoiding combinatorial explosion.",
             "The working memory constraint is a general cognitive architecture for data compression and relevance, not a trauma-repression mechanism.",
             "Working memory constraints precede human language in evolutionary history and serve fundamental sensorimotor relevance realization.",
             null
-          ]
+          ],
+          "youtubeId": "dRzm_wSR1RU"
         }
       },
       {
@@ -1421,13 +1468,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Salience landscapes are not static recordings of photons; they are dynamically sculpted by relevance realization, foregrounding affordances that matter to the organism.",
           "commonTrap": "Treating perception as passive video recording rather than active, motivated landscape construction.",
-          "timestampRef": "Lecture Section: 44:20 – The Salience Landscape",
+          "timestampRef": "Lecture Section: 19:00 – The Salience Landscape",
           "optionTraps": [
             "Salience landscaping is pre-reflective and participatory—the food billboard jumps out at you before any deliberate deduction.",
             "Dynamic salience modulation is not a visual pathology; it is the adaptive way consciousness highlights relevant affordances.",
             null,
             "Rather than bypassing consciousness, salience landscaping structures the very foreground and background of conscious experience itself."
-          ]
+          ],
+          "youtubeId": "dRzm_wSR1RU"
         }
       },
       {
@@ -1444,13 +1492,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Consciousness is the tiny illuminated tip of a massive unconscious cognitive iceberg. Intuitive heuristics, grammatical syntax, and motor programs are non-conscious.",
           "commonTrap": "Equating the mind exclusively with conscious self-talk.",
-          "timestampRef": "Lecture Section: 51:10 – Mind vs Consciousness",
+          "timestampRef": "Lecture Section: 05:49 – Mind vs Consciousness",
           "optionTraps": [
             "Cognitive science demonstrates that complex intelligent problem-solving, syntax, and implicit learning occur non-consciously.",
             null,
             "Cartesian transparency of mind has been thoroughly refuted by empirical cognitive science showing massive unconscious processing.",
             "This combines substance dualism with linguistic constructivism, missing how consciousness is an integrative workspace within embodied cognition."
-          ]
+          ],
+          "youtubeId": "dRzm_wSR1RU"
         }
       }
     ],
@@ -1497,13 +1546,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "People judge HSCs as \"realer than real\" because the experience provides a comprehensive, systemic increase in cognitive fluency, interconnectedness, and insight that dwarfs baseline framing.",
           "commonTrap": "Dismissing all mystical experiences as pathology or equating them with ordinary dream states.",
-          "timestampRef": "Lecture Section: 19:40 – The Realer than Real Phenomenon",
+          "timestampRef": "Lecture Section: 01:30 – Higher States vs. Dreams & Enhanced Realness",
           "optionTraps": [
             "This confuses systemic frame-breaking optimization with uninhibited emotional flooding or dream-like disinhibition.",
             "This reduces the structural fluency of systemic insight to a mere neurochemical illusion of reward.",
             null,
             "This mistakes the heightened participatory contact of an HSC for clinical dissociation and sensory withdrawal."
-          ]
+          ],
+          "youtubeId": "39NpjQDtqNw"
         }
       },
       {
@@ -1520,13 +1570,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Over 70% of participants rated the session among the top 5 most personally meaningful experiences of their lives, showing that systemic reframing can dissolve chronic neurotic despair.",
           "commonTrap": "Believing psychedelic therapy works merely as a biochemical sedative rather than through a transformative epistemic insight.",
-          "timestampRef": "Lecture Section: 29:15 – The Johns Hopkins Psilocybin Studies",
+          "timestampRef": "Lecture Section: 16:58 – Psychedelic Research & Release from Fear of Death",
           "optionTraps": [
             null,
             "This treats psilocybin as a chronic chemical sedative rather than a catalyst for a single, enduring quantum-leap reframing.",
             "This confuses authentic existential acceptance and participatory opening with psychological denial and repression.",
             "This mistakes non-propositional mystical insight and transjective connectedness for adopting propositional religious beliefs."
-          ]
+          ],
+          "youtubeId": "39NpjQDtqNw"
         }
       },
       {
@@ -1543,13 +1594,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Ego dissolution quiets the Default Mode Network (the seat of rumination and neurotic ego-maintenance), breaking reciprocal narrowing and opening the mind to fresh affordances.",
           "commonTrap": "Fearing ego dissolution as literal physical death rather than cognitive liberation from tunnel vision.",
-          "timestampRef": "Lecture Section: 38:50 – Ego Dissolution and the DMN",
+          "timestampRef": "Lecture Section: 19:12 – De-Centering and Release from the Ego",
           "optionTraps": [
             "This confuses temporary de-automatization of the egoic frame with permanent loss of executive function and agency.",
             "This mistakes the transjective unity of ego dissolution for age-regression or memory fusion.",
             "This conflates cognitive decentering with the loss of responsible individual agency into an amorphous collective haze.",
             null
-          ]
+          ],
+          "youtubeId": "39NpjQDtqNw"
         }
       },
       {
@@ -1566,13 +1618,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Vervaeke emphasizes that raw experiences are not self-authenticating. Higher states must be tested and integrated through critical reason, moral virtue, and communities of distributed cognition.",
           "commonTrap": "Falling into \"spiritual binging\" or believing every ecstatic vision is direct literal divine revelation.",
-          "timestampRef": "Lecture Section: 47:30 – The Danger of Ungrounded Ecstasy",
+          "timestampRef": "Lecture Section: 47:32 – Sapiential Traditions vs. Ungrounded Pronouncements",
           "optionTraps": [
             "This commits the opposite error of dismissing the genuine epistemic and developmental value of higher states altogether.",
             null,
             "This falsely restricts HSCs to subjective aesthetic feelings, ignoring their role in recalibrating relevance realization.",
             "This confuses trans-rational systemic insight with pre-rational mythological regression (Ken Wilber’s pre/trans fallacy)."
-          ]
+          ],
+          "youtubeId": "rvx4_0NAfaY"
         }
       },
       {
@@ -1589,13 +1642,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "William James established the pragmatic criterion: we judge an altered state by its transformative ethical and psychological fruits in everyday life, not by its origins.",
           "commonTrap": "Fixating on the intensity of the experience itself rather than its ongoing transformative impact.",
-          "timestampRef": "Lecture Section: 54:10 – William James: By Their Fruits",
+          "timestampRef": "Lecture Section: 48:39 – Participatory Transformation & Wise Practices",
           "optionTraps": [
             "This falls into experiential thrill-seeking, judging a state by its peak emotional drama rather than its lasting integration.",
             null,
             "This commits the genetic fallacy (\"roots\"), which James explicitly rejected in favor of evaluating ethical outcomes (\"fruits\").",
             "This applies propositional dogmatism to an experience whose primary value lies in participatory transformation."
-          ]
+          ],
+          "youtubeId": "rvx4_0NAfaY"
         }
       }
     ],
@@ -1612,7 +1666,7 @@ export const EPISODES_DATA = [
     "title": "Marcus Aurelius and Stoicism",
     "subtitle": "Prosochê, the Dichotomy of Control, and the View from Above",
     "duration": "59 min",
-    "youtubeId": "rvx4_0NAfaY",
+    "youtubeId": "FvLe4BuU-NM",
     "quote": "It is not events that upset us, but our judgments and interpretations about those events. Master the interpretation, and you master your freedom.",
     "thesis": "In Episode 12, Vervaeke explores Hellenistic philosophy through its most resilient operating system: Stoicism. As ancient city-states collapsed into sprawling, unstable empires, humans lost their intimate democratic agency. Stoicism arose as a powerful psychotechnology for maintaining sovereignty of the soul.\n\nDr. Vervaeke analyzes Emperor Marcus Aurelius and Epictetus, dismantling the modern myth that Stoicism is cold emotional suppression (\"having a stiff upper lip\"). Authentic Stoicism is cognitive reframing: our suffering does not come from external events, but from our internal value judgments (*dogmata*).\n\nThe core Stoic psychotechnologies include: Prosochê (continuous, vigilant mindfulness of attention), the Dichotomy of Control (separating what is within our power from what is not), and the View from Above (perspectival zooming out to cosmic scale to dissolve petty narcissistic anxiety). Stoicism represents an ancient cognitive behavioral therapy designed for existential resilience.",
     "keyThinkers": [
@@ -1642,13 +1696,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Epictetus famously taught: \"Men are disturbed not by things, but by the view which they take of them.\" The words are external sound; the suffering is your own internal assent to the judgment.",
           "commonTrap": "Blaming the external event rather than examining your own cognitive appraisal.",
-          "timestampRef": "Lecture Section: 16:15 – It is Judgments that Upset Us",
+          "timestampRef": "Lecture Section: 07:43 – Separating the Event from the Meaning",
           "optionTraps": [
             null,
             "This confuses an involuntary initial startle reflex (*propatheia*) with the full passion caused by assenting to a false value judgment.",
             "This seeks security by trying to control external people and status rather than governing your own internal faculty of judgment.",
             "This blames external social structures while missing that the turmoil arises from treating career status as an intrinsic moral good."
-          ]
+          ],
+          "youtubeId": "FvLe4BuU-NM"
         }
       },
       {
@@ -1665,13 +1720,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The foundation of Epictetus’ Enchiridion is dividing reality into what is up to us (desires, judgments, actions) vs what is not up to us (weather, traffic, other people). Peace comes from relinquishing control over the uncontrollable.",
           "commonTrap": "Confusing Stoic detachment with passive surrender; you act skillfully where you have agency and accept what you cannot alter.",
-          "timestampRef": "Lecture Section: 26:30 – The Dichotomy of Control",
+          "timestampRef": "Lecture Section: 09:00 – Epictetus and What Is in Our Control",
           "optionTraps": [
             "This mistakes lower-case \"stoic\" emotional repression and denial for rational Stoic discernment of agency.",
             "This still fixates your anxiety on controlling an external outcome (another person’s opinion) that is ultimately not up to you.",
             "This falls into the \"Lazy Argument\" fallacy, confusing acceptance of present externals with fatalistic passivity toward one’s own duties.",
             null
-          ]
+          ],
+          "youtubeId": "FvLe4BuU-NM"
         }
       },
       {
@@ -1688,13 +1744,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Stoics recognized that toxic passions (rage, jealousy, panic) are caused by cognitive distortions. By cultivating Prosochê, they healed the judgment, replacing distress with joy and peace (Apatheia / Eupatheiai).",
           "commonTrap": "Equating lower-case \"stoic\" (repressed numbness) with upper-case \"Stoic\" philosophy (philosophical cognitive reframing).",
-          "timestampRef": "Lecture Section: 35:45 – The Myth of the Emotionless Robot",
+          "timestampRef": "Lecture Section: 27:06 – Cognitive Reframing & Internalizing Socrates",
           "optionTraps": [
             "This confuses Stoic cognitive therapy with Romantic catharsis theory, which views passions as non-rational forces to be vented.",
             null,
             "This conflates Stoicism with a caricature of Epicurean withdrawal, whereas Stoics engaged deeply in civic life and relational duty.",
             "This misunderstands Stoic *Eupatheiai* (healthy rational emotions), as Stoics viewed craving for fame and honor as a primary passion to be cured."
-          ]
+          ],
+          "youtubeId": "FvLe4BuU-NM"
         }
       },
       {
@@ -1711,13 +1768,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The View from Above shifts perspectival knowing, expanding attention to cosmic scale. Seeing human struggles from afar strips petty worries of their inflated emotional salience.",
           "commonTrap": "Viewing this exercise as depressing nihilism rather than an empowering restoration of perspective and equanimity.",
-          "timestampRef": "Lecture Section: 44:10 – The View from Above",
+          "timestampRef": "Lecture Section: 24:41 – The View from Above",
           "optionTraps": [
             "This mistakes perspectival decentering for dissociative escapism, whereas Marcus used it to return to his civic duties with greater equanimity.",
             "This confuses the dissolution of egoic self-importance with modern nihilism, missing how the exercise reconnects one to the cosmic *Logos*.",
             null,
             "This conflates the Stoic immanent visualization of the whole physical cosmos with a Platonic ascent out of the material world."
-          ]
+          ],
+          "youtubeId": "FvLe4BuU-NM"
         }
       },
       {
@@ -1734,13 +1792,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Prosochê is continuous Stoic mindfulness: standing guard at the gates of the soul, checking every impression before granting internal belief or emotional reaction.",
           "commonTrap": "Assuming mindfulness only existed in Eastern Buddhism; ancient Greek and Roman philosophy had an equally rigorous attentional tradition.",
-          "timestampRef": "Lecture Section: 51:20 – Prosochê: The Guard at the Gate",
+          "timestampRef": "Lecture Section: 06:22 – Prosochê: Paying Attention to How You Judge",
           "optionTraps": [
             null,
             "This confuses real-time attentional vigilance (*Prosochê*) with retrospective self-flagellation, which Stoicism rejects as another toxic passion.",
             "This conflates Stoic *Prosochê*—which actively evaluates impressions before granting rational assent—with purely passive, non-evaluative awareness.",
             "This reduces an embodied, real-time attentional psychotechnology to merely academic propositional debate."
-          ]
+          ],
+          "youtubeId": "FvLe4BuU-NM"
         }
       }
     ],
@@ -1757,7 +1816,7 @@ export const EPISODES_DATA = [
     "title": "Epicureans, Cynics, and Skeptics",
     "subtitle": "Hellenistic Psychotechnologies for Ataraxia & Empire Collapse",
     "duration": "57 min",
-    "youtubeId": "vGB8k7jk1AQ",
+    "youtubeId": "rpndwf45nao",
     "quote": "When the ancient democratic polis was swallowed by vast impersonal empires, philosophy transformed from speculative metaphysics into emergency therapeutic psychotechnologies for psychological survival and peace of mind.",
     "thesis": "In Episode 13, Dr. John Vervaeke examines the dramatic civilizational crisis that followed the conquests of Alexander the Great: the collapse of the Athenian democratic polis and the rise of massive, bureaucratic Hellenistic empires.\n\nIn the classical polis, citizens experienced direct participatory belonging—their personal agency mattered in the assembly and civic life. Under empire, that intimacy shattered; individuals found themselves dwarfed by imperial bureaucracy, experiencing profound existential homelessness, political impotence, and cosmic dread (the Hellenistic crisis of agency).\n\nIn response, philosophy pivoted from cosmological theory to intensely practical \"therapies of the soul\"—psychotechnologies designed to cultivate Ataraxia (imperturbability, untroubledness of mind):\n\n1. The Epicureans (Epicurus): Adopted atomistic materialism not for physics, but to banish superstition, the dread of meddling gods, and the fear of death (\"Death is nothing to us; when we exist, death is not, and when death exists, we are not\"). True pleasure is not frantic hedonic indulgence, but Aponia (freedom from bodily pain) and Ataraxia, cultivated in quiet communities of deep friendship (The Garden).\n\n2. The Cynics (Diogenes of Sinope, Antisthenes): Diagnosed the meaning crisis as cultural conditioning and obsession with artificial social status, wealth, and convention. Diogenes advocated radical shamelessness and living according to nature (like a dog, kynikos), training the mind to be invulnerable to fortune by shedding all illusions.\n\n3. The Skeptics (Pyrrho, Sextus Empiricus): Recognized that dogmatic grasping and ideological certainty produce cognitive agitation and conflict. By cultivating Epoché (the deliberate suspension of judgment) and recognizing that opposite arguments balance out (Isostheneia), the mind unexpectedly discovers tranquility (Ataraxia follows suspension of judgment like a shadow).\n\nTogether with the Stoics (Episode 12), these Hellenistic schools represent humanity's first comprehensive emergency response to imperial alienation—an essential precursor to modern psychotechnologies.",
     "keyThinkers": [
@@ -1788,13 +1847,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "When individuals lost their participatory civic agency in the vast empire, the Hellenistic schools (Stoics, Epicureans, Cynics, Skeptics) turned inward, reinventing philosophy as \"therapy of the soul\" to help people cope with chaos.",
           "commonTrap": "Assuming Hellenistic thinkers gave up on reason; they applied reason more urgently than ever, but directed it toward existential tranquility (Ataraxia) rather than abstract cosmic models.",
-          "timestampRef": "Lecture Section: 11:40 – The Hellenistic Crisis of Agency",
+          "timestampRef": "Lecture Section: 11:41 – The Philosopher as Physician of the Soul",
           "optionTraps": [
             "This mistakes Hellenistic philosophy for ivory-tower scholasticism, when in fact it subordinated abstract theory to urgent existential therapy.",
             null,
             "This projects modern revolutionary politics onto antiquity, whereas Hellenistic schools focused on inner sovereignty rather than overthrowing empire.",
             "This confuses the rational psychotechnologies of the Hellenistic philosophical schools with the later rise of imperial mystery religions."
-          ]
+          ],
+          "youtubeId": "rpndwf45nao"
         }
       },
       {
@@ -1811,13 +1871,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Epicurus used Democritus’ atomism therapeutically: if you are a mortal configuration of atoms that dissolves at death, there is no conscious subject remaining to experience suffering, punishment, or deprivation. Fearing non-experience is irrational.",
           "commonTrap": "Thinking Epicureanism meant hedonistic orgies; Epicurus actually advocated simple bread, water, philosophical friendship, and eliminating false desires to achieve peaceful Aponia.",
-          "timestampRef": "Lecture Section: 24:15 – Epicurus and the Tetrapharmakos",
+          "timestampRef": "Lecture Section: 18:52 – Epicurus on Accepting Mortality",
           "optionTraps": [
             "This confuses Epicurean *Aponia* (tranquil absence of pain through simple living) with Cyrenaic or modern consumerist hedonism.",
             "This attributes panpsychist or Stoic cosmic survival to Epicurus, whose therapeutic point relied strictly on complete cessation of sensation at death.",
             null,
             "This conflates Epicurean materialism with Aristotelian or Platonic contemplation of eternal forms."
-          ]
+          ],
+          "youtubeId": "rpndwf45nao"
         }
       },
       {
@@ -1834,13 +1895,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Cynicism (living like a dog, kynikos) was a rigorous psychotechnology of radical deflation: demonstrating that culture trains us to crave unnecessary status, approval, and wealth, blinding us to true moral self-sufficiency.",
           "commonTrap": "Confusing ancient Cynicism with modern cynicism (jaded distrust); ancient Cynics were fiercely committed to virtue, but utterly indifferent to social convention.",
-          "timestampRef": "Lecture Section: 36:50 – Diogenes and the Shock of Sincerity",
+          "timestampRef": "Lecture Section: 35:18 – Diogenes the Cynic & Cultural Illusions",
           "optionTraps": [
             null,
             "This confuses ancient Cynicism (fierce devotion to natural virtue and self-sufficiency) with the modern meaning of cynicism (jaded opportunism).",
             "This misses why Diogenes stayed right in the center of the marketplace: to perform public Socratic shock-therapy on cultural illusions.",
             "This overlooks that Diogenes deliberately replaced propositional debate with visceral, embodied performance (*askesis*) to break social framing."
-          ]
+          ],
+          "youtubeId": "rpndwf45nao"
         }
       },
       {
@@ -1857,13 +1919,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Pyrrhonian Skeptics realized that our emotional turmoil comes from dogmatic grasping onto claims of absolute truth. By cultivating Epoché (suspending judgment), the mental struggle vanishes, and tranquility (Ataraxia) naturally follows.",
           "commonTrap": "Assuming Skepticism makes you paralyzed or nihilistic; Skeptics lived active, practical lives by following appearances and customs, but without toxic ideological dogmatism.",
-          "timestampRef": "Lecture Section: 47:30 – Pyrrho and the Peace of Epoché",
+          "timestampRef": "Lecture Section: 46:54 – Stepping Back from Reactive Attachment",
           "optionTraps": [
             "This confuses Pyrrhonian *Epoché* (which suspends judgment to find peace) with Cartesian methodological doubt (which hunts for absolute certainty).",
             "This conflates Pyrrhonian suspension of belief with Academic Skepticism’s reliance on probable opinion, which still clings to preferential judgment.",
             "This mistakes non-dogmatic suspension of assent for dogmatic postmodern relativism, which fuels rather than quiets ideological conflict.",
             null
-          ]
+          ],
+          "youtubeId": "rpndwf45nao"
         }
       },
       {
@@ -1880,13 +1943,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Despite differing metaphysics (Epicurean atoms vs. Stoic logos vs. Skeptic epoché vs. Cynic nature), all Hellenistic schools shared the exact same psychological goal: Ataraxia—cultivating an unshakeable inner citadel of tranquility.",
           "commonTrap": "Getting bogged down in doctrinal disputes and missing that their ultimate purpose was practical psychological resilience.",
-          "timestampRef": "Lecture Section: 53:10 – The Hellenistic Synthesis",
+          "timestampRef": "Lecture Section: 26:36 – The Shared Goal of the Hellenistic Schools",
           "optionTraps": [
             "This misses the historical rupture: the Hellenistic schools arose precisely because the classical Aristotelian polis-synthesis was no longer viable.",
             null,
             "This confuses Hellenistic philosophy with late antique Neoplatonism or Gnosticism; Stoics and Epicureans were actually strict materialists.",
             "This inverts their shared commitment to practical reason and *askesis* as tools for liberating the individual from superstitious submission to fortune."
-          ]
+          ],
+          "youtubeId": "rpndwf45nao"
         }
       }
     ],
@@ -1903,7 +1967,7 @@ export const EPISODES_DATA = [
     "title": "Nominalism and the Fall of the Middle Ages",
     "subtitle": "William of Ockham and the Shattering of the Sacred Canopy",
     "duration": "59 min",
-    "youtubeId": "ITfUCL1yTQQ",
+    "youtubeId": "lWrqdUo5W4Q",
     "quote": "Nominalism broke the contact epistemology that held the medieval cosmos together. Universals were demoted to mere names, leaving the human mind trapped in isolated subjectivity.",
     "thesis": "In Episode 18, Vervaeke details what he considers the philosophical catastrophe that set the modern Meaning Crisis in motion: the rise of 14th-century Nominalism, championed by William of Ockham.\n\nIn the high medieval synthesis of Thomas Aquinas and Aristotle (Realism), universals—forms, essences, intelligible patterns (like \"justice\", \"dogness\", \"triangularity\")—were real features of being. God created the cosmos through the Logos, meaning the universe was inherently intelligible and meaningful. Knowing was \"contact epistemology\": the human mind conformed to the real forms of things.\n\nOckham, terrified that Realism constrained God's absolute sovereign power, proposed Nominalism (from Latin *nomen*, \"name\"). Universals do not exist in reality; they are merely arbitrary mental labels humans invent to categorize similar particular things. Furthermore, God does not create through reason, but through unconstrained sheer Will (Voluntarism).\n\nThis shattered the sacred canopy. The cosmos was no longer an intelligible web of meaning to participate in; it became a collection of isolated, meaningless particulars governed by an unpredictable, terrifying Will. Reason was decoupled from meaning, setting the stage for modern nihilism.",
     "keyThinkers": [
@@ -1933,13 +1997,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Nominalism rejects the reality of universals. For Ockham, things in the world share no real common nature or essence; \"oakness\" or \"justice\" are just useful linguistic tags we invent.",
           "commonTrap": "Thinking nominalism is just a debate about grammar rather than the foundation of reality and knowledge.",
-          "timestampRef": "Lecture Section: 18:10 – Realism vs Nominalism",
+          "timestampRef": "Lecture Section: 14:16 – Ockham's Nominalism & Raw Particulars",
           "optionTraps": [
             "This describes extreme Platonic Realism, which is the exact metaphysical opposite of Ockham’s Nominalism.",
             null,
             "This inverts Nominalism by treating abstract universals as real and physical particulars as illusory.",
             "This describes Aristotelian-Thomistic Moderate Realism, the very framework that Ockham’s Nominalism dismantled."
-          ]
+          ],
+          "youtubeId": "lWrqdUo5W4Q"
         }
       },
       {
@@ -1956,13 +2021,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Voluntarism elevates Will over Reason. In Ockham’s view, if God was bound by logical or moral truths, God would not be all-powerful. This made reality fundamentally arbitrary rather than rational.",
           "commonTrap": "Believing medieval Christianity always viewed God as arbitrary sovereign will; Aquinas view was centered on God as Logos (Reason).",
-          "timestampRef": "Lecture Section: 27:45 – The Terror of Voluntarism",
+          "timestampRef": "Lecture Section: 12:01 – Ockham & God's Unconstrained Will",
           "optionTraps": [
             "This describes theological intellectualism/rationalism, which Ockham rejected as an unacceptable limitation on divine omnipotence.",
             "This confuses theological Voluntarism (the primacy of God’s unconstrained Will) with Pelagianism regarding human moral effort.",
             null,
             "This describes 18th-century Deism, whereas Ockham insisted that God’s unconstrained Will actively governs every contingent instant."
-          ]
+          ],
+          "youtubeId": "lWrqdUo5W4Q"
         }
       },
       {
@@ -1979,13 +2045,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "If universals are only in our minds, then our words and thoughts are separated by an ontological chasm from the world. We no longer \"participate\" in being; we are trapped inside our own subjective theater.",
           "commonTrap": "Failing to see that modern Cartesian skepticism was born directly out of medieval nominalism.",
-          "timestampRef": "Lecture Section: 36:50 – The Collapse of Contact Epistemology",
+          "timestampRef": "Lecture Section: 34:00 – The Loss of Conformity & the Veil of Experience",
           "optionTraps": [
             "This attributes the loss of contact to moral corruption rather than Ockham’s ontological elimination of real forms in the world.",
             "This confuses medieval Nominalism with Heraclitean flux or ancient atomistic skepticism about sensory stability.",
             "This mistakes Ockham for an anti-empirical mystic, when in fact he emphasized direct intuition of particulars while severing conceptual participation.",
             null
-          ]
+          ],
+          "youtubeId": "lWrqdUo5W4Q"
         }
       },
       {
@@ -2002,13 +2069,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "When reality is stripped of intrinsic teleology (purpose) and intelligible order, nature becomes dead, neutral matter. Human beings are transformed from cosmic participants into alienated outsiders.",
           "commonTrap": "Assuming scientific advancement alone automatically generates existential meaning.",
-          "timestampRef": "Lecture Section: 45:15 – The Shattered Canopy",
+          "timestampRef": "Lecture Section: 38:13 – Death of the Universe & the Indifferent Machine",
           "optionTraps": [
             null,
             "This ignores that the collapse of the Sacred Canopy actually triggered intense spiritual terror, witch-crazes, and Luther’s epistemic anxiety.",
             "This projects modern secular democratic theory backward, ignoring how Voluntarism actually inspired theories of absolute sovereign power.",
             "This misses how Nominalism actually accelerated empirical inspection of contingent particulars while draining them of intrinsic teleology."
-          ]
+          ],
+          "youtubeId": "lWrqdUo5W4Q"
         }
       },
       {
@@ -2025,13 +2093,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The modern assumption that meaning is purely a human linguistic construct or subjective projection is the direct cultural inheritance of Ockham’s nominalism.",
           "commonTrap": "Thinking that post-modern relativism is an entirely 20th-century invention, rather than the logical culmination of 14th-century nominalism.",
-          "timestampRef": "Lecture Section: 52:40 – Nominalism in the Modern Mind",
+          "timestampRef": "Lecture Section: 15:49 – Order Only in Language & the Absurd World",
           "optionTraps": [
             "Aristotle and Aquinas championed Realism and Contact Epistemology, the exact opposite of treating meaning as an arbitrary projection.",
             null,
             "Socrates and Plato fought against Sophistic relativism by grounding meaning in real, trans-subjective structural forms (*eidos*).",
             "Spinoza and the Neoplatonists upheld deep participatory intelligibility (*Logos*), rejecting the nominalist reduction of order to mere words."
-          ]
+          ],
+          "youtubeId": "lWrqdUo5W4Q"
         }
       }
     ],
@@ -2078,13 +2147,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "By dismantling the external sacramental canopy and placing salvation solely in internal subjective faith, Luther intensified anxiety about the reliability of one’s own inner states.",
           "commonTrap": "Viewing the Reformation merely as an institutional dispute about taxes rather than an epochal psychological shift.",
-          "timestampRef": "Lecture Section: 14:30 – Luther and Epistemic Anxiety",
+          "timestampRef": "Lecture Section: 25:34 – Luther's Double Bind & Salvation Anxiety",
           "optionTraps": [
             "This describes the medieval sacramental system that Luther dismantled in favor of radical inwardness (*sola fide*).",
             null,
             "Luther fiercely rejected Aristotelian virtue ethics as \"works-righteousness,\" severing salvation from gradual character transformation.",
             "While Erasmus flirted with skeptical modesty, Luther demanded absolute inward conviction, which heightened rather than suspended epistemic anxiety."
-          ]
+          ],
+          "youtubeId": "x90XKjhcu4w"
         }
       },
       {
@@ -2101,13 +2171,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Descartes established *Cogito Ergo Sum*: even if an evil demon deceives me, the very act of thinking/doubting proves the existence of the thinking subject.",
           "commonTrap": "Thinking Descartes was an atheist; he used the Cogito to rebuild an argument for God and physics.",
-          "timestampRef": "Lecture Section: 26:10 – The Cogito",
+          "timestampRef": "Lecture Section: 24:41 – Radical Doubt & Cogito Ergo Sum",
           "optionTraps": [
             null,
             "This confuses Descartes’ rationalist foundationalism with Lockean empiricism; Descartes explicitly doubted all sensory impressions first.",
             "Descartes deliberately rejected Aristotelian teleology in nature, rebuilding his system from the isolated thinking self before proving God.",
             "Descartes severed participatory coupling between agent and arena, locking certainty exclusively inside the isolated thinking subject."
-          ]
+          ],
+          "youtubeId": "T-e2Z49n2h8"
         }
       },
       {
@@ -2124,13 +2195,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Cartesian dualism separated mind from body. The body became a mechanical clockwork machine to be fixed with mechanics, severed from consciousness and meaning.",
           "commonTrap": "Assuming modern mechanistic medicine was always the standard; pre-Cartesian medicine was deeply holistic.",
-          "timestampRef": "Lecture Section: 37:45 – Cartesian Dualism & Res Extensa",
+          "timestampRef": "Lecture Section: 32:58 – Mind-Matter Dualism & Bodily Alienation",
           "optionTraps": [
             "Aristotelian hylomorphism united form and matter as a single living organism, which Descartes explicitly replaced with mechanistic dualism.",
             "Spinoza rejected Cartesian dualism precisely to overcome the split between mechanical body and disembodied mind.",
             "Phenomenology (Merleau-Ponty) critiques the mechanistic medical gaze by distinguishing the lived body (*Leib*) from dead matter (*Körper*).",
             null
-          ]
+          ],
+          "youtubeId": "T-e2Z49n2h8"
         }
       },
       {
@@ -2147,13 +2219,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "By declaring that only quantitative properties (mass, velocity, geometry) are real, lived human experience was expelled from reality. Nature became a dead mathematical equation.",
           "commonTrap": "Failing to realize that the Cartesian-Galilean split is the direct engine of modern nihilism.",
-          "timestampRef": "Lecture Section: 45:20 – Primary vs Secondary Qualities",
+          "timestampRef": "Lecture Section: 17:01 – Primary vs. Secondary Qualities",
           "optionTraps": [
             "It did the exact opposite: it demoted beauty, color, and value to mere subjective projections while enthroning mathematical physics as sole reality.",
             "Galileo and Descartes used the primary/secondary quality distinction to destroy Aristotelian conformity theory, not restore it.",
             null,
             "By distrusting lived sensory qualities as subjective illusions, the Galilean revolution made mathematical instrumentation mandatory."
-          ]
+          ],
+          "youtubeId": "T-e2Z49n2h8"
         }
       },
       {
@@ -2170,13 +2243,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "By demanding 100% propositional certainty, Descartes created the \"Theater of the Mind\". We are locked behind our eyes, forever anxious about whether our mental pictures match the external world.",
           "commonTrap": "Believing that pursuing hyper-certainty leads to peace; it actually feeds paranoid skepticism.",
-          "timestampRef": "Lecture Section: 52:15 – The Curse of Certainty",
+          "timestampRef": "Lecture Section: 37:42 – The Problem of Other Minds & Solipsism",
           "optionTraps": [
             null,
             "Descartes actually modeled all philosophy on deductive geometry; the problem was precisely his obsession with axiomatic propositional certainty.",
             "Descartes made the thinking self (*Cogito*) the one indubitable certainty, which is what trapped modern consciousness inside egoic solipsism.",
             "Descartes rejected traditional authority in favor of radical individual introspection, isolating the ego inside its own mental theater."
-          ]
+          ],
+          "youtubeId": "T-e2Z49n2h8"
         }
       }
     ],
@@ -2193,7 +2267,7 @@ export const EPISODES_DATA = [
     "title": "Nietzsche, Nihilism, and Frankfurt’s Bullshit",
     "subtitle": "The Death of God, Will to Power, and the Anatomy of Deception",
     "duration": "59 min",
-    "youtubeId": "Yp6F80Nx0lc",
+    "youtubeId": "Noc1OH0CUBc",
     "quote": "The bullshitter is far more dangerous than the liar. The liar still respects the truth by trying to conceal it; the bullshitter has completely severed all concern for reality.",
     "thesis": "In Episode 28, Vervaeke reaches the fever pitch of modern alienation: Friedrich Nietzsche's prophecy of Nihilism and Harry Frankfurt's landmark philosophical diagnosis of \"Bullshit\".\n\nWhen Nietzsche proclaimed \"God is dead\", he was not making a smug atheist celebration; he was delivering a terrifying diagnosis. The shared transcendent framework that grounded truth, morality, and purpose in Western civilization had collapsed. Without an alternative, humanity was hurtling toward catastrophic nihilism, ideological fanaticism, and existential despair.\n\nVervaeke then connects this to contemporary culture using Princeton philosopher Harry Frankfurt’s treatise *On Bullshit*. Frankfurt distinguishes the Liar from the Bullshitter: the Liar recognizes truth and deliberately misleads you away from it; the Bullshitter has zero regard for truth whatsoever, caring only about manipulating salience, rhetoric, and social status. When a culture is flooded with bullshit, it loses its grip on reality—the ultimate manifestation of the Meaning Crisis.",
     "keyThinkers": [
@@ -2223,13 +2297,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Frankfurt defines bullshit as indifference to truth. The liar cares about truth (to conceal it); the bullshitter doesn’t care at all, aiming only to manipulate attention and persuade.",
           "commonTrap": "Confusing bullshit with lying. The difference is the agent’s attitude toward truth itself.",
-          "timestampRef": "Lecture Section: 29:30 – Frankfurt On Bullshit",
+          "timestampRef": "Lecture Section: 35:30 – Frankfurt On Bullshit vs. Lying",
           "optionTraps": [
             null,
             "This confuses bullshit with lying; the liar remains tethered to truth as a negative coordinate, whereas the bullshitter is indifferent to truth.",
             "Socratic irony aims to awaken the interlocutor to truth and wisdom, whereas bullshit exploits salience solely for impression management.",
             "This rationalizes salience manipulation as epistemic humility, ignoring the executive’s complete disregard for truth-tracking."
-          ]
+          ],
+          "youtubeId": "Lhl51bZQlM8"
         }
       },
       {
@@ -2246,13 +2321,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Nietzsche was horrified by the consequences: with the death of the sacred canopy, our moral values, meaning, and truth lose their objective grounding, threatening civilizational collapse.",
           "commonTrap": "Believing Nietzsche celebrated the death of God; he viewed it as an impending existential catastrophe.",
-          "timestampRef": "Lecture Section: 16:45 – The Madman and Nihilism",
+          "timestampRef": "Lecture Section: 42:16 – Nietzsche, Nihilism, and the Will to Power",
           "optionTraps": [
             "This mistakes Nietzsche for the smug marketplace atheists whom the Madman was explicitly mocking for their blindness to the coming crisis.",
             "Nietzsche saw the collapse of the Christian-Platonic worldview as irreversible; he called for a transvaluation of values, not nostalgic regression.",
             null,
             "This takes Nietzsche’s cultural and metaphysical diagnosis of the Sacred Canopy’s collapse as a literal statement about physical cosmology."
-          ]
+          ],
+          "youtubeId": "Noc1OH0CUBc"
         }
       },
       {
@@ -2269,13 +2345,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "When you bullshit, you train your cognition to disconnect assertion from reality. Over time, your relevance realization machinery is completely hijacked, leaving you unable to tell truth from illusion.",
           "commonTrap": "Assuming bullshitting is a victimless rhetorical game.",
-          "timestampRef": "Lecture Section: 38:15 – The Deep Danger of Bullshit",
+          "timestampRef": "Lecture Section: 41:43 – How You Bullshit Yourself via Salience",
           "optionTraps": [
             "Actually, strategic lying requires higher executive tracking of truth versus falsehood, whereas bullshit lazily bypasses truth-monitoring altogether.",
             "This mistakes a cognitive-epistemic corruption of relevance realization for a literal biological neurological disease.",
             "This confuses non-propositional salience manipulation with propositional memory error; the bullshitter stops caring what is true or false at all.",
             null
-          ]
+          ],
+          "youtubeId": "Lhl51bZQlM8"
         }
       },
       {
@@ -2292,13 +2369,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Nihilism is the existential despair that reality is fundamentally meaningless and that values are merely subjective fictions.",
           "commonTrap": "Equating nihilism with philosophical skepticism; skepticism questions dogmas, whereas nihilism drains reality of mattering.",
-          "timestampRef": "Lecture Section: 22:50 – The Anatomy of Nihilism",
+          "timestampRef": "Lecture Section: 37:38 – Nihilism and Machines of Meaningless Existence",
           "optionTraps": [
             "Socratic *Aporia* deepens our care for truth and virtue by shattering false conceit, whereas nihilism abandons truth and mattering altogether.",
             null,
             "Pyrrhonian *Epoché* suspends dogmatic propositions to achieve tranquility, whereas this speaker makes the dogmatic metaphysical claim that nothing matters.",
             "Stoic *Apatheia* is grounded in deep reverence for the cosmic *Logos* and moral duty, the exact opposite of cynical hedonic distraction."
-          ]
+          ],
+          "youtubeId": "Noc1OH0CUBc"
         }
       },
       {
@@ -2315,13 +2393,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Zombies are the terrifying archetype of modern alienated man: relentless, mindless consumption without agency, consciousness, or meaning—the walking dead of consumer nihilism.",
           "commonTrap": "Treating monster myths as mere cinema tropes rather than projections of deep civilizational anxiety.",
-          "timestampRef": "Lecture Section: 49:10 – The Zombie Apocalypse as Meaning Crisis",
+          "timestampRef": "Lecture Section: 12:17 – The Zombie as Mythological Monster of the Meaning Crisis",
           "optionTraps": [
             "The zombie horde represents anti-communal, parasitized consumption—the dark inversion of genuine distributed cognition and *Dialogos*.",
             "Unlike Romantic nature-myths, the zombie is decaying, unnatural, and driven by insatiable hunger (literalizing the devouring of brains/intelligence).",
             null,
             "Rather than celebrating a Platonic ascent of the soul, the zombie myth expresses horror at the loss of interiority, agency, and meaning."
-          ]
+          ],
+          "youtubeId": "KoqibFwvQJ4"
         }
       }
     ],
@@ -2338,7 +2417,7 @@ export const EPISODES_DATA = [
     "title": "The 4 Ways of Knowing",
     "subtitle": "Propositional, Procedural, Perspectival, and Participatory Knowing",
     "duration": "59 min",
-    "youtubeId": "gfKcVbNd7Xc",
+    "youtubeId": "A6Q_B7z6gLc",
     "quote": "Our culture is afflicted with Propositional Tyranny—the disastrous conviction that all knowledge is knowing that something is true, blinding us to how we participate in being.",
     "thesis": "In Episode 31, Dr. Vervaeke delivers his definitive cognitive-scientific framework: The 4 Ways of Knowing (4P/3R). He argues that post-Cartesian Western culture has committed an epistemic tragedy by reducing all knowledge to Propositional Knowing: assertions, statements, and facts that can be true or false.\n\nBeneath propositional knowing lies Procedural Knowing: embodied skills, routines, and know-how (riding a bike, playing violin, navigating a room). Beneath procedural knowing lies Perspectival Knowing: the situational awareness of \"what it is like\" in a specific state of consciousness, configuring your salience landscape here-and-now.\n\nAt the very foundation lies Participatory Knowing: the reciprocal co-shaping of agent and arena. You cannot be an agent without an environment that affords your agency, and an environment cannot be an arena without an agent attuned to it. When participatory knowing fails, we experience profound alienation, absurdity, and the agony of the Meaning Crisis.",
     "keyThinkers": [
@@ -2368,13 +2447,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Knowing *that* water supports buoyancy (propositional) does not give you the embodied sensorimotor skill (procedural) or real-time situational awareness (perspectival) required to swim.",
           "commonTrap": "Mistaking verbal fluency or memorized information for genuine embodied competence.",
-          "timestampRef": "Lecture Section: 14:15 – Propositional vs Procedural Knowing",
+          "timestampRef": "Lecture Section: 39:22 – From Propositional Rules to Procedural Skills",
           "optionTraps": [
             "This inverts the 4P hierarchy: the person had memorized all the textbook facts (propositional) but had zero embodied coupling with the water.",
             null,
             "If they had possessed procedural and perspectival knowing of swimming, they would have been able to swim regardless of textbook deductions.",
             "Drowning here is caused by the absence of embodied sensorimotor skill (procedural) and situational grip (perspectival), not a lack of theoretical belief."
-          ]
+          ],
+          "youtubeId": "A6Q_B7z6gLc"
         }
       },
       {
@@ -2391,13 +2471,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Perspectival knowing is knowing \"what it is like\"—it dynamically shifts your salience landscape, framing reality and highlighting affordances according to your current state and context.",
           "commonTrap": "Treating perception as a static camera rather than an active, perspectival framing engine.",
-          "timestampRef": "Lecture Section: 26:40 – Perspectival Knowing & Salience",
+          "timestampRef": "Lecture Section: 42:37 – Perspectival Knowing and Situational Awareness",
           "optionTraps": [
             "This confuses rapid, pre-reflective situational framing (perspectival) with slow, explicit logical deliberation (propositional).",
             "Procedural knowing is the skilled *how-to* action you execute once an affordance is sensed, whereas perspectival knowing sets up the situational salience itself.",
             null,
             "While participatory knowing grounds agent-arena coupling, the acute situational shift of \"what it is like right now\" in the alley is specifically perspectival."
-          ]
+          ],
+          "youtubeId": "A6Q_B7z6gLc"
         }
       },
       {
@@ -2414,13 +2495,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Participatory knowing is the deepest level. It is not an assertion or a skill, but the structural coupling (co-shaping) between agent and arena that creates identity and existential belonging.",
           "commonTrap": "Assuming agent and arena exist completely independently of one another prior to interaction.",
-          "timestampRef": "Lecture Section: 38:50 – Participatory Knowing & Agent-Arena Co-shaping",
+          "timestampRef": "Lecture Section: 44:22 – Participatory Knowing and Agent-Arena Co-shaping",
           "optionTraps": [
             "Knowing the rulebook is propositional (\"knowing-that\"), which sits at the top of the hierarchy and presupposes the deeper agent-arena coupling.",
             "Procedural knowing focuses on skilled routines, whereas the mutual ontogenetic co-constitution of identity (agent) and world (arena) is participatory.",
             null,
             "Visual focus in a single moment is perspectival, which rests upon the deeper participatory co-shaping that makes the person a player and the space a court."
-          ]
+          ],
+          "youtubeId": "A6Q_B7z6gLc"
         }
       },
       {
@@ -2437,13 +2519,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Vervaeke calls this Propositional Tyranny. It blinds modern culture to the non-propositional foundations of wisdom, virtue, and meaning, leaving people unable to diagnose their existential despair.",
           "commonTrap": "Thinking that criticizing propositional tyranny is anti-science; it is actually a critique of narrow scientism.",
-          "timestampRef": "Lecture Section: 46:30 – Propositional Tyranny",
+          "timestampRef": "Lecture Section: 12:55 – Why Ideologies and Propositional Beliefs Fail at Meaning-Making",
           "optionTraps": [
             null,
             "Empirical falsification is a valid method within science, whereas claiming that *only* propositions count as knowledge is self-refuting scientism.",
             "The critic is committing the exact opposite error: hyper-rationalist reductionism that denies participatory, perspectival, and procedural knowing.",
             "Rather than claiming all perspectives are relative, this critic denies non-propositional ways of knowing any epistemic status at all."
-          ]
+          ],
+          "youtubeId": "vGB8k7jk1AQ"
         }
       },
       {
@@ -2460,13 +2543,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "This is the tragedy of alienation: having the right propositions, but losing the participatory attunement (fittedness) that generates the felt sense of realness and belonging.",
           "commonTrap": "Trying to cure existential alienation by giving the person more propositional arguments or self-help books.",
-          "timestampRef": "Lecture Section: 53:10 – Existential Alienation in the 4P Framework",
+          "timestampRef": "Lecture Section: 18:52 – Existential Inertia and Lacking Participatory/Perspectival Knowing",
           "optionTraps": [
             "People in an existential meaning crisis can still execute daily procedural tasks (driving, typing), yet feel utterly disconnected while doing them.",
             "Because their propositional beliefs (\"my life is good\") are already intact, giving them more propositional arguments fails to touch the deeper disconnection.",
             "This inverts the diagnosis: feeling unreal and disconnected is a starvation of participatory knowing and transjective fittedness, not an excess.",
             null
-          ]
+          ],
+          "youtubeId": "mXfK4nicygA"
         }
       }
     ],
@@ -2483,7 +2567,7 @@ export const EPISODES_DATA = [
     "title": "Relevance Realization and Parasitic Processing",
     "subtitle": "The Cognitive Mechanics of Neurosis, Addiction, and Reciprocal Opening",
     "duration": "58 min",
-    "youtubeId": "48Ch2x3DrfM",
+    "youtubeId": "vGB8k7jk1AQ",
     "quote": "Parasitic processing is not an alien virus; it is your own adaptive intelligence turning in on itself, weaponizing your relevance realization against you.",
     "thesis": "In Episode 36, Dr. Vervaeke explores the cognitive science anatomy of complex psychological distress: anxiety, depression, OCD, and addiction. Why do highly intelligent people fall into destructive behavioral traps?\n\nHis answer is Parasitic Processing. Parasitic processing is a feedback loop that feeds on the exact same adaptive machinery of Relevance Realization that makes us smart. It begins with Reciprocal Narrowing: a perceived threat or craving narrows our attention; the narrowed frame filters out disconfirming evidence; this makes the threat seem even more omnipotent, which narrows the frame even further. The person's cognitive world shrinks until they are trapped in a self-reinforcing downward spiral.\n\nTo heal this, we cannot simply use willpower or propositional logic (because the logic itself is framed by the parasite). We require Reciprocal Opening: an ecology of embodied psychotechnologies (like mindfulness, play, dialogos, and therapeutic insight) that systematically loosen rigid frames, expand affordances, and cultivate transformative flourishing.",
     "keyThinkers": [
@@ -2513,13 +2597,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Reciprocal narrowing shrinks the salience landscape. The narrowed attention triggers behaviors that actually evoke the feared response, locking the person into a vicious cycle.",
           "commonTrap": "Viewing social anxiety as merely an irrational belief rather than a dynamic agent-arena co-shaping feedback loop.",
-          "timestampRef": "Lecture Section: 17:40 – Reciprocal Narrowing",
+          "timestampRef": "Lecture Section: 41:57 – Marc Lewis's Model of Reciprocal Narrowing",
           "optionTraps": [
             "This reduces a dynamic, embodied agent-arena feedback loop to a mere propositional error in conscious logic.",
             "The anxious person is not making a deliberate conscious choice to suffer; their salience landscape and procedural posture are automatically co-shaping the arena.",
             "While threat vigilance evolved as an adaptive heuristic, here it has locked into a maladaptive, self-defeating spiral that shrinks agency and affordances.",
             null
-          ]
+          ],
+          "youtubeId": "vGB8k7jk1AQ"
         }
       },
       {
@@ -2536,13 +2621,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "A parasite is dangerous because it lives off your own host systems. Parasitic processing uses your own heuristic search, pattern recognition, and salience machinery to entrap you.",
           "commonTrap": "Assuming psychological illness is a total breakdown of intelligence rather than a perversion of adaptive intelligence.",
-          "timestampRef": "Lecture Section: 26:15 – Why It Is Parasitic",
+          "timestampRef": "Lecture Section: 31:04 – Why Self-Destructive Heuristics Are Called Parasitic Processing",
           "optionTraps": [
             null,
             "Sensory perception remains intact; the problem is how relevance realization frames and interprets the salience of what is perceived.",
             "While cultural memes can interact with cognition, parasitic processing specifically refers to an internal dynamical loop co-opting one’s own adaptive machinery.",
             "Rather than shutting down cortical problem-solving, parasitic processing recruits our highest problem-solving intelligence to rationalize and reinforce the trap."
-          ]
+          ],
+          "youtubeId": "vGB8k7jk1AQ"
         }
       },
       {
@@ -2559,13 +2645,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "You cannot defeat a hijacked salience landscape with a mere sentence. Addiction captures your procedural habits, perspectival salience, and participatory identity; it requires an ecology of practices to heal.",
           "commonTrap": "Treating addiction purely as a failure of moral willpower or propositional belief.",
-          "timestampRef": "Lecture Section: 36:50 – The Failure of Mere Willpower",
+          "timestampRef": "Lecture Section: 47:30 – Cultivating a Counteractive Dynamical System",
           "optionTraps": [
             "This reduces addiction to a simple linguistic association error rather than a systemic hijacking of the 4P cognitive hierarchy.",
             null,
             "This falls into fatalistic reductionism; Vervaeke argues agency can be recovered, but through an ecology of embodied practices rather than bare willpower.",
             "This moralistic view ignores how reciprocal narrowing hijacks relevance realization beneath conscious propositional choice."
-          ]
+          ],
+          "youtubeId": "vGB8k7jk1AQ"
         }
       },
       {
@@ -2582,13 +2669,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Reciprocal opening is the virtuous cycle: insight loosens rigid framing, revealing new affordances, which builds confidence, which further broadens the salience landscape.",
           "commonTrap": "Thinking mental health is merely the absence of distress rather than the active presence of reciprocal opening.",
-          "timestampRef": "Lecture Section: 45:10 – Reciprocal Opening & Anagoge",
+          "timestampRef": "Lecture Section: 43:26 – Reciprocal Opening and Anagoge",
           "optionTraps": [
             "Reciprocal opening is not defensive walling-off of the ego, but an increasingly permeable, adaptive co-shaping between agent and arena.",
             "Replacing embodied heuristics with rigid propositional rules would actually increase cognitive rigidity rather than fostering dynamic opening.",
             null,
             "Reciprocal opening (*anagoge*) involves embracing deeper complexity and developmental challenge, not retreating into static hedonic comfort."
-          ]
+          ],
+          "youtubeId": "vGB8k7jk1AQ"
         }
       },
       {
@@ -2605,13 +2693,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Ancient myths of demonic possession and idolatry capture the phenomenology of parasitic processing: an internal power takes over your agency and uses your own mind against you.",
           "commonTrap": "Dismissing ancient religious myths as silly superstition rather than phenomenological maps of psychological suffering.",
-          "timestampRef": "Lecture Section: 52:30 – Demons, Idols, and Cognitive Science",
+          "timestampRef": "Lecture Section: 15:23 – Existential Entrapment, Parasitic Processing, and Powers & Principalities",
           "optionTraps": [
             "Ancient traditions recognized that even the most educated scholars fall prey to spiritual bondage, which cannot be cured by propositional literacy alone.",
             "While astrology existed in antiquity, spiritual traditions specifically framed inner compulsion as a moral-existential captivity requiring transformative *metanoia*.",
             "Ancient spiritual traditions did not reduce inner compulsion to neutral bodily humors; they mapped its autonomous, agency-hijacking phenomenology.",
             null
-          ]
+          ],
+          "youtubeId": "ITfUCL1yTQQ"
         }
       }
     ],
@@ -2628,7 +2717,7 @@ export const EPISODES_DATA = [
     "title": "Wisdom and Sophrosyne",
     "subtitle": "Foolishness vs. Stupidity, Optimal Grip, and Coordinated Cognition",
     "duration": "59 min",
-    "youtubeId": "H1yDgjQdRHw",
+    "youtubeId": "DxLogRVfBv8",
     "quote": "Wisdom is not having high IQ; intelligence can simply make you better at rationalizing your own bullshit. Wisdom is the systemic coordination of cognition to counteract foolishness.",
     "thesis": "In Episode 42, Vervaeke addresses the pinnacle of the series: the nature of Wisdom. What is wisdom, and why do our modern educational and cultural institutions fail so completely to cultivate it?\n\nVervaeke begins by sharply distinguishing Stupidity from Foolishness. Stupidity is a lack of raw cognitive capacity or computational power. Foolishness, by contrast, is the misuse of cognitive capacity—it is the chronic tendency to fall into self-deception, salience hijacking, and bullshit. In fact, high intelligence often makes people more foolish, because they possess greater verbal agility to rationalize their illusions.\n\nWisdom is the systemic, counter-active psychotechnology that prevents foolishness. Drawing on ancient Greek philosophy and modern cognitive science, Vervaeke defines Sophrosyne: optimal self-regulation. Sophrosyne is the dynamic capacity to achieve an \"Optimal Grip\" across all 4 Ways of Knowing—balancing zoom-in concentration with zoom-out decentering, theoretical intellect with embodied virtue.",
     "keyThinkers": [
@@ -2658,13 +2747,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Intelligence is computational capacity; wisdom is the meta-cognitive regulation that prevents self-deception. High IQ without wisdom produces hyper-articulate foolishness.",
           "commonTrap": "Equating academic intelligence or high IQ test scores with living a wise life.",
-          "timestampRef": "Lecture Section: 14:15 – Foolishness vs Stupidity",
+          "timestampRef": "Lecture Section: 22:59 – Intelligence vs. Rationality and Why Smart People Can Be Foolish",
           "optionTraps": [
             "This blames narrow domain specialization rather than the fundamental structural difference between computational intelligence and self-regulatory wisdom.",
             null,
             "Rationality is not helpless if integrated into an ecology of wisdom practices (*Sophrosyne*); the failure here is uncalibrated relevance realization.",
             "High-IQ individuals actually use elaborate analytical arguments to defend their cults—weaponizing their intelligence to rationalize self-deception."
-          ]
+          ],
+          "youtubeId": "IZRqZX5JJqM"
         }
       },
       {
@@ -2681,13 +2771,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Stupidity is low capacity. Foolishness is the tragic misdirection of high adaptive machinery: being blinded by our own salience landscapes and rationalizations.",
           "commonTrap": "Using \"stupid\" and \"foolish\" interchangeably, obscuring the cognitive nature of self-deception.",
-          "timestampRef": "Lecture Section: 22:40 – Defining Foolishness",
+          "timestampRef": "Lecture Section: 22:57 – Stanovich's Theory of Foolishness as Dysrationalia",
           "optionTraps": [
             null,
             "Foolishness is not merely a brief tired lapse; it is a chronic, structural vulnerability of our relevance realization machinery to parasitic self-deception.",
             "This confuses cognitive foolishness (self-deceptive salience distortion) with deliberate malice or instrumental psychopathy.",
             "Both deduction and induction are computational tools; foolishness occurs beneath both when our framing of what is relevant becomes parasitized."
-          ]
+          ],
+          "youtubeId": "H1yDgjQdRHw"
         }
       },
       {
@@ -2704,13 +2795,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Sophrosyne is not rigid puritanical repression; it is the harmonious coordination of attention, desire, and reason to maintain an optimal grip with reality.",
           "commonTrap": "Translating Sophrosyne as prudish self-denial rather than healthy cognitive homeostasis.",
-          "timestampRef": "Lecture Section: 33:10 – Sophrosyne as Optimal Grip",
+          "timestampRef": "Lecture Section: 18:03 – Sophrosyne vs. Enkrateia and Optimizing Perspectival Knowing",
           "optionTraps": [
             null,
             "This mistakes *Sophrosyne* (harmonious coordination of desire and reason) for puritanical repression or *enkrateia* (white-knuckle continence).",
             "Because relevance realization is non-algorithmic, *Sophrosyne* cannot be reduced to a fixed utilitarian formula; it requires dynamic, context-sensitive grip.",
             "Unlike escapist withdrawal, *Sophrosyne* is practiced right in the midst of the civic and existential arena."
-          ]
+          ],
+          "youtubeId": "DxLogRVfBv8"
         }
       },
       {
@@ -2727,13 +2819,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Merleau-Ponty’s concept of \"Optimal Grip\" is central to Vervaeke’s theory of wisdom: dynamically adjusting your cognitive distance so you don’t miss the forest for the trees or the trees for the forest.",
           "commonTrap": "Thinking that more detail is always better; true wisdom knows how to balance granularity with gestalt.",
-          "timestampRef": "Lecture Section: 41:50 – The Principle of Optimal Grip",
+          "timestampRef": "Lecture Section: 35:14 – Dreyfus and Merleau-Ponty's Optimal Grip",
           "optionTraps": [
             "This is the error of standing 2 inches from the canvas—hyper-focusing on atomic details while losing the emergent gestalt.",
             "This is the opposite error of standing 100 feet away—floating in vague universal abstractions divorced from concrete particulars.",
             "Optimal Grip is never a single static distance; it requires continuous, dynamic trade-offs between zooming in and zooming out as context shifts.",
             null
-          ]
+          ],
+          "youtubeId": "39NpjQDtqNw"
         }
       },
       {
@@ -2750,13 +2843,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Proverbs often contradict each other (\"Look before you leap\" vs \"He who hesitates is lost\"). Wisdom is knowing *when* and *how* to apply which perspective in real-time practice (phronesis).",
           "commonTrap": "Believing that possessing wise-sounding quotes makes a person a wise practitioner.",
-          "timestampRef": "Lecture Section: 51:15 – Wisdom Beyond Propositions",
+          "timestampRef": "Lecture Section: 21:57 – Why Phronesis Cannot Be Reduced to Propositional Rules",
           "optionTraps": [
             "Proverbs actually capture genuine heuristic insights, but they contradict one another (\"Look before you leap\" vs. \"He who hesitates is lost\") without *phronesis*.",
             null,
             "This commits Propositional Tyranny by assuming formal logic can replace embodied *phronesis* and relevance realization.",
             "Selecting a single rigid rule for all situations is dogmatism, whereas wisdom requires the perspectival agility to know *when* each maxim applies."
-          ]
+          ],
+          "youtubeId": "EUcFqb-DxOA"
         }
       }
     ],
@@ -2773,7 +2867,7 @@ export const EPISODES_DATA = [
     "title": "The Religion That Is Not a Religion",
     "subtitle": "The Ecology of Practices, Dialogos, and Awakening",
     "duration": "62 min",
-    "youtubeId": "iu9fa4TkWE0",
+    "youtubeId": "440NV0eer00",
     "quote": "We need a religion that is not a religion: not a return to creeds and dogmas, but an ecology of practices embedded in distributed cognition to awaken us from the meaning crisis.",
     "thesis": "In the grand 50th and final episode of the series, Dr. John Vervaeke synthesizes the entire 50-hour intellectual journey. The central question of our age is: How do we respond to the Meaning Crisis without falling into the twin traps of reactionary fundamentalism or cynical, nihilistic consumerism?\n\nDrawing on Paul Tillich and Owen Barfield, Vervaeke diagnoses how modern humanity falls into idolatry when we mistake a finite sign or creed for inexhaustible Ultimate Concern, or when we confuse the developmental achievement of \"Final Participation\" with a regressive return to pre-reflective \"Original Participation\". Tillich’s \"God above God\" points beyond dogmatic theism toward the transjective ground of being that continuously opens us beyond every fixed representation.\n\nHis answer is: We must cultivate \"A Religion That Is Not a Religion\". Historical religions succeeded because they were not just propositional creeds, but comprehensive socio-cognitive ecologies of practices: coordination of mindfulness, contemplation, music, ritual, community, and ethical self-transcendence that systematically counteracted self-deception.\n\nTo rebuild this today, we need an Ecology of Practices—a balanced suite of complementary psychotechnologies where each practice checks the blind spots of the others (e.g., combining solitary Vipassana with relational Dialogos, cognitive reflection with embodied movement). Through distributed cognition and community, we can recover sacredness, transjectivity, and deep contact with reality.",
     "keyThinkers": [
@@ -2807,13 +2901,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "No single practice is a silver bullet. Mindfulness can lead to dissociation without Tai Chi or somatic grounding; solitary reflection can lead to solipsism without communal Dialogos. We need an ecology where practices mutually check and balance each other.",
           "commonTrap": "Chasing a single \"miracle method\" rather than a coherent, balanced ecology of practices.",
-          "timestampRef": "Lecture Section: 16:30 – The Need for an Ecology of Practices",
+          "timestampRef": "Lecture Section: 28:18 – The Goldsmith Parable and Cultivating an Ecology of Practices",
           "optionTraps": [
             "Meditation actually works directly on attentional and perspectival knowing; the danger is that any *single* practice has structural blind spots.",
             null,
             "Mindfulness is a vital psychotechnology for modern people, provided it is integrated into a wider ecology of somatic and relational practices.",
             "Submitting to a dogmatic creed is what Vervaeke’s non-dogmatic Ecology of Practices is specifically designed to avoid."
-          ]
+          ],
+          "youtubeId": "2kQooMZzR7w"
         }
       },
       {
@@ -2830,13 +2925,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Dialogos transforms dialectic into shared flow. By letting go of defensive ego-maintenance, the participants create a distributed cognitive system that achieves reciprocal opening and emergent wisdom.",
           "commonTrap": "Confusing Dialogos with ordinary polite conversation or academic debate.",
-          "timestampRef": "Lecture Section: 28:15 – Dialectic into Dialogos",
+          "timestampRef": "Lecture Section: 47:03 – Platonic Dialogue, Collective Flow, and Authentic Discourse vs. Debate",
           "optionTraps": [
             "Dialogos is not a transactional bargaining of pre-existing propositions, but an emergent upward spiral of shared discovery.",
             null,
             "Unlike mere emotional venting, *Dialogos* is rigorously oriented toward truth, wisdom, and mutual transformation through the *Logos*.",
             "This describes adversarial debate (*eristic*), whereas *Dialogos* transcends egoic winning and losing through shared participatory flow."
-          ]
+          ],
+          "youtubeId": "2kQooMZzR7w"
         }
       },
       {
@@ -2853,13 +2949,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "The Latin root of religion (*religare*) means \"to bind together\". We need the binding together of cognitive practices, community, and sacredness, while remaining scientifically grounded and non-dogmatic.",
           "commonTrap": "Thinking that abandoning supernatural dogma requires abandoning the vital psychotechnologies of community, ritual, and wisdom.",
-          "timestampRef": "Lecture Section: 37:45 – The Religion That Is Not a Religion",
+          "timestampRef": "Lecture Section: 06:35 – The Religion That Is Not a Religion: Religio vs. Credo Dominance",
           "optionTraps": [
             "Merging supernatural propositions into a single giant creed still falls into Propositional Tyranny and dogmatic fundamentalism.",
             "Turning science into a dogmatic object of worship is what Paul Tillich called idolatry—mistaking a finite method for Ultimate Concern.",
             "Barfield and Vervaeke warn that we cannot regress to pre-reflective *Original Participation*; we must advance to conscious *Final Participation*.",
             null
-          ]
+          ],
+          "youtubeId": "440NV0eer00"
         }
       },
       {
@@ -2876,13 +2973,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Sacredness is transjective: not an objective physical mineral, nor a subjective delusion, but the profound, inexhaustible fittedness and reciprocal opening between human consciousness and the depths of being.",
           "commonTrap": "Getting trapped in the false binary of objective physicalism vs subjective emotionalism.",
-          "timestampRef": "Lecture Section: 47:00 – Transjectivity and the Sacred",
+          "timestampRef": "Lecture Section: 31:50 – Sacredness as Transjective, Participatory, and Aspirational",
           "optionTraps": [
             null,
             "Treating the sacred as a mere \"useful fiction\" projected by the brain remains trapped inside the subjective half of the Cartesian dichotomy.",
             "This falls into pseudo-scientific idealism, trying to make consciousness an objective physical force rather than understanding relational transjectivity.",
             "Tillich sharply distinguished arbitrary *Signs* from participatory *Symbols*; only symbols participate in the transjective reality to which they point."
-          ]
+          ],
+          "youtubeId": "iu9fa4TkWE0"
         }
       },
       {
@@ -2899,13 +2997,14 @@ export const EPISODES_DATA = [
         "explanation": {
           "whyCorrect": "Wisdom is an existential way of being, not academic consumption. Awakening requires actively building communities of practice, engaging in dialogos, and transforming our participatory connection to reality.",
           "commonTrap": "Treating the Meaning Crisis as merely an intellectual puzzle to be debated rather than a live existential challenge to be embodied.",
-          "timestampRef": "Lecture Section: 57:30 – The Call to Awaken",
+          "timestampRef": "Lecture Section: 53:57 – Awakening from the Meaning Crisis Conclusion",
           "optionTraps": [
             "Treating the series as propositional ammunition for winning debates is the exact Propositional Tyranny that Vervaeke diagnoses across all 50 episodes.",
             null,
             "A genuine response to the Meaning Crisis cannot be imposed top-down by state bureaucracy; it must emerge middle-out through communities of practice.",
             "Solitary enlightenment divorced from relational *Dialogos* and communal participation is an ungrounded illusion, not authentic awakening."
-          ]
+          ],
+          "youtubeId": "iu9fa4TkWE0"
         }
       }
     ],

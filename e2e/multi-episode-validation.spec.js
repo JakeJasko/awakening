@@ -19,7 +19,7 @@ test.describe('Headless Multi-Episode & Error State Validation', () => {
     // Verify Error Banner and Didactic Explanation
     await expect(page.locator('text=EPISTEMIC ILLUSION DETECTED • REVIEW THE VERVAEKEAN ARGUMENT')).toBeVisible();
     await expect(page.locator('text=THE COMMON COGNITIVE TRAP / COUNTERFEIT')).toBeVisible();
-    await expect(page.locator('text=14:15 – Propositional vs Procedural Knowing')).toBeVisible();
+    await expect(page.locator('text=39:22 – From Propositional Rules to Procedural Skills')).toBeVisible();
   });
 
   test('Episode IV: Socrates handles full completion and Answer Review accordion', async ({ page }) => {

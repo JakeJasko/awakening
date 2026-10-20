@@ -576,7 +576,7 @@ export default function EpisodeQuiz({
                 {onSeekTimestamp && timestampSeconds !== null ? (
                   <button
                     type="button"
-                    onClick={() => onSeekTimestamp(timestampSeconds)}
+                    onClick={() => onSeekTimestamp(timestampSeconds, currentQ.explanation.youtubeId)}
                     className="touch-active"
                     title="Jump Audio Companion to this lecture timestamp"
                     style={{

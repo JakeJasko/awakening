@@ -81,7 +81,7 @@ test.describe('Awakening Quiz App - Headless Validation', () => {
     // Verify Didactic Feedback
     await expect(page.locator('text=COGNITIVE CONTACT ACHIEVED • CORRECT UNDERSTANDING')).toBeVisible();
     await expect(page.locator('text=WHY THIS IS TRUE TO THE COGNITIVE SCIENCE')).toBeVisible();
-    await expect(page.locator('text=14:20 – What is Meaning?')).toBeVisible();
+    await expect(page.locator('text=19:00 – What is Meaning?')).toBeVisible();
 
     // Proceed to Q2
     await page.click('button:has-text("Proceed to Next Inquiry")');

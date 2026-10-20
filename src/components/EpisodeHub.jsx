@@ -601,7 +601,9 @@ export default function EpisodeHub({
           episode={{ ...episode, id: epId, roman: epRoman }}
           onFinishQuiz={handleFinishQuiz}
           onBackToOverview={() => setActiveTab('primer')}
-          onSeekTimestamp={(seconds) => onSeekAudioTimestamp && onSeekAudioTimestamp(episode, seconds)}
+          onSeekTimestamp={(seconds, overrideYoutubeId) =>
+            onSeekAudioTimestamp && onSeekAudioTimestamp(episode, seconds, overrideYoutubeId)
+          }
         />
       )}
 
