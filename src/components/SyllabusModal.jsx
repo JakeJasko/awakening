@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Compass, X, ExternalLink, PlayCircle, Award, CheckCircle, BookOpen } from 'lucide-react';
 import { ARCS, ALL_EPISODES_CATALOG } from '../data/syllabusData';
 
@@ -9,6 +9,18 @@ export default function SyllabusModal({
   onSelectEpisode
 }) {
   const [selectedArc, setSelectedArc] = useState(1);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose && onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 

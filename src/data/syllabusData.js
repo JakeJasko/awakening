@@ -1,5 +1,28 @@
 // Complete 50-Episode Syllabus for John Vervaeke's Awakening from the Meaning Crisis
 
+export function toRoman(num) {
+  const n = Number(num);
+  if (!n || n < 1) return String(num || '');
+  const lookup = [
+    ['L', 50],
+    ['XL', 40],
+    ['X', 10],
+    ['IX', 9],
+    ['V', 5],
+    ['IV', 4],
+    ['I', 1]
+  ];
+  let result = '';
+  let remaining = n;
+  for (const [roman, value] of lookup) {
+    while (remaining >= value) {
+      result += roman;
+      remaining -= value;
+    }
+  }
+  return result;
+}
+
 export const ARCS = [
   {
     id: 1,
@@ -54,255 +77,1013 @@ export const ARCS = [
 ];
 
 export const ALL_EPISODES_CATALOG = [
-  // Arc 1
+  // ============================================================================
+  // ARC 1: THE AXIAL REVOLUTION & CLASSICAL ANTIQUITY (Episodes 1 – 13)
+  // ============================================================================
   {
+    id: 1,
     number: 1,
+    roman: 'I',
     title: 'Introduction to the Meaning Crisis',
+    subtitle: 'Diagnosing the Modern Epidemic & The Collapse of the Threefold Order',
     arc: 1,
     duration: '59 min',
     youtubeId: '54l8_ewcOlY',
     youtubeUrl: 'https://www.youtube.com/watch?v=54l8_ewcOlY&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=1',
     summary: 'Dr. Vervaeke diagnoses the modern epidemic of anxiety, depression, and existential despair as a systemic Meaning Crisis rooted in the collapse of the Threefold Order.',
-    keyTerms: ['Meaning Crisis', 'Nomological Order', '4 Ways of Knowing', 'Psychotechnology'],
+    keyTerms: ['Meaning Crisis', 'Nomological Order', 'The 4 Ways of Knowing', 'Psychotechnology'],
+    keyConcepts: ['Meaning Crisis', 'Nomological Order', 'Psychotechnology', 'The 4 Ways of Knowing'],
     hasQuiz: true
   },
   {
+    id: 2,
     number: 2,
+    roman: 'II',
     title: 'Flow, Metaphor, and the Axial Revolution',
+    subtitle: 'From Paleolithic Shamanism to Second-Order Thinking',
     arc: 1,
     duration: '54 min',
     youtubeId: 'aF9HeXg65AE',
     youtubeUrl: 'https://www.youtube.com/watch?v=aF9HeXg65AE&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=2',
     summary: 'Exploring shamanism, Upper Paleolithic art, psychotechnologies, flow states, and the monumental transition to second-order thinking in the Axial Revolution.',
-    keyTerms: ['Flow State', 'Shamanism', 'Axial Revolution', 'Metaphor'],
+    keyTerms: ['Flow State', 'Shamanism', 'Axial Revolution', 'Second-Order Thinking'],
+    keyConcepts: ['Flow State', 'Shamanism', 'Axial Revolution', 'Second-Order Thinking'],
     hasQuiz: true
   },
   {
+    id: 3,
     number: 3,
+    roman: 'III',
     title: 'Continuous Cosmos and the Axial Revolution',
+    subtitle: 'From Bronze Age Mythic Immersion to Transcendent Self-Correction',
     arc: 1,
     duration: '58 min',
     youtubeId: 'C1AaqD8t3pk',
     youtubeUrl: 'https://www.youtube.com/watch?v=C1AaqD8t3pk&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=3',
     summary: 'Contrasting the Bronze Age "continuous cosmos" of ritual and myth with the breakthrough to the transcendent realm in Ancient Israel and Ancient Greece.',
     keyTerms: ['Continuous Cosmos', 'Two-Worlds Mythology', 'Prophetic Tradition', 'Akrasia'],
+    keyConcepts: ['Continuous Cosmos', 'Two-Worlds Mythology', 'Prophetic Tradition', 'Akrasia'],
     hasQuiz: true
   },
   {
+    id: 4,
     number: 4,
+    roman: 'IV',
     title: 'Socrates and the Quest for Wisdom',
+    subtitle: 'The Elenchus, Aporia, and Overcoming Self-Deception',
     arc: 1,
     duration: '57 min',
     youtubeId: 'Lhl51bZQlM8',
     youtubeUrl: 'https://www.youtube.com/watch?v=Lhl51bZQlM8&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=4',
     summary: 'Socrates exposes self-deception through the Elenchus, cultivating Aporia and transforming passion into Ta Erotika—the love of truth and goodness.',
     keyTerms: ['Elenchus', 'Aporia', 'Ta Erotika', 'Self-Deception'],
+    keyConcepts: ['Elenchus', 'Aporia', 'Ta Erotika', 'Self-Deception', 'Akrasia'],
     hasQuiz: true
   },
   {
+    id: 5,
     number: 5,
+    roman: 'V',
     title: 'Plato and the Cave',
+    subtitle: 'Anagoge, the Tripartite Soul, and the Ascent to the Good',
     arc: 1,
     duration: '58 min',
     youtubeId: 'neDutbcedUY',
     youtubeUrl: 'https://www.youtube.com/watch?v=neDutbcedUY&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=5',
     summary: 'Plato’s Allegory of the Cave, the tripartite psyche (Appetite, Thumos, Reason), and the process of Anagoge—climbing toward the Good.',
     keyTerms: ['Allegory of the Cave', 'Tripartite Psyche', 'Anagoge', 'The Good'],
+    keyConcepts: ['Allegory of the Cave', 'Tripartite Psyche', 'Anagoge', 'The Good', 'Akrasia'],
     hasQuiz: true
   },
   {
+    id: 6,
     number: 6,
+    roman: 'VI',
     title: 'Aristotle, Kant, and Purpose',
+    subtitle: 'Hylomorphism, Entelechy, and the Nature of Human Flourishing',
     arc: 1,
     duration: '56 min',
     youtubeId: 'A_gH5VIZO0Q',
     youtubeUrl: 'https://www.youtube.com/watch?v=A_gH5VIZO0Q&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=6',
     summary: 'Aristotle’s revolutionary biological and teleological worldview: Hylomorphism, Actuality vs. Potentiality, and human flourishing as Entelechy.',
     keyTerms: ['Hylomorphism', 'Entelechy', 'Actuality/Potentiality', 'Flourishing (Eudaimonia)'],
+    keyConcepts: ['Hylomorphism', 'Entelechy', 'Actuality/Potentiality', 'Flourishing (Eudaimonia)'],
     hasQuiz: true
   },
   {
+    id: 7,
     number: 7,
+    roman: 'VII',
     title: 'Aristotle’s Worldview and Alienation',
+    subtitle: 'Contact Epistemology, the Geocentric Cosmos, and Cosmic Belonging',
     arc: 1,
     duration: '59 min',
     youtubeId: 'yy47YzvGniQ',
     youtubeUrl: 'https://www.youtube.com/watch?v=yy47YzvGniQ&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=7',
     summary: 'Aristotle’s contact epistemology—the conformity theory of knowing where the soul becomes what it knows—and the deep sense of cosmic belonging.',
     keyTerms: ['Contact Epistemology', 'Conformity Theory', 'Cosmic Belonging', 'Morphé'],
+    keyConcepts: ['Contact Epistemology', 'Conformity Theory', 'Cosmic Belonging', 'Morphé'],
     hasQuiz: true
   },
   {
+    id: 8,
     number: 8,
+    roman: 'VIII',
     title: 'The Buddha and the Axial Revolution',
+    subtitle: 'Mindfulness, Dukkha, and the Deconstruction of the Self',
     arc: 1,
     duration: '58 min',
     youtubeId: 'EWumJSBqXa8',
     youtubeUrl: 'https://www.youtube.com/watch?v=EWumJSBqXa8&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=8',
     summary: 'Siddhartha Gautama’s radical psychotechnology of mindfulness: Sati, Vipassana, the Four Noble Truths, and untangling existential Dukkha.',
-    keyTerms: ['Mindfulness (Sati)', 'Vipassana', 'Dukkha', 'Eightfold Path'],
+    keyTerms: ['Mindfulness (Sati)', 'Vipassana', 'Dukkha', 'Anicca / Anatta'],
+    keyConcepts: ['Mindfulness (Sati)', 'Vipassana', 'Dukkha', 'Anicca / Anatta'],
     hasQuiz: true
   },
   {
+    id: 9,
     number: 9,
+    roman: 'IX',
     title: 'Insight',
+    subtitle: 'The Nine-Dot Problem, Combinatorial Explosion, and Reframing',
     arc: 1,
     duration: '58 min',
     youtubeId: 'jkWNBdBDyoE',
     youtubeUrl: 'https://www.youtube.com/watch?v=jkWNBdBDyoE&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=9',
     summary: 'Gestalt psychology, the Nine-Dot Problem, reframing, and how the brain solves combinatorial explosion through dynamic Insight.',
-    keyTerms: ['Insight', 'Gestalt Shift', 'Combinatorial Explosion', 'Reframing'],
+    keyTerms: ['Insight', 'Combinatorial Explosion', 'Relevance Realization', 'Reframing'],
+    keyConcepts: ['Insight', 'Combinatorial Explosion', 'Relevance Realization', 'Reframing'],
     hasQuiz: true
   },
   {
+    id: 10,
     number: 10,
+    roman: 'X',
     title: 'Consciousness',
+    subtitle: 'Global Workspace Theory, Working Memory, and Salience Landscapes',
     arc: 1,
     duration: '56 min',
     youtubeId: 'dRzm_wSR1RU',
     youtubeUrl: 'https://www.youtube.com/watch?v=dRzm_wSR1RU&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=10',
     summary: 'Global Workspace Theory, integrated information, working memory, and why consciousness is optimized for complex relevance realization.',
     keyTerms: ['Global Workspace Theory', 'Salience Landscape', 'Working Memory', 'Relevance Realization'],
+    keyConcepts: ['Global Workspace Theory', 'Salience Landscape', 'Working Memory', 'Relevance Realization'],
     hasQuiz: true
   },
   {
+    id: 11,
     number: 11,
+    roman: 'XI',
     title: 'Higher States of Consciousness',
+    subtitle: 'Mystical Awakening, the "Realer Than Real" Experience, and Anagoge',
     arc: 1,
     duration: '59 min',
     youtubeId: '39NpjQDtqNw',
     youtubeUrl: 'https://www.youtube.com/watch?v=39NpjQDtqNw&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=11',
     summary: 'Mystical experiences, "realer than real" phenomenological states, and how transformative flow experiences disrupt neurotic fixed framing.',
     keyTerms: ['Higher States of Consciousness', 'Realer Than Real', 'Ego Dissolution', 'Anagoge'],
+    keyConcepts: ['Higher States of Consciousness', 'Realer Than Real', 'Ego Dissolution', 'Anagoge'],
     hasQuiz: true
   },
   {
+    id: 12,
     number: 12,
+    roman: 'XII',
     title: 'Marcus Aurelius and Stoicism',
+    subtitle: 'Prosochê, the Dichotomy of Control, and the View from Above',
     arc: 1,
     duration: '59 min',
     youtubeId: 'rvx4_0NAfaY',
     youtubeUrl: 'https://www.youtube.com/watch?v=rvx4_0NAfaY&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=12',
     summary: 'Stoicism as an operating system for mental discipline: Prosochê (attention), the Dichotomy of Control, and the View from Above.',
     keyTerms: ['Stoicism', 'Prosochê', 'Dichotomy of Control', 'View from Above'],
+    keyConcepts: ['Stoicism', 'Prosochê', 'Dichotomy of Control', 'View from Above'],
     hasQuiz: true
   },
   {
+    id: 13,
     number: 13,
+    roman: 'XIII',
     title: 'Epicureans, Cynics, and Skeptics',
+    subtitle: 'Hellenistic Psychotechnologies for Ataraxia & Empire Collapse',
     arc: 1,
     duration: '57 min',
     youtubeId: 'vGB8k7jk1AQ',
     youtubeUrl: 'https://www.youtube.com/watch?v=vGB8k7jk1AQ&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=13',
     summary: 'Hellenistic therapeutic philosophies created to achieve Ataraxia (untroubledness) amidst historical chaos and empire collapse.',
-    keyTerms: ['Ataraxia', 'Cynicism', 'Skepticism', 'Epicureanism'],
+    keyTerms: ['Ataraxia', 'Aponia', 'Cynicism', 'Skepticism'],
+    keyConcepts: ['Ataraxia', 'Aponia', 'Cynicism', 'Skepticism', 'Psychotechnology'],
     hasQuiz: true
   },
 
-  // Arc 2
+  // ============================================================================
+  // ARC 2: THE MEDIEVAL SYNTHESIS & THE FALL (Episodes 14 – 20)
+  // ============================================================================
   {
+    id: 14,
     number: 14,
+    roman: 'XIV',
     title: 'Gnosticism and the Ancient Crisis',
+    subtitle: 'Cosmic Conspiracy, Existential Throwness, and Salvation via Gnosis',
     arc: 2,
     duration: '58 min',
     youtubeId: 'rpndwf45nao',
     youtubeUrl: 'https://www.youtube.com/watch?v=rpndwf45nao&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=14',
+    quote: 'When the empire grows too vast for civic participation, the cosmos itself starts to feel like a bureaucratic prison.',
     summary: 'Gnostic psychology, the alienated soul trapped in a cosmic conspiracy, and Gnosis as salvation through transformative insight.',
-    keyTerms: ['Gnosticism', 'Gnosis', 'Existential Alienation', 'Demiurge'],
+    thesis: 'As the Hellenistic kingdoms were swallowed by the bureaucratic vastness of the Roman Empire, ordinary individuals experienced a profound Domicide—the destruction of their civic and cosmic home. When the Two-Worlds Mythology of the Axial Age became severed from viable participatory practices, the upper world receded into unreachable distance while the everyday arena came to feel like an oppressive, deterministic prison.\n\nOut of this existential trauma emerged Gnosticism. The Gnostics radicalized the Two-Worlds split: the material universe was no longer an imperfect copy of the Good, but a malicious counterfeit crafted by a blind or malevolent Demiurge (Yaldabaoth) and policed by tyrannical cosmic Archons. Human beings carried a divine spark (pneuma) trapped inside dead matter.\n\nCrucially, Vervaeke highlights that Gnostic salvation was not achieved through moral obedience or propositional belief, but through Gnosis—a sudden, shattering participatory insight that awakens the sleeper from cosmic intoxication. Gnosticism represents the ancient prototype of existential alienation, paranoia, and the yearning for radical cognitive liberation.',
+    keyThinkers: ['Valentinus', 'Marcion', 'Hans Jonas', 'Plotinus'],
+    keyTerms: ['Two-Worlds Mythology', 'Participatory Knowing', 'The Good', 'Cosmic Belonging'],
+    keyConcepts: ['Two-Worlds Mythology', 'Participatory Knowing', 'The Good', 'Cosmic Belonging'],
+    reflection: {
+      socraticPrompt: 'When you feel overwhelmed by large institutional or digital systems today, how easily does your mind slip into a "Gnostic" framing—viewing the world as a hostile conspiracy from which you must escape?',
+      practice: 'Separating Systemic Complexity from Paranoia',
+      practiceDescription: 'Notice moments when frustration with bureaucracy, technology, or society tempts you into totalizing cynicism. Practice distinguishing between real structural problems that afford local agency and the Gnostic trap of viewing the entire arena as irredeemably corrupt.'
+    },
     hasQuiz: false
   },
   {
+    id: 15,
     number: 15,
+    roman: 'XV',
     title: 'Christianity and Agape',
+    subtitle: 'Kenotic Love, Radical Personhood, and the Sanctification of History',
     arc: 2,
     duration: '59 min',
     youtubeId: 'FvLe4BuU-NM',
     youtubeUrl: 'https://www.youtube.com/watch?v=FvLe4BuU-NM&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=15',
+    quote: 'Eros climbs upward toward perfection; Agape pours downward to create value and personhood where none existed before.',
     summary: 'Agape as kenotic, down-flowing creative love that calls forth personhood in the other, distinct from Eros and Philia.',
-    keyTerms: ['Agape', 'Kenosis', 'Personhood', 'Historical Consciousness'],
+    thesis: 'Why did Christianity triumph over Gnosticism, Stoicism, and Mithraism in the Roman Empire? Vervaeke argues that early Christianity forged a revolutionary cognitive and relational psychotechnology centered on Agape. While Greek Eros is an upward-climbing desire attracted to existing beauty and perfection, Agape is a kenotic (self-emptying), downward-flowing love that bestows worth and calls forth personhood in the broken, the marginalized, and the stranger.\n\nDrawing on the Hebrew Prophetic Tradition of Kairos (participatory turning points in historical time), Christianity rejected both the Gnostic hatred of matter and the Stoic resignation to cyclical fate. Through the Incarnation—the Logos becoming flesh—the transcendent upper world did not abandon the lower world; it entered directly into embodied history to redeem it from within.\n\nThis participatory communion formed tightly knit, resilient communities that crossed class, gender, and ethnic boundaries in the Roman Empire. Agape functions cognitively as a powerful engine of reciprocal opening: by unconditionally valuing the other as a deep center of agency, it affords the psychological safety required for genuine repentance (metanoia)—a transformative reframing of one’s entire life trajectory.',
+    keyThinkers: ['Jesus of Nazareth', 'Paul of Tarsus', 'Prophet Isaiah', 'Charles Taylor'],
+    keyTerms: ['Prophetic Tradition', 'Participatory Knowing', 'Reciprocal Opening', 'Reframing'],
+    keyConcepts: ['Prophetic Tradition', 'Participatory Knowing', 'Reciprocal Opening', 'Reframing'],
+    reflection: {
+      socraticPrompt: 'In your closest relationships, when are you relating through Eros (valuing the other because they fulfill your needs or ideals) versus Agape (attuning to the other to help actualize their deepest potential)?',
+      practice: 'Kenotic Listening in Conversation',
+      practiceDescription: 'In one conversation today, intentionally suspend your impulse to judge, fix, or impress the other person. Practice "kenosis"—stepping back from your egoic agenda so your full perspectival attention creates a welcoming space that draws out the other person’s voice.'
+    },
     hasQuiz: false
   },
   {
+    id: 16,
+    number: 16,
+    roman: 'XVI',
+    title: 'Neoplatonism and the Augustinian Synthesis',
+    subtitle: 'Plotinus, Emanation, and Augustine’s Healing of the Divided Will',
+    arc: 2,
+    duration: '58 min',
+    youtubeId: 'Jbwm03djuJc',
+    youtubeUrl: 'https://www.youtube.com/watch?v=Jbwm03djuJc&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=16',
+    quote: 'You have made us for Yourself, O Lord, and our heart is restless until it rests in You.',
+    summary: 'Plotinus’s Neoplatonic emanation from the One and Saint Augustine’s grand synthesis uniting Greek upward Eros with Christian downward Agape.',
+    thesis: 'In the twilight of antiquity, Plotinus revitalized Platonism by solving how the timeless One relates to the multiplicity of the world: through a continuous ontological waterfall of Emanation (overflowing fullness) and Epistrophe (anagogic return). Reality is a luminous hierarchy of intelligible levels—the Great Chain of Being—where every level participates in the One according to its capacity.\n\nSaint Augustine of Hippo, wrestling with his own agonizing Akrasia and existential fragmentation, discovered that neither Manichaean dualism nor Neoplatonic contemplation alone could heal his divided will. Studying Plotinus allowed Augustine to understand evil not as a rival substance, but as privatio boni—a parasitic privation of the Good, a falling away from higher structural integration into lower fixation.\n\nAugustine achieved the foundational synthesis of Western Christendom by marrying Greek upward-striving Eros (anagoge toward truth) with Christian downward-reaching Agape (grace). Because human relevance realization is trapped in self-deceptive pride and reciprocal narrowing, we cannot pull ourselves out of the cave by sheer willpower; our upward ascent must be met and empowered by a transjective grace that reorders our loves (ordo amoris).',
+    keyThinkers: ['Plotinus', 'Saint Augustine', 'Porphyry', 'Plato'],
+    keyTerms: ['Anagoge', 'The Good', 'Ta Erotika', 'Akrasia'],
+    keyConcepts: ['Anagoge', 'The Good', 'Ta Erotika', 'Akrasia'],
+    reflection: {
+      socraticPrompt: 'Augustine diagnosed human suffering as "disordered love"—treating finite, lower goods as if they were infinite, ultimate goods. What finite pursuit in your life is currently bearing the weight of an infinite expectation?',
+      practice: 'Auditing Your Ordo Amoris (Hierarchy of Care)',
+      practiceDescription: 'Write down the three things that consumed most of your anxious energy this week, and alongside them write the three things you most deeply revere when your mind is at peace. Reflect on the gap between your immediate salience and your deepest care.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 17,
+    number: 17,
+    roman: 'XVII',
+    title: 'Thomas Aquinas and the Aristotelian Recovery',
+    subtitle: 'Faith and Reason, the Sacred Canopy, and the Medieval Cosmic Home',
+    arc: 2,
+    duration: '59 min',
+    youtubeId: 'mXfK4nicygA',
+    youtubeUrl: 'https://www.youtube.com/watch?v=mXfK4nicygA&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=17',
+    quote: 'Grace does not destroy nature, but perfects it.',
+    summary: 'The rediscovery of Aristotle in the High Middle Ages and Thomas Aquinas’s monumental cathedral uniting Aristotelian science with Christian theology.',
+    thesis: 'During the 12th and 13th centuries, the Latin West experienced an intellectual earthquake: the recovery of Aristotle’s complete philosophical and scientific corpus via Islamic and Jewish scholars (Ibn Rushd/Averroes and Maimonides). Suddenly, Christendom was confronted with a comprehensive, naturalistic, teleological account of the cosmos that operated without reference to Christian revelation.\n\nRather than retreating into anti-intellectual fundamentalism or splitting truth into two irreconcilable compartments ("double truth"), Thomas Aquinas accomplished one of the greatest integrative feats in intellectual history. Aquinas synthesized Aristotelian Hylomorphism and Contact Epistemology with Augustinian Neoplatonism, constructing a two-tiered architecture where natural reason and supernatural faith harmonize seamlessly.\n\nIn the Thomistic cosmos, every creature possesses an intrinsic form (morphé) and teleological drive (entelechy) that participates in the divine Logos. The Nomological Order (how the universe works), the Normative Order (how we ought to act), and the Narrative Order (the cosmic story of creation and redemption) were woven into a single, breathtaking Sacred Canopy.',
+    keyThinkers: ['Thomas Aquinas', 'Aristotle', 'Ibn Rushd (Averroes)', 'Maimonides'],
+    keyTerms: ['Nomological Order', 'Contact Epistemology', 'Conformity Theory', 'Hylomorphism'],
+    keyConcepts: ['Nomological Order', 'Contact Epistemology', 'Conformity Theory', 'Hylomorphism'],
+    reflection: {
+      socraticPrompt: 'Do you experience scientific inquiry and spiritual/existential meaning as warring enemies, indifferent strangers, or mutually illuminating partners?',
+      practice: 'Contemplating Structural Intelligibility',
+      practiceDescription: 'Observe a natural organism (a tree, a bird, or your own hand) and reflect on how its physical structure, biological function, and evolutionary history form an intelligible unity—practicing the pre-Cartesian appreciation of immanent form.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 18,
     number: 18,
+    roman: 'XVIII',
     title: 'Nominalism and the Fall of the Middle Ages',
+    subtitle: 'William of Ockham and the Shattering of the Sacred Canopy',
     arc: 2,
     duration: '59 min',
     youtubeId: 'ITfUCL1yTQQ',
     youtubeUrl: 'https://www.youtube.com/watch?v=ITfUCL1yTQQ&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=18',
     summary: 'William of Ockham champions Nominalism, sundering universals into mere names and shattering the sacred canopy of the Aristotelian cosmos.',
-    keyTerms: ['Nominalism', 'William of Ockham', 'Realism', 'Sacred Canopy'],
+    keyTerms: ['Nominalism', 'Realism', 'Voluntarism', 'Contact Epistemology'],
+    keyConcepts: ['Nominalism', 'Realism', 'Voluntarism', 'Contact Epistemology'],
     hasQuiz: true
   },
-
-  // Arc 3
   {
+    id: 19,
+    number: 19,
+    roman: 'XIX',
+    title: 'Meister Eckhart, Late Medieval Trauma, and the Fractured World',
+    subtitle: 'The Black Death, Gelassenheit, and the Collapse of the Ecclesial Ecology',
+    arc: 2,
+    duration: '57 min',
+    youtubeId: 'mRh4lwtgfVE',
+    youtubeUrl: 'https://www.youtube.com/watch?v=mRh4lwtgfVE&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=19',
+    quote: 'Man’s last and highest parting occurs when, for God’s sake, he takes leave of God.',
+    summary: 'How the Black Death, the Papal Schism, and Nominalism shattered medieval psychotechnologies, and how Meister Eckhart pioneered radical inner releasement (Gelassenheit).',
+    thesis: 'The 14th century was an epoch of cascading civilizational trauma: the Little Ice Age, the Black Death (which wiped out at least a third of Europe), the Hundred Years’ War, and the Western Schism with rival popes excommunicating one another. Combined with the intellectual acid of Nominalism, the medieval Ecology of Practices—which had reliably bound everyday life to cosmic sacredness—began to disintegrate.\n\nAmidst this crisis, the Dominican mystic Meister Eckhart recognized that when theological concepts become rigid idols under a voluntarist God, the soul must reach deeper than propositional dogma to the "Ground of the Soul" (Seelengrund) where the human and divine are indistinct. Eckhart taught Gelassenheit (releasement or letting-be)—radically letting go of egoic clinging, mental images, and even one’s conceptual grasping after "God."\n\nTragically, Eckhart’s subtle mystical psychotechnology was condemned and marginalized just as Europe needed it most. Without a viable contemplative ecology to bridge the growing chasm between the isolated individual and an inscrutable God, Western consciousness grew increasingly anxious, unmoored, and desperate for certainty.',
+    keyThinkers: ['Meister Eckhart', 'Johannes Tauler', 'Jan van Ruusbroec', 'William of Ockham'],
+    keyTerms: ['Ecology of Practices', 'Ego Dissolution', 'Nominalism', 'Higher States of Consciousness'],
+    keyConcepts: ['Ecology of Practices', 'Ego Dissolution', 'Nominalism', 'Higher States of Consciousness'],
+    reflection: {
+      socraticPrompt: 'Where in your own life has a helpful concept, ideal, or goal hardened into a mental idol that actually blocks you from experiencing living reality?',
+      practice: 'Practicing Gelassenheit (Releasement)',
+      practiceDescription: 'Sit quietly for five minutes. Whenever a demand, self-judgment, or anxious plan arises, consciously practice "letting it be"—releasing your grip on needing to control or solve it right now, resting in open, non-possessive awareness.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 20,
+    number: 20,
+    roman: 'XX',
+    title: 'The Renaissance, Nicholas of Cusa, and the Copernican Shift',
+    subtitle: 'Learned Ignorance, Perspective Painting, and the Eviction from the Cosmic Center',
+    arc: 2,
+    duration: '58 min',
+    youtubeId: 'lWrqdUo5W4Q',
+    youtubeUrl: 'https://www.youtube.com/watch?v=lWrqdUo5W4Q&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=20',
+    quote: 'The universe is a sphere whose center is everywhere and whose circumference is nowhere.',
+    summary: 'How linear perspective, Nicholas of Cusa’s Docta Ignorantia, and the Copernican heliocentric revolution dissolved the medieval geocentric home.',
+    thesis: 'As the medieval synthesis fractured, the Renaissance introduced new cultural psychotechnologies that fundamentally rewired human perspectival knowing. The invention of linear perspective in painting trained the Western eye to view reality from a fixed, mathematical vantage point outside the scene—elevating the individual observer while simultaneously turning the world into a measured object.\n\nPhilosopher-cardinal Nicholas of Cusa attempted a brilliant Neoplatonic rescue with his doctrine of Docta Ignorantia (Learned Ignorance) and the Coincidence of Opposites. Cusa argued that because the infinite transcends all finite proportions, the physical cosmos has no fixed center or circumference; wherever you stand, you can participate directly in the divine center through contemplative wonder.\n\nYet when Copernicus, Kepler, and Galileo mathematically proved heliocentrism, the cultural effect was not Cusa’s mystical intimacy, but existential vertigo. Evicted from the center of the Aristotelian geocentric drama, humanity found that everyday sensory perception ("the sun rises") was a massive illusion. The stage was set for a terrifying new question: if our senses deceive us about the cosmos, how can we trust anything at all?',
+    keyThinkers: ['Nicholas of Cusa', 'Nicolaus Copernicus', 'Johannes Kepler', 'Filippo Brunelleschi'],
+    keyTerms: ['Perspectival Knowing', 'Cosmic Belonging', 'Aporia', 'Contact Epistemology'],
+    keyConcepts: ['Perspectival Knowing', 'Cosmic Belonging', 'Aporia', 'Contact Epistemology'],
+    reflection: {
+      socraticPrompt: 'Nicholas of Cusa distinguished humble "learned ignorance" (which opens us to wonder) from cynical agnosticism (which shuts down inquiry). How do you relate to the mysteries you cannot propositionally master?',
+      practice: 'Gazing Beyond the Horizon',
+      practiceDescription: 'Look up at the night sky or a vast natural vista. First notice the modern habit of feeling small and insignificant in a dead vacuum; then intentionally shift to Cusa’s perspective—experiencing yourself as a living focal point through which the universe beholds itself.'
+    },
+    hasQuiz: false
+  },
+
+  // ============================================================================
+  // ARC 3: THE MODERN DILEMMA & COGNITIVE ALIENATION (Episodes 21 – 30)
+  // ============================================================================
+  {
+    id: 21,
     number: 21,
+    roman: 'XXI',
     title: 'Martin Luther and Descartes',
+    subtitle: 'The Protestant Inward Turn and the Birth of Cartesian Anxiety',
     arc: 3,
     duration: '58 min',
     youtubeId: 'x90XKjhcu4w',
     youtubeUrl: 'https://www.youtube.com/watch?v=x90XKjhcu4w&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=21',
     summary: 'Descartes introduces the mind-body split (Cartesian dualism), reducing the living cosmos to a mechanical clockwork and inventing epistemic anxiety.',
     keyTerms: ['Cartesian Dualism', 'Epistemic Anxiety', 'Ghost in the Machine', 'Clockwork Universe'],
+    keyConcepts: ['Cartesian Dualism', 'Epistemic Anxiety', 'Ghost in the Machine', 'Clockwork Universe'],
     hasQuiz: true
   },
   {
+    id: 22,
+    number: 22,
+    roman: 'XXII',
+    title: 'Galileo, Hobbes, and the Mechanization of the World',
+    subtitle: 'Matter in Motion, the Death of Teleology, and Computation as Thinking',
+    arc: 3,
+    duration: '58 min',
+    youtubeId: 'T-e2Z49n2h8',
+    youtubeUrl: 'https://www.youtube.com/watch?v=T-e2Z49n2h8&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=22',
+    quote: 'For reason, in this sense, is nothing but reckoning—that is, adding and subtracting of the consequences of general names.',
+    summary: 'How Galileo stripped secondary qualities from nature and Thomas Hobbes reduced the human mind, morality, and politics to mechanical matter in motion.',
+    thesis: 'While Descartes tried to preserve an immaterial soul (res cogitans) alongside a mechanical body (res extensa), Thomas Hobbes saw how unstable this dualism was: how can a non-physical ghost push physical gears in the pineal gland? Hobbes resolved the contradiction with ruthless consistency—eliminating the ghost altogether and declaring that everything, including the human mind, is strictly material particles colliding in blind motion.\n\nFollowing Galileo’s distinction between primary qualities (mathematical mass, shape, velocity) and secondary qualities (color, sound, beauty, value), the modern scientific worldview drained the universe of intrinsic meaning. Beauty, purpose, and sacredness were demoted to subjective figments projected by human nerves onto an indifferent Clockwork Universe.\n\nIn a landmark move for cognitive science, Hobbes declared that reasoning is nothing more than "reckoning"—the mechanical manipulation of arbitrary symbols according to rules. With Contact Epistemology dead and Aristotelian teleology banished, human beings were reframed as self-seeking biological machines driven by appetite and fear in a war of all against all, requiring the artificial leviathan of the modern state to prevent chaos.',
+    keyThinkers: ['Thomas Hobbes', 'Galileo Galilei', 'Francis Bacon', 'René Descartes'],
+    keyTerms: ['Clockwork Universe', 'Contact Epistemology', 'Epistemic Anxiety', 'Propositional Tyranny'],
+    keyConcepts: ['Clockwork Universe', 'Contact Epistemology', 'Epistemic Anxiety', 'Propositional Tyranny'],
+    reflection: {
+      socraticPrompt: 'When you experience a moving piece of music or deep love for another person, do you secretly suspect that "really" it is just neurotransmitters firing in a meaningless machine?',
+      practice: 'Reclaiming Primary Participatory Reality',
+      practiceDescription: 'Notice when reductive materialist language ("it’s just dopamine", "we’re just algorithms") flattens your lived experience. Remind yourself that mathematical physics is an abstraction derived from lived participatory reality, not a replacement for it.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 23,
+    number: 23,
+    roman: 'XXIII',
+    title: 'Locke, Hume, Kant, and the Enclosure of the Mind',
+    subtitle: 'Empiricist Skepticism, the Copernican Revolution in Philosophy, and the Loss of the Thing-in-Itself',
+    arc: 3,
+    duration: '59 min',
+    youtubeId: 'Noc1OH0CUBc',
+    youtubeUrl: 'https://www.youtube.com/watch?v=Noc1OH0CUBc&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=23',
+    quote: 'Thoughts without content are empty, intuitions without concepts are blind.',
+    summary: 'How Hume’s radical skepticism awakened Kant to construct the transcendental architecture of mind—rescuing science while locking humanity out of ultimate reality (the Noumenon).',
+    thesis: 'Once Descartes and Locke trapped consciousness inside an internal theater of mental representations, David Hume delivered a devastating blow: if all we ever experience are fleeting sensory impressions, we have zero rational justification for believing in causality, an enduring self, or inductive science. Reason is, and ought only to be, the slave of the passions.\n\nAwakened from his "dogmatic slumber" by Hume, Immanuel Kant executed his famous "Copernican Revolution" in philosophy. Instead of the mind conforming to objects (ancient Contact Epistemology), objects must conform to the innate structuring categories of the human mind! Space, time, and causality are the a priori lenses through which consciousness synthesizes experience.\n\nVervaeke notes that while Kant brilliantly rescued Newton’s physics and laid the foundations for modern cognitive psychology, his victory came at a steep existential cost. Because we only ever know the Phenomenal world (reality as filtered by our mental machinery) and are forever barred from the Noumenal world (things-in-themselves, Das Ding an sich), humanity was hermetically sealed inside its own cognitive bubble.',
+    keyThinkers: ['Immanuel Kant', 'David Hume', 'John Locke', 'Baruch Spinoza'],
+    keyTerms: ['Contact Epistemology', 'Conformity Theory', 'Epistemic Anxiety', 'Perspectival Knowing'],
+    keyConcepts: ['Contact Epistemology', 'Conformity Theory', 'Epistemic Anxiety', 'Perspectival Knowing'],
+    reflection: {
+      socraticPrompt: 'How does the assumption that "we are all trapped inside our own subjective heads" affect your confidence that you can truly know another person or touch reality?',
+      practice: 'From Representational Theater to Embodied Contact',
+      practiceDescription: 'Hold a solid object in your hand—a stone or a ceramic cup. Instead of imagining an image of the cup inside your skull, attend directly to the dynamic muscular resistance, texture, and temperature where your living hand and the cup co-shape each other.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 24,
+    number: 24,
+    roman: 'XXIV',
+    title: 'Romanticism, Schopenhauer, and the Aesthetic Counter-Revolution',
+    subtitle: 'The Sublime, the Blind Will, and the Danger of Emotional Counterfeits',
+    arc: 3,
+    duration: '58 min',
+    youtubeId: '6pwBgL0BbJ0',
+    youtubeUrl: 'https://www.youtube.com/watch?v=6pwBgL0BbJ0&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=24',
+    quote: 'The world is my representation... and at its root, a blind, striving Will.',
+    summary: 'The Romantic rebellion against Enlightenment mechanism, elevating art, nature, and intense emotion as the new sacred—and why Romanticism ultimately failed to resolve the Meaning Crisis.',
+    thesis: 'Appalled by the cold, disenchanted factory of the Enlightenment Clockwork Universe, the Romantic movement launched a passionate counter-revolution in the late 18th and 19th centuries. Thinkers and poets like Goethe, Wordsworth, Novalis, and Schelling sought to re-enchant the world through the creative imagination, the awe of the Sublime in untamed nature, and the sacralization of romantic love and artistic genius.\n\nArthur Schopenhauer pushed Kant’s philosophy into dark Romantic territory: he argued that we actually do have direct access to the Kantian Thing-in-Itself through our own lived body—and what we discover at the core of reality is not a benevolent Logos, but Der Wille (The Will), a blind, insatiable, irrational cosmic craving that devours itself in endless suffering. Only aesthetic contemplation and ascetic negation of the Will offer temporary relief.\n\nVervaeke diagnoses why Romanticism, despite its noble defense of perspectival and participatory knowing, ultimately collapsed into decadence and sentimentality. By divorcing transformative experience from rigorous scientific truth and rational self-correction, Romanticism equated intensity of feeling with depth of meaning—leaving modern culture vulnerable to salience hijacking, narcissism, and emotional manipulation.',
+    keyThinkers: ['Arthur Schopenhauer', 'Johann Wolfgang von Goethe', 'Samuel Taylor Coleridge', 'Friedrich Schelling'],
+    keyTerms: ['Salience Hijacking', 'Clockwork Universe', 'Perspectival Knowing', 'Self-Deception'],
+    keyConcepts: ['Salience Hijacking', 'Clockwork Universe', 'Perspectival Knowing', 'Self-Deception'],
+    reflection: {
+      socraticPrompt: 'When have you mistaken the sheer emotional intensity of an experience (a dramatic romance, an outrage spiral, or an aesthetic high) for genuine wisdom and existential meaning?',
+      practice: 'Distinguishing Intensity from Transformation',
+      practiceDescription: 'Recall a recent experience that felt emotionally overwhelming. Ask yourself: Did this experience expand my long-term cognitive flexibility, humility, and care for others (anagoge), or did it merely spike my salience landscape and leave me craving another hit?'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 25,
+    number: 25,
+    roman: 'XXV',
+    title: 'Hegel, Marx, and the Engines of History',
+    subtitle: 'Dialectical Idealism, Alienated Labor, and the Birth of Secular Utopia',
+    arc: 3,
+    duration: '59 min',
+    youtubeId: 'Z0i7qrOJALw',
+    youtubeUrl: 'https://www.youtube.com/watch?v=Z0i7qrOJALw&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=25',
+    quote: 'The owl of Minerva spreads its wings only with the falling of the dusk.',
+    summary: 'Hegel’s dialectical unfolding of Spirit (Geist) through history, and Karl Marx’s materialist inversion diagnosing economic alienation and promising political salvation.',
+    thesis: 'Recognizing that Kant had left consciousness frozen outside of reality, Georg Wilhelm Friedrich Hegel revolutionized Western thought by making reason and reality thoroughly historical and dynamic. For Hegel, mind (Geist) is not a static box of categories; it evolves through Dialectics—where an initial framing (thesis) generates its own internal contradiction (antithesis), forcing a higher structural integration (synthesis/Aufhebung). History itself is the grand anagogic story of Spirit awakening to self-knowledge and freedom.\n\nKarl Marx took Hegel’s dialectical engine and "turned it right side up," grounding history not in evolving ideas, but in material economic production. Marx brilliantly diagnosed how industrial capitalism severs Participatory Knowing: the worker is alienated from the product of their hands, from the procedural act of creation, from their own human nature (Gattungswesen), and from their fellow human beings.\n\nYet Vervaeke warns that by externalizing all existential alienation onto socio-economic structures and promising a secular Kingdom of God at the end of revolutionary history, Marxism discarded the inner psychotechnologies of personal wisdom and self-correction—sowing the seeds for the catastrophic ideological possession of the 20th century.',
+    keyThinkers: ['G.W.F. Hegel', 'Karl Marx', 'Ludwig Feuerbach', 'Friedrich Engels'],
+    keyTerms: ['Participatory Knowing', 'Procedural Knowing', 'Prophetic Tradition', 'Cosmic Belonging'],
+    keyConcepts: ['Participatory Knowing', 'Procedural Knowing', 'Prophetic Tradition', 'Cosmic Belonging'],
+    reflection: {
+      socraticPrompt: 'In your daily work or craft, what practices help you experience your labor as an expressive extension of your agency rather than mere mechanical time-trading?',
+      practice: 'Dialectical Integration of Opposing Views',
+      practiceDescription: 'Take a polarizing issue where you hold a strong opinion. Instead of treating the opposing view as sheer stupidity, ask in a Hegelian spirit: What legitimate aspect of reality is the other side foregrounding that my current framing has backgrounded?'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 26,
+    number: 26,
+    roman: 'XXVI',
+    title: 'Kierkegaard and the Existential Awakening',
+    subtitle: 'Angst, the Crowd as Untruth, and the Teleological Suspension of the Ethical',
+    arc: 3,
+    duration: '58 min',
+    youtubeId: 'pqsUDNkBt-Q',
+    youtubeUrl: 'https://www.youtube.com/watch?v=pqsUDNkBt-Q&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=26',
+    quote: 'The most common form of despair is not being who you are.',
+    summary: 'Søren Kierkegaard’s critique of Hegelian abstraction, bourgeois conformism, and his call for passionate existential commitment ("truth is subjectivity").',
+    thesis: 'Against Hegel’s grandiose system—which explained the entire cosmos while forgetting what it actually means to exist as a mortal, anxious human being—Søren Kierkegaard birthed Existentialism. Kierkegaard compared Hegel to a man who builds a magnificent palace of abstract propositions, only to live in a doghouse next door. You cannot live inside a purely propositional system.\n\nKierkegaard diagnosed the modern bourgeois public ("The Crowd") as a massive engine of leveling and Frankfurtian bullshit: in an age of reflection without passion, people chatter endlessly about everything so they never have to risk a life-transforming commitment. Underneath this comfortable conformity lurks Angst (existential dread)—the dizzying vertigo of finite freedom confronting infinite possibility.\n\nTo awaken from this despair, Kierkegaard mapped three existential spheres: the Aesthetic (chasing hedonic salience), the Ethical (committing to universal duty), and the Religious—exemplified by the "Knight of Faith" who makes a passionate, participatory leap of commitment into the absurd, discovering authentic selfhood in a direct transjective relationship with the Eternal.',
+    keyThinkers: ['Søren Kierkegaard', 'G.W.F. Hegel', 'Socrates', 'Blaise Pascal'],
+    keyTerms: ['Participatory Knowing', 'Propositional Tyranny', 'Frankfurtian Bullshit', 'Awakening'],
+    keyConcepts: ['Participatory Knowing', 'Propositional Tyranny', 'Frankfurtian Bullshit', 'Awakening'],
+    reflection: {
+      socraticPrompt: 'Where in your life are you using endless research, analysis, and "keeping your options open" as a defense mechanism to avoid the vulnerability of wholehearted commitment?',
+      practice: 'Stepping Out of "The Crowd"',
+      practiceDescription: 'Identify one belief or habit you maintain primarily for social safety or ironic detachment. Today, practice taking an earnest, un-ironic stand for something you genuinely care about, even if it feels vulnerable.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 27,
+    number: 27,
+    roman: 'XXVII',
+    title: 'Sartre, Camus, and the Absurdity of the Modern Arena',
+    subtitle: 'Existential Nausea, Radical Freedom, and the Myth of Sisyphus',
+    arc: 3,
+    duration: '57 min',
+    youtubeId: '9j5O-tnaFzE',
+    youtubeUrl: 'https://www.youtube.com/watch?v=9j5O-tnaFzE&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=27',
+    quote: 'Man is condemned to be free; because once thrown into the world, he is responsible for everything he does.',
+    summary: 'How 20th-century atheistic existentialism confronted the collision between the human hunger for meaning and the cold silence of a mechanical universe.',
+    thesis: 'When Kierkegaard’s existentialism was stripped of its Christian canopy in the 20th century, thinkers like Jean-Paul Sartre and Albert Camus confronted the starkest form of the modern dilemma. In Sartre’s famous dictum, "existence precedes essence": unlike a paper-knife designed by an artisan for a purpose, human beings are thrown into existence first with no pre-given human nature or cosmic telos, and must invent their own value from scratch.\n\nYet Vervaeke demonstrates the tragic cognitive contradiction at the heart of Sartrean existentialism. In Sartre’s novel Nausea, the protagonist Roquentin looks at a chestnut tree root and is overwhelmed by revulsion at the sheer, brute, unintelligible contingency of matter. If meaning is merely a subjective fiction that my isolated will projects onto dead matter, then the moment I remember I made it up, the meaning evaporates into "bad faith" (mauvaise foi).\n\nAlbert Camus named this collision "The Absurd": the irreconcilable divorce between the human heart’s desperate longing for Nomological coherence and the "unreasonable silence of the world." Meaning cannot be manufactured by pure voluntarist willpower inside a Cartesian head; it requires genuine transjective fittedness between agent and arena.',
+    keyThinkers: ['Jean-Paul Sartre', 'Albert Camus', 'Simone de Beauvoir', 'Fyodor Dostoevsky'],
+    keyTerms: ['Nihilism', 'Voluntarism', 'Transjectivity', 'Meaning Crisis'],
+    keyConcepts: ['Nihilism', 'Voluntarism', 'Transjectivity', 'Meaning Crisis'],
+    reflection: {
+      socraticPrompt: 'Why does telling yourself "I can just invent my own meaning!" often feel hollow when you are going through a period of deep grief or existential exhaustion?',
+      practice: 'Discovering vs. Inventing Value',
+      practiceDescription: 'Reflect on a moment in your life that felt undeniably meaningful. Notice that you did not arbitrarily "decide" to make it meaningful by an act of raw will; rather, you were drawn into a relationship or task whose real affordances claimed and transformed you.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 28,
     number: 28,
+    roman: 'XXVIII',
     title: 'Nietzsche, Nihilism, and Frankfurt’s Bullshit',
+    subtitle: 'The Death of God, Will to Power, and the Anatomy of Deception',
     arc: 3,
     duration: '59 min',
     youtubeId: 'Yp6F80Nx0lc',
     youtubeUrl: 'https://www.youtube.com/watch?v=Yp6F80Nx0lc&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=28',
     summary: 'The death of God, Friedrich Nietzsche’s prophesy of catastrophic nihilism, and Harry Frankfurt’s diagnostic analysis of modern Bullshit.',
     keyTerms: ['Nietzsche', 'Nihilism', 'Frankfurtian Bullshit', 'Salience Hijacking'],
+    keyConcepts: ['Nietzsche', 'Nihilism', 'Frankfurtian Bullshit', 'Salience Hijacking'],
     hasQuiz: true
   },
-
-  // Arc 4
   {
+    id: 29,
+    number: 29,
+    roman: 'XXIX',
+    title: 'Totalitarian Pseudo-Religions and the Hunger for Myth',
+    subtitle: 'Ideological Possession, Domicide, and the 20th-Century Nightmare',
+    arc: 3,
+    duration: '58 min',
+    youtubeId: 'A6Q_B7z6gLc',
+    youtubeUrl: 'https://www.youtube.com/watch?v=A6Q_B7z6gLc&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=29',
+    quote: 'Human beings cannot live without meaning; when starved of wisdom, they will gorge on ideological poison.',
+    summary: 'How the vacuum of the Meaning Crisis birthed totalitarian pseudo-religions in the 20th century and fuels modern culture-war tribalism.',
+    thesis: 'Following Nietzsche’s prophecy that the Death of God would unleash unprecedented convulsions, the 20th century witnessed the rise of secular totalitarian pseudo-religions—Fascism, Nazism, and Stalinist Communism. Vervaeke analyzes why millions of educated modern people eagerly surrendered their critical faculties to monstrous regimes: because human cognitive architecture cannot endure prolonged participatory starvation and domicide.\n\nPseudo-religions operate as dark counterfeits of the ancient Threefold Order. They offer a seductive, totalizing Narrative (a cosmic struggle of pure "us" against demonic "them"), a rigid Normative identity (absolute tribal belonging through rallies and symbols), and a pseudo-scientific Nomological destiny (racial or historical determinism). They cure loneliness by inducing collective salience hijacking and reciprocal narrowing.\n\nEven after the collapse of 20th-century totalitarian empires, this vulnerability remains acute in the digital age. Whenever individuals lack an ecology of wisdom practices to cultivate inner equilibrium and genuine community, political ideologies, conspiracy movements, and outrage algorithms rush in to parasitize the sacred hunger for belonging.',
+    keyThinkers: ['Hannah Arendt', 'Carl Jung', 'Viktor Frankl', 'Erich Fromm'],
+    keyTerms: ['Meaning Crisis', 'Parasitic Processing', 'Reciprocal Narrowing', 'Salience Hijacking'],
+    keyConcepts: ['Meaning Crisis', 'Parasitic Processing', 'Reciprocal Narrowing', 'Salience Hijacking'],
+    reflection: {
+      socraticPrompt: 'When you feel a surge of righteous tribal outrage against an out-group, what existential need (belonging, certainty, moral superiority) is that outrage secretly feeding?',
+      practice: 'Immunizing Against Ideological Possession',
+      practiceDescription: 'Check whether any group or worldview you belong to relies on demonizing outsiders to generate internal cohesion. Practice articulating the humanity and complex motivations of someone across an ideological divide.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 30,
+    number: 30,
+    roman: 'XXX',
+    title: 'The Cognitive Revolution and the Dawn of 4E Science',
+    subtitle: 'Overcoming Behaviorism, the Computational Mind, and the Return of the Embodied Agent',
+    arc: 3,
+    duration: '58 min',
+    youtubeId: 'Wex12GhUFqE',
+    youtubeUrl: 'https://www.youtube.com/watch?v=Wex12GhUFqE&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=30',
+    quote: 'Mind is not an isolated calculator inside the skull; it is embodied, embedded, enactive, and extended.',
+    summary: 'Tracing the birth of Cognitive Science—from the overthrow of Behaviorism and early AI to the 4E revolution (Embodied, Embedded, Enactive, Extended cognition).',
+    thesis: 'At the close of Arc 3, Vervaeke turns toward the constructive scientific breakthrough that makes a genuine awakening possible: the rise of Cognitive Science. For the first half of the 20th century, psychology was split between psychoanalytic depth myths and behaviorism, which treated the mind as a non-existent "black box." In the 1950s, pioneers like Newell, Simon, Chomsky, and Miller launched the Cognitive Revolution, proving that mental representations and information processing are scientifically real.\n\nHowever, first-generation cognitive science ("Good Old-Fashioned AI") inherited Hobbes’s and Descartes’s blind spots: it modeled the mind as a disembodied computer manipulating formal propositions according to syntactic rules. Very quickly, AI researchers hit a brick wall—computers could prove theorems, yet could not walk across a cluttered room, understand a simple metaphor, or figure out what information was relevant in an open-ended world.\n\nThis crisis catalyzed Third-Generation (4E) Cognitive Science: discovering that real intelligence is fundamentally Embodied (rooted in sensorimotor biology), Embedded (coupled to ecological affordances), Enactive (brought forth through dynamic autopoietic agency), and Extended (distributed across cultural psychotechnologies and other minds). 4E Cognitive Science bridges the Cartesian chasm and scientifically restores participatory contact with reality.',
+    keyThinkers: ['Herbert Simon', 'Noam Chomsky', 'Francisco Varela', 'Evan Thompson'],
+    keyTerms: ['Ghost in the Machine', 'Combinatorial Explosion', 'Relevance Realization', 'Affordances'],
+    keyConcepts: ['Ghost in the Machine', 'Combinatorial Explosion', 'Relevance Realization', 'Affordances'],
+    reflection: {
+      socraticPrompt: 'How do your physical posture, breathing, and surrounding physical environment shape the quality of your thinking right now?',
+      practice: 'Experiencing 4E Extended Cognition',
+      practiceDescription: 'Try solving a complex problem solely in your head with your eyes closed, then solve it using pen and paper or by pacing and gesturing. Observe how your external tools and bodily movements are not mere outputs of thought, but active parts of your thinking machinery.'
+    },
+    hasQuiz: false
+  },
+
+  // ============================================================================
+  // ARC 4: COGNITIVE SCIENCE & RELEVANCE REALIZATION (Episodes 31 – 40)
+  // ============================================================================
+  {
+    id: 31,
     number: 31,
+    roman: 'XXXI',
     title: 'The 4 Ways of Knowing',
+    subtitle: 'Propositional, Procedural, Perspectival, and Participatory Knowing',
     arc: 4,
     duration: '59 min',
     youtubeId: 'gfKcVbNd7Xc',
     youtubeUrl: 'https://www.youtube.com/watch?v=gfKcVbNd7Xc&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=31',
     summary: 'A deep systematic dissection of Propositional, Procedural, Perspectival, and Participatory knowing (4P/3R) and why propositional bias blinds us.',
-    keyTerms: ['4 Ways of Knowing', 'Participatory Knowing', 'Propositional Tyranny', 'Affordances'],
+    keyTerms: ['The 4 Ways of Knowing', 'Participatory Knowing', 'Propositional Tyranny', 'Affordances'],
+    keyConcepts: ['The 4 Ways of Knowing', 'Participatory Knowing', 'Propositional Tyranny', 'Affordances'],
     hasQuiz: true
   },
   {
+    id: 32,
+    number: 32,
+    roman: 'XXXII',
+    title: 'Procedural Knowing and Embodied Skill',
+    subtitle: 'Techne, Sensorimotor Coupling, and Why Competence Precedes Theory',
+    arc: 4,
+    duration: '58 min',
+    youtubeId: 'IZyWuD9UqI4',
+    youtubeUrl: 'https://www.youtube.com/watch?v=IZyWuD9UqI4&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=32',
+    quote: 'We know vastly more in our hands, habits, and skills than we can ever state in propositions.',
+    summary: 'Examining Procedural Knowing (knowing-how), implicit memory systems, and how embodied skill forms the indispensable scaffolding for higher cognition.',
+    thesis: 'Continuing his deep dive into the 4P architecture of cognition, Vervaeke examines Procedural Knowing—knowing how to perform skilled actions in the world. Unlike Propositional Knowing, which is stored in declarative memory and evaluated as true or false, Procedural Knowing is enacted through implicit sensorimotor loops and evaluated by adaptive fittedness, fluency, and optimal grip.\n\nDrawing on Michael Polanyi’s concept of "tacit knowing" and Hubert Dreyfus’s critique of disembodied rule-following, Vervaeke shows that expertise is not the rapid unconscious execution of propositional textbook rules. When a master jazz musician improvises or a surgeon operates, their procedural skill dynamically integrates thousands of micro-adjustments that cannot be reduced to verbal formulas.\n\nCrucially, Procedural Knowing depends upon Perspectival Knowing: you cannot execute the right skill unless the environment is framed so that the right action-possibilities (affordances) stand out as salient. Restoring respect for embodied craftsmanship, ritual, and disciplined practice is essential to breaking out of Propositional Tyranny.',
+    keyThinkers: ['Michael Polanyi', 'Hubert Dreyfus', 'Gilbert Ryle', 'Maurice Merleau-Ponty'],
+    keyTerms: ['Procedural Knowing', 'The 4 Ways of Knowing', 'Propositional Tyranny', 'Optimal Grip'],
+    keyConcepts: ['Procedural Knowing', 'The 4 Ways of Knowing', 'Propositional Tyranny', 'Optimal Grip'],
+    reflection: {
+      socraticPrompt: 'Think of a skill you have mastered (playing an instrument, cooking, driving, or athletics). What happens to your fluency if you suddenly try to narrate every micro-movement in verbal propositions while doing it?',
+      practice: 'Mindful Craft & Embodied Attunement',
+      practiceDescription: 'Engage in one physical task today—chopping vegetables, handwriting, or walking—with total attention on the tactile feedback loop between your hands/body and the material, appreciating the silent intelligence of procedural skill.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 33,
+    number: 33,
+    roman: 'XXXIII',
+    title: 'Perspectival Knowing and Situational Awareness',
+    subtitle: 'Noesis, Aspect Perception, and the Contouring of Consciousness',
+    arc: 4,
+    duration: '57 min',
+    youtubeId: '_zkLevmQe90',
+    youtubeUrl: 'https://www.youtube.com/watch?v=_zkLevmQe90&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=33',
+    quote: 'To know what it is like to be here now is to inhabit a contoured landscape of salience.',
+    summary: 'How Perspectival Knowing shapes what it is like to experience the world here-and-now by dynamically foregrounding and backgrounding salience.',
+    thesis: 'Beneath propositional beliefs and alongside procedural skills lies Perspectival Knowing: knowing what it is like to inhabit a specific state of consciousness and situational framing right now. When someone undergoes a profound life transition—becoming a parent, recovering from grief, or entering a meditative state—their factual list of propositions may not change, yet the entire texture, weight, and horizon of their lived world is transformed.\n\nVervaeke connects Perspectival Knowing to Ludwig Wittgenstein’s "seeing-as" (aspect perception) and Thomas Nagel’s phenomenology of consciousness. Perspectival Knowing operates by configuring a Salience Landscape: sizing up a situation so that certain features leap into the foreground while vast oceans of irrelevant detail recede into the background, immediately presenting you with a coherent field of actionable affordances.\n\nWhen Perspectival Knowing becomes rigid or distorted, we suffer from cognitive fixation and situational blindness. Psychotechnologies like Buddhist Sati (mindfulness) and Stoic Prosochê work precisely at this level—training consciousness to step back from automatic framing so we can perceive how our attention is contouring reality in real time.',
+    keyThinkers: ['Thomas Nagel', 'Ludwig Wittgenstein', 'Bernard Baars', 'William James'],
+    keyTerms: ['Perspectival Knowing', 'Salience Landscape', 'Mindfulness (Sati)', 'Global Workspace Theory'],
+    keyConcepts: ['Perspectival Knowing', 'Salience Landscape', 'Mindfulness (Sati)', 'Global Workspace Theory'],
+    reflection: {
+      socraticPrompt: 'Recall entering a familiar room after receiving life-changing news. Nothing physical in the room moved—so what changed in your Perspectival Knowing?',
+      practice: 'Shifting Foreground and Background',
+      practiceDescription: 'Pause in your current environment. For 60 seconds, deliberately shift your attention to the background sounds, peripheral visual textures, and subtle bodily sensations your brain was automatically filtering out. Notice how your situational perspective refreshes.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 34,
+    number: 34,
+    roman: 'XXXIV',
+    title: 'Participatory Knowing and the Agent-Arena Relation',
+    subtitle: 'Gnosis, Ecological Affordances, and Transjective Co-Creation',
+    arc: 4,
+    duration: '59 min',
+    youtubeId: 'KoqibFwvQJ4',
+    youtubeUrl: 'https://www.youtube.com/watch?v=KoqibFwvQJ4&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=34',
+    quote: 'Agent and arena are not two separate things that bump into each other; they reciprocally co-create one another.',
+    summary: 'Unpacking the deepest level of the cognitive pyramid: Participatory Knowing, J.J. Gibson’s ecological affordances, and the transjective coupling of agent and arena.',
+    thesis: 'At the foundational base of the 4 Ways of Knowing lies Participatory Knowing—knowing by being, through the mutual co-shaping of organism and environment. Drawing on J.J. Gibson’s ecological psychology and evolutionary biology’s "niche construction," Vervaeke demonstrates that an organism is never a passive object dropped into a pre-packaged box; just as evolution shapes the organism to fit the environment, the organism actively modifies the environment to create an Arena that affords its Agency.\n\nThis Agent-Arena relationship is the quintessential example of Transjectivity. Consider the "sittability" of a chair or the "climbability" of a staircase: these affordances are neither subjective hallucinations inside your head nor purely physical properties of atoms in a vacuum. They are real, objective relational properties that emerge strictly in the coupling between an embodied agent and a structured world.\n\nParticipatory Knowing is where identity, roles, and existential belonging are forged. When you fall in love, join a jazz ensemble, or immerse yourself in a sacred tradition, you are transformed so that the arena can reveal deeper dimensions of itself to you. The Meaning Crisis is fundamentally a rupture at this foundational participatory level.',
+    keyThinkers: ['J.J. Gibson', 'Francisco Varela', 'Maurice Merleau-Ponty', 'Paul Tillich'],
+    keyTerms: ['Participatory Knowing', 'Affordances', 'Transjectivity', 'The 4 Ways of Knowing'],
+    keyConcepts: ['Participatory Knowing', 'Affordances', 'Transjectivity', 'The 4 Ways of Knowing'],
+    reflection: {
+      socraticPrompt: 'Think of a community, place, or relationship where you feel "most yourself." How does that arena call forth capacities in you that remain dormant elsewhere?',
+      practice: 'Mapping Affordances in Your Arena',
+      practiceDescription: 'Look around your primary workspace or living space. Ask: What habits and states of mind does this physical arrangement currently afford (distraction, anxiety, or calm focus)? Make one small physical change to reshape the agent-arena coupling.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 35,
+    number: 35,
+    roman: 'XXXV',
+    title: 'The Cognitive Science of Flow and Intuition',
+    subtitle: 'Implicit Learning, Error-Reduction Cascades, and Peak Agency',
+    arc: 4,
+    duration: '58 min',
+    youtubeId: 'rpivf1SoEdc',
+    youtubeUrl: 'https://www.youtube.com/watch?v=rpivf1SoEdc&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=35',
+    quote: 'In flow, you are not losing consciousness; you are experiencing a cascade of insight into deeply structured reality.',
+    summary: 'Deconstructing the cognitive mechanics of the Flow State: how implicit learning, clear feedback, and high skill-challenge coupling generate effortless intuition and deep meaning.',
+    thesis: 'Why did Mihaly Csikszentmihalyi’s research reveal that people across all cultures experience the Flow State as the single most meaningful, fulfilling experience of waking life? In Episode 35, Vervaeke reverse-engineers the cognitive mechanics of flow by uniting his theory of Insight with Arthur Reber’s work on implicit learning (how the brain unconsciously detects complex statistical patterns).\n\nWhen you are in the flow channel—balanced on the razor’s edge where environmental demands slightly stretch your procedural skills, with immediate, clear feedback—your brain enters a metabolically efficient state of transient hypofrontality. The noisy, self-conscious inner narrator (the Default Mode Network) quiets down, while your relevance realization machinery locks into tightly coupled synchronization with the environment.\n\nVervaeke argues that flow is actually an "insight cascade": each successful micro-prediction resolves uncertainty, triggers a burst of processing fluency, and immediately opens the next affordance. Flow feels profoundly meaningful because it is the phenomenological signature of optimal Participatory Knowing—when agent and arena are dancing together in real time.',
+    keyThinkers: ['Mihaly Csikszentmihalyi', 'Arthur Reber', 'Daniel Kahneman', 'Robin Hogarth'],
+    keyTerms: ['Flow State', 'Insight', 'Procedural Knowing', 'Optimal Grip'],
+    keyConcepts: ['Flow State', 'Insight', 'Procedural Knowing', 'Optimal Grip'],
+    reflection: {
+      socraticPrompt: 'Notice the difference between "junk flow" (passive absorption in video games or scrolling that leaves you depleted) and "anagogic flow" (active mastery that leaves you energized and expanded). Where do you spend your evenings?',
+      practice: 'Calibrating the Skill-Challenge Channel',
+      practiceDescription: 'Choose a task you have been avoiding out of boredom or anxiety. If you are bored, increase the challenge (set a time constraint or higher standard of craft); if you are anxious, break the task into smaller, immediate feedback steps to enter the flow channel.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 36,
     number: 36,
+    roman: 'XXXVI',
     title: 'Relevance Realization and Parasitic Processing',
+    subtitle: 'The Cognitive Mechanics of Neurosis, Addiction, and Reciprocal Opening',
     arc: 4,
     duration: '58 min',
     youtubeId: '48Ch2x3DrfM',
     youtubeUrl: 'https://www.youtube.com/watch?v=48Ch2x3DrfM&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=36',
     summary: 'The cognitive mechanics of how our intelligence parasitizes itself: addiction, neurotic loops, and the transition from reciprocal narrowing to reciprocal opening.',
     keyTerms: ['Parasitic Processing', 'Reciprocal Narrowing', 'Reciprocal Opening', 'Cognitive Flexibility'],
+    keyConcepts: ['Parasitic Processing', 'Reciprocal Narrowing', 'Reciprocal Opening', 'Cognitive Flexibility'],
     hasQuiz: true
   },
-
-  // Arc 5
   {
+    id: 37,
+    number: 37,
+    roman: 'XXXVII',
+    title: 'Dynamical Systems, Self-Organization, and Salience',
+    subtitle: 'Opponent Processing, Trade-Offs, and the Bio-Economy of Intelligence',
+    arc: 4,
+    duration: '59 min',
+    youtubeId: '2kQooMZzR7w',
+    youtubeUrl: 'https://www.youtube.com/watch?v=2kQooMZzR7w&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=37',
+    quote: 'There is no static definition of relevance; relevance is continuously realized through opponent processing.',
+    summary: 'How Relevance Realization operates as a self-organizing dynamical system balancing competing trade-offs (exploration vs. exploitation, compression vs. particularization).',
+    thesis: 'Why can’t we write a single fixed mathematical formula for "what is relevant"? Because relevance is not a static property of objects (like mass or electrical charge); what is relevant changes continuously depending on your goals, bodily state, and changing environment. If you tried to use a rule to decide which rule is relevant, you would trigger an infinite regress (the Frame Problem in AI).\n\nVervaeke explains that evolution solved this through self-organizing Dynamical Systems and Opponent Processing. Just as your autonomic nervous system maintains optimal readiness by pitting the sympathetic ("fight/flight" arousal) and parasympathetic ("rest/digest" calming) systems against each other in dynamic tension, cognition realizes relevance by continuously negotiating fundamental trade-offs.\n\nEvery moment, your brain balances Exploration (broadening attention to discover novel possibilities) against Exploitation (narrowing focus to harvest known rewards); it balances Cognitive Compression (generalizing into broad rules) against Particularization (attending to unique details). This continuous, opponent-processing bio-economy is what sculpts your Salience Landscape and maintains Optimal Grip on an ever-shifting world.',
+    keyThinkers: ['Alicia Juarrero', 'Walter Freeman', 'Ilya Prigogine', 'Marc Lewis'],
+    keyTerms: ['Relevance Realization', 'Salience Landscape', 'Optimal Grip', 'Combinatorial Explosion'],
+    keyConcepts: ['Relevance Realization', 'Salience Landscape', 'Optimal Grip', 'Combinatorial Explosion'],
+    reflection: {
+      socraticPrompt: 'In your current season of life, is your cognitive economy stuck in over-exploitation (rigid routine and risk-aversion) or over-exploration (scattered novelty-seeking without follow-through)?',
+      practice: 'Tuning Opponent Trade-Offs',
+      practiceDescription: 'When making a decision today, consciously observe the tension between zooming out (seeing the big picture) and zooming in (handling concrete details). Practice treating these not as contradictions, but as rhythmic partners in maintaining optimal grip.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 38,
+    number: 38,
+    roman: 'XXXVIII',
+    title: 'The Cognitive Anatomy of Self-Deception',
+    subtitle: 'Heuristic Blind Spots, Confirmation Bias, and How Intelligence Traps Itself',
+    arc: 4,
+    duration: '58 min',
+    youtubeId: 'xRjPy8c44vI',
+    youtubeUrl: 'https://www.youtube.com/watch?v=xRjPy8c44vI&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=38',
+    quote: 'The very mechanisms that make us adaptively intelligent are the exact mechanisms that make us pervasively prone to self-deception.',
+    summary: 'Why human beings are so vulnerable to self-deception: how adaptive heuristics, encoding specificity, and emotional conditioning hijack Relevance Realization.',
+    thesis: 'One of Vervaeke’s most profound insights is that human foolishness and self-deception are not the result of "broken" brain parts or low intelligence. Rather, self-deception is an inescapable byproduct of the very heuristic machinery that saves us from Combinatorial Explosion. Because heuristics must trade guaranteed logical certainty for rapid, frugal adaptability, every heuristic is inherently biased and vulnerable to misfiring.\n\nConsider the availability and representativeness heuristics studied by Kahneman and Tversky, or the phenomenon of "encoding specificity" in memory: when you are in an anxious or angry mood, your memory preferentially retrieves anxious or angry memories, which in turn makes threats even more salient in your current perception, which further intensifies your mood.\n\nOnce this feedback loop crosses a critical threshold in dynamical systems theory, it becomes an autonomous attractor state—Parasitic Processing. Your own intelligence is now working overtime to confirm a distorted framing of reality, actively filtering out corrective evidence. Only Second-Order Thinking combined with embodied counter-practices can disrupt these self-sealing cognitive loops.',
+    keyThinkers: ['Daniel Kahneman', 'Amos Tversky', 'Keith Stanovich', 'digest of Socratic Elenchus'],
+    keyTerms: ['Self-Deception', 'Relevance Realization', 'Parasitic Processing', 'Second-Order Thinking'],
+    keyConcepts: ['Self-Deception', 'Relevance Realization', 'Parasitic Processing', 'Second-Order Thinking'],
+    reflection: {
+      socraticPrompt: 'When you are in a low or defensive mood, notice how convincing your pessimistic thoughts feel. Can you catch your memory selectively feeding you only evidence that matches that mood?',
+      practice: 'Disrupting Mood-Congruent Framing',
+      practiceDescription: 'The next time you feel certain that "everything is going wrong" or someone is out to get you, pause and write down three concrete counter-examples that your current emotional state was keeping invisible.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 39,
+    number: 39,
+    roman: 'XXXIX',
+    title: 'Anxiety, Trauma, and Parasitic Processing Loops',
+    subtitle: 'Hyper-Salience, Predictive Coding Errors, and the Loss of Agency',
+    arc: 4,
+    duration: '57 min',
+    youtubeId: '440NV0eer00',
+    youtubeUrl: 'https://www.youtube.com/watch?v=440NV0eer00&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=39',
+    quote: 'Parasitic processing colonizes your relevance realization until the entire arena shrinks to the size of your fear.',
+    summary: 'Examining how trauma, chronic anxiety, and obsessive rumination function as self-organising parasitic attractors that drain cognitive flexibility.',
+    thesis: 'Expanding the model of Parasitic Processing, Episode 39 examines how chronic anxiety and trauma reshape the mind’s predictive architecture. In healthy cognition, error signals prompt the brain to reframe its internal model to better fit the environment. In trauma and severe anxiety, however, the threat-detection system becomes hyper-sensitized, interpreting ambiguous everyday cues as catastrophic dangers.\n\nTo protect the organism, the cognitive system narrows its attentional aperture and locks into rigid defensive habits (avoidance, hyper-vigilance, or compulsive rumination). Paradoxically, avoidance prevents the predictive coding system from ever encountering the disconfirming evidence that the world is safe! The safety behavior itself reinforces the credibility of the threat.\n\nAs this parasitic attractor deepens, it consumes more and more working memory and metabolic energy. The person’s Salience Landscape flattens everywhere except around the feared object, starving curiosity, play, and social connection. Understanding this dynamic removes moralistic shame while clarifying why propositional reassurance ("just relax, it’s fine!") cannot untie a perspectival and participatory knot.',
+    keyThinkers: ['Aaron Beck', 'Karl Friston', 'Bessel van der Kolk', 'Marc Lewis'],
+    keyTerms: ['Parasitic Processing', 'Reciprocal Narrowing', 'Salience Landscape', 'Working Memory'],
+    keyConcepts: ['Parasitic Processing', 'Reciprocal Narrowing', 'Salience Landscape', 'Working Memory'],
+    reflection: {
+      socraticPrompt: 'What avoidance habit in your life gives you immediate short-term relief, yet quietly convinces your brain that you are too fragile to handle the arena?',
+      practice: 'Micro-Exposures to Expand the Arena',
+      practiceDescription: 'Identify one small area where anxiety has narrowed your behavior. Take one gentle, deliberate step toward voluntary engagement today—proving to your embodied nervous system through action (procedural/participatory knowing) that you possess agency.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 40,
+    number: 40,
+    roman: 'XL',
+    title: 'Addiction, Depression, and Breaking Reciprocal Narrowing',
+    subtitle: 'When the Salience Machinery Devours the Arena—and How Therapeutic Awakening Works',
+    arc: 4,
+    duration: '59 min',
+    youtubeId: 'udlkps-81JM',
+    youtubeUrl: 'https://www.youtube.com/watch?v=udlkps-81JM&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=40',
+    quote: 'Addiction is not a failure of morality; it is the tragic hijacking of the machinery of developmental learning.',
+    summary: 'Drawing on Marc Lewis’s neuroscience of addiction to show how reciprocal narrowing culminates in addiction and depression, and how multi-level therapies restore reciprocal opening.',
+    thesis: 'Concluding Arc 4, Vervaeke synthesizes cognitive neuroscience—particularly Marc Lewis’s developmental model of addiction—to show how Reciprocal Narrowing reaches its ultimate extreme in addiction and clinical depression. Dopamine is not primarily a molecule of hedonic pleasure; it is the neuromodulator of incentive salience—tagging stimuli as "relevant for agency and survival."\n\nAddictive substances and supernormal digital stimuli artificially flood this salience machinery, training the brain to treat the addictive target as the single most relevant affordance in the universe. As the person’s life reorganizes around the addiction, relationships, hobbies, and health decay. Now the external arena genuinely offers fewer healthy affordances, making the addictive escape even more overwhelmingly salient—a devastating spiral of Reciprocal Narrowing.\n\nDepression represents the other side of this collapse: when the cognitive system concludes that no actions can meaningfully alter the arena, it shuts down motivational salience altogether to conserve energy ("learned helplessness"). Healing requires an integrated therapeutic ecology—combining mindfulness (perspectival de-centering), behavioral activation (procedural skill), cognitive reframing (propositional insight), and loving community (participatory belonging) to ignite Reciprocal Opening.',
+    keyThinkers: ['Marc Lewis', 'Martin Seligman', 'Zindel Segal', 'John Teasdale'],
+    keyTerms: ['Reciprocal Narrowing', 'Parasitic Processing', 'Salience Hijacking', 'Reciprocal Opening'],
+    keyConcepts: ['Reciprocal Narrowing', 'Parasitic Processing', 'Salience Hijacking', 'Reciprocal Opening'],
+    reflection: {
+      socraticPrompt: 'Notice how isolation accelerates every form of reciprocal narrowing. What is one relationship or restorative practice that reliably helps your world feel wider again when you feel stuck?',
+      practice: 'Designing a Circuit-Breaker Ecology',
+      practiceDescription: 'Write down a concrete 3-step protocol for moments when you feel pulled into a compulsive loop or depressive fog: (1) a somatic reset (cold water, brisk walk, breathwork), (2) a perspectival shift (naming the loop aloud), and (3) a participatory reach-out (contacting a trusted friend).'
+    },
+    hasQuiz: false
+  },
+
+  // ============================================================================
+  // ARC 5: WISDOM, DIALOGOS & THE ECOLOGY OF PRACTICES (Episodes 41 – 50)
+  // ============================================================================
+  {
+    id: 41,
+    number: 41,
+    roman: 'XLI',
+    title: 'Rationality, Intelligence, and Overcoming Akrasia',
+    subtitle: 'Why High IQ Does Not Prevent Foolishness: Keith Stanovich and Active Open-Mindedness',
+    arc: 5,
+    duration: '58 min',
+    youtubeId: 'IZRqZX5JJqM',
+    youtubeUrl: 'https://www.youtube.com/watch?v=IZRqZX5JJqM&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=41',
+    quote: 'Intelligence is horsepower; rationality is steering—and without wisdom, high horsepower just drives you off a cliff faster.',
+    summary: 'Distinguishing algorithmic intelligence (IQ) from rationality (Keith Stanovich’s Dysrationalia), and examining how hyperbolic discounting causes Akrasia.',
+    thesis: 'Opening Arc 5, Vervaeke tackles a crucial paradox: why do brilliantly intelligent people so often act with catastrophic foolishness? Drawing on cognitive psychologist Keith Stanovich’s research on "Dysrationalia," Vervaeke distinguishes raw algorithmic Intelligence (working memory speed and pattern-matching measured by IQ tests) from Rationality—the reflective disposition to question one’s own biases, calibrate epistemic humility, and care about truth over ego validation.\n\nIn fact, high IQ can exacerbate self-deception when used as a weapon for "myside bias" and motivated reasoning—constructing elaborate propositional rationalizations to defend existing dogma. Equally dangerous is George Ainslie’s discovery of Hyperbolic Discounting, the cognitive mechanism behind Socratic Akrasia: as an immediate temptation draws near in time or space, its perceived value spikes hyperbolically, eclipsing our long-term commitments.\n\nTo overcome Akrasia and Dysrationalia, we cannot rely on sheer willpower or raw IQ. Like Plato’s charioteer training Thumos to harmonize with Nous, we must internalize reflective psychotechnologies that reshape our Salience Landscape so that long-term flourishing becomes viscerally salient in the present moment.',
+    keyThinkers: ['Keith Stanovich', 'George Ainslie', 'Socrates', 'Plato'],
+    keyTerms: ['Akrasia', 'Salience Landscape', 'Self-Deception', 'Tripartite Psyche', 'Reframing', 'Salience Hijacking'],
+    keyConcepts: ['Akrasia', 'Salience Landscape', 'Self-Deception', 'Tripartite Psyche', 'Reframing', 'Salience Hijacking'],
+    reflection: {
+      socraticPrompt: 'Where have you used your verbal intelligence to win an argument or rationalize an indulgence, even while a quieter part of you knew you were deceiving yourself?',
+      practice: 'Bundling Choices Against Hyperbolic Discounting',
+      practiceDescription: 'Apply George Ainslie’s technique of "bundling": when tempted by a short-term impulse today, do not frame it as "just this one exception." Frame your present choice as a precedent that sets the rule for your future self over the next 30 days.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 42,
     number: 42,
+    roman: 'XLII',
     title: 'Wisdom and Sophrosyne',
+    subtitle: 'Foolishness vs. Stupidity, Optimal Grip, and Coordinated Cognition',
     arc: 5,
     duration: '59 min',
     youtubeId: 'H1yDgjQdRHw',
     youtubeUrl: 'https://www.youtube.com/watch?v=H1yDgjQdRHw&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=42',
     summary: 'What is wisdom? Distinguishing foolishness from stupidity, cultivating Sophrosyne (optimal self-regulation), and coordinating the cognitive ecology.',
     keyTerms: ['Wisdom', 'Sophrosyne', 'Foolishness', 'Optimal Grip'],
+    keyConcepts: ['Wisdom', 'Sophrosyne', 'Foolishness', 'Optimal Grip'],
     hasQuiz: true
   },
   {
+    id: 43,
+    number: 43,
+    roman: 'XLIII',
+    title: 'Psychological Theories of Wisdom',
+    subtitle: 'Baltes, Sternberg, McKee & Barber: Converging on Systematic Insight into Illusion',
+    arc: 5,
+    duration: '58 min',
+    youtubeId: 'EUcFqb-DxOA',
+    youtubeUrl: 'https://www.youtube.com/watch?v=EUcFqb-DxOA&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=43',
+    quote: 'Wisdom is not having a storehouse of answers; it is systematic insight into the conditions that generate illusion.',
+    summary: 'Synthesizing modern empirical psychology’s leading models of wisdom—the Berlin Wisdom Paradigm, Sternberg’s Balance Theory, and McKee & Barber’s seeing through illusion.',
+    thesis: 'After decades of neglecting wisdom as too "fuzzy" for science, cognitive psychologists in the late 20th century began rigorously studying what distinguishes wise individuals. Vervaeke reviews the major empirical frameworks: Paul Baltes’s Berlin Wisdom Paradigm (which defines wisdom as expert knowledge in the "fundamental pragmatics of life," managing uncertainty and value relativism) and Robert Sternberg’s Balance Theory (balancing intrapersonal, interpersonal, and extrapersonal interests across short and long terms).\n\nWhile valuable, Baltes’s and Sternberg’s models remain overly propositional or leave the underlying cognitive mechanism unexplained. Vervaeke brings in Patrick McKee and Clifton Barber’s landmark definition: wisdom lies in "seeing through illusion"—specifically, understanding how our own cognitive framing generates systematic illusions, and using that insight to live free of them.\n\nIntegrating these theories into 4E Cognitive Science, Vervaeke defines Wisdom as an enhanced, self-correcting ecology of Relevance Realization across all 4 Ways of Knowing—systematically overcoming self-deception while cultivating Flourishing (Eudaimonia) for both the agent and the broader community.',
+    keyThinkers: ['Paul Baltes', 'Robert Sternberg', 'Patrick McKee', 'Monika Ardelt'],
+    keyTerms: ['Wisdom', 'Flourishing (Eudaimonia)', 'Cognitive Flexibility', 'Optimal Grip'],
+    keyConcepts: ['Wisdom', 'Flourishing (Eudaimonia)', 'Cognitive Flexibility', 'Optimal Grip'],
+    reflection: {
+      socraticPrompt: 'Think of the wisest person you have personally known. What made them wise—was it the volume of facts they knew, or the way they held uncertainty, listened, and saw through egoic drama?',
+      practice: 'Sternberg’s Threefold Balance Check',
+      practiceDescription: 'Before making a significant interpersonal or professional decision this week, explicitly map how it affects (1) your own inner integrity, (2) the immediate others involved, and (3) the broader community/context over a 5-year horizon.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 44,
+    number: 44,
+    roman: 'XLIV',
+    title: 'Anagoge, Reciprocal Opening, and Self-Transcendence',
+    subtitle: 'L.A. Paul’s Transformative Experience, Agnes Callard’s Aspiration, and Climbing Toward the Good',
+    arc: 5,
+    duration: '59 min',
+    youtubeId: 'cK5Npv-OdAE',
+    youtubeUrl: 'https://www.youtube.com/watch?v=cK5Npv-OdAE&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=44',
+    quote: 'You cannot decide to transform yourself by doing a cost-benefit analysis from inside your current self.',
+    summary: 'How genuine developmental transformation (Anagoge) works through Agnes Callard’s theory of Aspiration, L.A. Paul’s Transformative Experience, and Reciprocal Opening.',
+    thesis: 'How do human beings intentionally grow wiser if they are not yet wise? Philosopher L.A. Paul posed a profound puzzle in Transformative Experience: before you undergo a radical life transformation (like becoming a parent, or awakening from the cave), you cannot know what it is like, and your core preferences themselves will change afterward—making standard economic cost-benefit decision theory completely useless!\n\nTo solve this, Vervaeke integrates philosopher Agnes Callard’s theory of Aspiration with Platonic Anagoge. Aspiration is the rational yet non-propositional process of reaching toward a value you can currently only dimly sense as an inadequacy in your present self. Through serious play, imitation of exemplars, and developmental practices, you scaffold yourself into becoming a person capable of appreciating the higher good.\n\nCognitively, this is the engine of Reciprocal Opening: as you humble your ego (Ego Dissolution) and aspire toward an inexhaustible horizon (The Good), your framing expands, revealing deeper affordances in the world, which in turn calls forth a deeper version of your agency in an upward, self-transcending spiral.',
+    keyThinkers: ['L.A. Paul', 'Agnes Callard', 'Plato', 'Iris Murdoch'],
+    keyTerms: ['Anagoge', 'The Good', 'Ego Dissolution', 'Reciprocal Opening'],
+    keyConcepts: ['Anagoge', 'The Good', 'Ego Dissolution', 'Reciprocal Opening'],
+    reflection: {
+      socraticPrompt: 'What is a virtue, art, or deeper way of being that you currently feel drawn toward, even though your present self only partially understands what it will demand of you?',
+      practice: 'Cultivating Aspirational Serious Play',
+      practiceDescription: 'Choose one exemplar of wisdom or craft whom you admire. Today, instead of judging yourself for falling short, engage in "serious play"—embodying their posture of attention and curiosity for one hour as a developmental scaffold.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 45,
+    number: 45,
+    roman: 'XLV',
+    title: 'Wonder, Awe, Mystery, and the Spirituality of Relevance Realization',
+    subtitle: 'Distinguishing Puzzles from Mysteries and Resurrecting Contemplative Depth',
+    arc: 5,
+    duration: '58 min',
+    youtubeId: 'DxLogRVfBv8',
+    youtubeUrl: 'https://www.youtube.com/watch?v=DxLogRVfBv8&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=45',
+    quote: 'A problem is something that stands in your way; a mystery is something in which you find yourself.',
+    summary: 'Exploring Gabriel Marcel’s distinction between Problems and Mysteries, the cognitive science of Awe and Wonder, and how sacredness emerges from inexhaustible intelligibility.',
+    thesis: 'Why has modern culture reduced spirituality to either dogmatic supernatural propositions or vague sentimental feelings? Vervaeke reconstructs the cognitive science of authentic spirituality by examining Wonder, Awe, and Mystery. Whereas curiosity seeks a missing piece of propositional information to close a gap, Wonder and Awe occur when the sheer depth of reality requires us to expand and accommodate our entire cognitive framing.\n\nInvoking existential philosopher Gabriel Marcel, Vervaeke distinguishes a Problem from a Mystery. A problem is an objective obstacle out in front of you that can be solved and dismissed with a technique. A Mystery, by contrast, is a reality in which your own agency and identity are inextricably involved—like love, consciousness, or being itself. You never "finish" knowing a mystery; the more deeply you participate in it, the more inexhaustible intelligibility it reveals.\n\nThis experience of inexhaustible, non-dual intelligibility—what happens when Relevance Realization touches its own generative ground—is the authentic cognitive root of the Sacred. Far from being anti-scientific, true spirituality is the contemplative celebration of the transjective depths that make both science and personhood possible.',
+    keyThinkers: ['Gabriel Marcel', 'Abraham Heschel', 'Dacher Keltner', 'Rudolf Otto'],
+    keyTerms: ['Higher States of Consciousness', 'Realer Than Real', 'Transjectivity', 'Participatory Knowing'],
+    keyConcepts: ['Higher States of Consciousness', 'Realer Than Real', 'Transjectivity', 'Participatory Knowing'],
+    reflection: {
+      socraticPrompt: 'Where in your life have you been treating an intimate Mystery (a loved one, your own mortality, or your calling) as if it were merely a technical Problem to be fixed and optimized?',
+      practice: 'Shifting from Problem-Solving to Contemplative Wonder',
+      practiceDescription: 'Spend ten minutes with a person, a piece of art, or nature without trying to extract utility or solve anything. Practice beholding its presence as an inexhaustible mystery that always exceeds your conceptual grasp.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 46,
+    number: 46,
+    roman: 'XLVI',
+    title: 'Sacredness, Transjectivity, and the Prophets of the Meaning Crisis',
+    subtitle: 'The Symbol, Ontological Depth, and Answering Nietzsche’s Madman',
+    arc: 5,
+    duration: '59 min',
+    youtubeId: 'POY3p9TpdD0',
+    youtubeUrl: 'https://www.youtube.com/watch?v=POY3p9TpdD0&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=46',
+    quote: 'A sign points to something you already know; a living symbol participates in the reality to which it opens you.',
+    summary: 'How living Symbols differ from arbitrary signs, how Sacredness anchors Relevance Realization, and how the 20th-century prophets of the Meaning Crisis pointed toward renewal.',
+    thesis: 'In Episode 46, Vervaeke examines how human cultures sustain participatory contact with the Sacred through the psychotechnology of the Symbol. Following Paul Tillich, we must distinguish a mere "sign" (an arbitrary label, like a red octagon meaning stop) from a living "Symbol." A symbol participates in the reality it signifies; it functions like a cognitive portal that reconfigures your Perspectival and Participatory Knowing so you can commune with a transjective reality otherwise beyond your grasp.\n\nWhen Nominalism and Cartesianism collapsed symbols into mere literal propositions or decorative metaphors, Western culture suffered symbolic starvation. Fundamentalists tried to read mythic symbols as literal scientific textbooks, while secular cynics dismissed them as fairy tales—both missing the transjective participatory dimension entirely.\n\nVervaeke transitions into the great 20th-century "Prophets of the Meaning Crisis"—thinkers who took Nietzsche’s diagnosis seriously and sought to recover ontological and symbolic depth without regressing into pre-modern dogma: Martin Heidegger, Henry Corbin, Carl Jung, Paul Tillich, and Owen Barfield.',
+    keyThinkers: ['Friedrich Nietzsche', 'Paul Tillich', 'Mircea Eliade', 'Susanne Langer'],
+    keyTerms: ['Meaning Crisis', 'Participatory Knowing', 'Transjectivity', 'Nietzsche', 'Nihilism'],
+    keyConcepts: ['Meaning Crisis', 'Participatory Knowing', 'Transjectivity', 'Nietzsche', 'Nihilism'],
+    reflection: {
+      socraticPrompt: 'Notice the difference between arguing over whether a metaphor or story is "literally factually true" versus allowing it to act as a lens that reveals a deeper pattern of human existence.',
+      practice: 'Beholding Through a Symbol',
+      practiceDescription: 'Revisit a great mythic story, poem, or piece of sacred music. Instead of analyzing it from the outside as a critic, practice looking through it as a cognitive lens—observing what dimensions of your own life and world come into focus.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 47,
+    number: 47,
+    roman: 'XLVII',
+    title: 'Heidegger, Corbin, Jung, and the Symbolic Imagination',
+    subtitle: 'Dasein, Aletheia, the Mundus Imaginalis, and Individuation',
+    arc: 5,
+    duration: '60 min',
+    youtubeId: 'qrkqopjEceU',
+    youtubeUrl: 'https://www.youtube.com/watch?v=qrkqopjEceU&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=47',
+    quote: 'Between the sensory world of perceptions and the abstract world of propositions lies the Mundus Imaginalis—where transjective symbols live.',
+    summary: 'Synthesizing Martin Heidegger’s Being-in-the-World (Dasein) and Aletheia, Henry Corbin’s Mundus Imaginalis, and Carl Jung’s Individuation into 4E Cognitive Science.',
+    thesis: 'Continuing his study of the 20th-century prophets of the Meaning Crisis, Vervaeke explores Martin Heidegger’s radical dismantling of Cartesian dualism. Heidegger argued that before we ever detach ourselves as a subject staring at objects, we are Dasein ("Being-there")—always already embedded in a caring, participatory web of readiness-to-hand. Truth is not primarily propositional correctness, but Aletheia (unconcealment)—the reciprocal opening in which Being discloses itself.\n\nComplementing Heidegger, scholar of Islamic mysticism Henry Corbin identified what Western post-Cartesian thought had lost: the Mundus Imaginalis (the Imaginal Realm). Distinct from arbitrary daydreaming ("the imaginary"), the Imaginal is the transjective cognitive zone where embodied sensation and intelligible meaning meet through living symbols, archetypes, and visionary participation.\n\nPsychologist Carl Jung mapped this same territory internally: when modern individuals lose their external mythic canopy, the unconscious still generates archetypal patterns demanding integration. Through active imagination and confronting the Shadow, the psyche undergoes Individuation—harmonizing conscious ego with the deeper self-organizing wisdom of the whole cognitive ecology.',
+    keyThinkers: ['Martin Heidegger', 'Henry Corbin', 'Carl Jung', 'Ibn Arabi'],
+    keyTerms: ['Transjectivity', 'Participatory Knowing', 'Contact Epistemology', 'Anagoge'],
+    keyConcepts: ['Transjectivity', 'Participatory Knowing', 'Contact Epistemology', 'Anagoge'],
+    reflection: {
+      socraticPrompt: 'Heidegger warned of "Gestell" (Enframing)—the modern technological habit of viewing everything, including forests, rivers, and our own minds, as mere standing-reserve to be exploited. Where has Gestell colonized your relationship with yourself?',
+      practice: 'Attending to Readiness-to-Hand & Poiesis',
+      practiceDescription: 'Contrast the feeling of "forcing" an outcome (technological manipulation) with "poiesis"—bringing something forth by listening to and cooperating with the grain of the material, the conversation, or the moment.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 48,
+    number: 48,
+    roman: 'XLVIII',
+    title: 'Tillich, Barfield, and Distributed Cognition in Dialogos',
+    subtitle: 'The God Above God, Final Participation, and Awakening the Logos Between Us',
+    arc: 5,
+    duration: '59 min',
+    youtubeId: 'mrnpZhWqdcA',
+    youtubeUrl: 'https://www.youtube.com/watch?v=mrnpZhWqdcA&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=48',
+    quote: 'In genuine Dialogos, the Logos speaks between us, carrying every participant somewhere none of us could have reached alone.',
+    summary: 'Paul Tillich’s Ground of Being, Owen Barfield’s evolution of consciousness toward Final Participation, and the communal psychotechnology of Dialogos.',
+    thesis: 'Vervaeke completes his survey of the prophets with theologian Paul Tillich and philosopher Owen Barfield. Tillich argued that to survive the death of the supernatural theistic idol (a cosmic tyrant "up there"), we must awaken to the "God above God"—the inexhaustible Ground of Being accessed through the Courage to Be and Ultimate Concern. Meanwhile, Owen Barfield traced the evolution of human consciousness from ancient "Original Participation" (unreflective mythic immersion), through modern alienation, toward an emerging "Final Participation"—where we consciously and scientifically re-enter participatory communion without sacrificing critical rationality.\n\nHow do we enact Final Participation in practice? Not as isolated heroic individuals, because solitary relevance realization is perpetually vulnerable to its own blind spots. We need distributed cognition—specifically, the communal psychotechnology of Dialogos.\n\nGoing beyond polite debate or group monologue, Dialogos unites Socratic Elenchus (mutual error-correction) with Neoplatonic/Christian Agape and mindfulness. When participants attune to the shared flow of inquiry, a self-organizing collective intelligence emerges between them—awakening the Logos to illuminate insights that transcend every individual ego.',
+    keyThinkers: ['Paul Tillich', 'Owen Barfield', 'Martin Buber', 'David Bohm'],
+    keyTerms: ['Dialogos', 'Psychotechnology', 'Ecology of Practices', 'Elenchus', 'Religion That Is Not a Religion'],
+    keyConcepts: ['Dialogos', 'Psychotechnology', 'Ecology of Practices', 'Elenchus', 'Religion That Is Not a Religion'],
+    reflection: {
+      socraticPrompt: 'Think of the best conversation of your life—when time disappeared and you and your interlocutor discovered a breakthrough together. What allowed you both to drop your egoic defenses and follow the Logos?',
+      practice: 'Practicing Dia-Logos in Dialogue',
+      practiceDescription: 'In your next deep conversation, practice listening not merely to formulate your reply, but to hear what is trying to emerge *between* you and the other person. Ask questions that help your partner birth their deepest insight.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 49,
+    number: 49,
+    roman: 'XLIX',
+    title: 'Cultivating Gnosis, Agape, and the Ecology of Practices',
+    subtitle: 'Balancing Meditative Mindfulness, Contemplative Inquiry, and Embodied Movement',
+    arc: 5,
+    duration: '59 min',
+    youtubeId: 'kkykBqApP4A',
+    youtubeUrl: 'https://www.youtube.com/watch?v=kkykBqApP4A&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=49',
+    quote: 'Every single practice has an inherent blind spot; wisdom requires an ecology of practices where each corrects and completes the others.',
+    summary: 'How to architect a resilient, mutually corrective Ecology of Practices combining mindfulness, contemplative reading (Lectio Divina), Tai Chi, and Dialogos.',
+    thesis: 'Why has the modern Western "mindfulness revolution" (McMindfulness) often failed to produce wisdom, sometimes even serving as a narcotic to make people more compliant cogs in an alienating machine? Vervaeke explains that any single psychotechnology practiced in isolation will eventually amplify its own opponent bias. Pure scaling-down meditation (Vipassana) without integrative scaling-up or active engagement in the world can lead to dissociation and flat detachment.\n\nHistorically, wisdom traditions never taught a lone technique; they embedded practices within a rich, mutually corrective Ecology of Practices. Just as a healthy biological ecosystem relies on diverse organisms keeping each other in dynamic balance, a cognitive ecology pairs opponent practices: balancing seated meditation with embodied movement (like Tai Chi or Qigong), solitary reflection with communal Dialogos, and receptive contemplation with rigorous Socratic critique.\n\nBy weaving these psychotechnologies together, we systematically cultivate all 4 Ways of Knowing—training Prosochê/Sati for Perspectival clarity, embodied craft for Procedural Optimal Grip, philosophical inquiry for Propositional truth, and Dialogos/Agape for deep Participatory Gnosis.',
+    keyThinkers: ['John Vervaeke', 'Pierre Hadot', 'Michel Foucault', 'Iain McGilchrist'],
+    keyTerms: ['Ecology of Practices', 'Dialogos', 'Mindfulness (Sati)', 'Religion That Is Not a Religion'],
+    keyConcepts: ['Ecology of Practices', 'Dialogos', 'Mindfulness (Sati)', 'Religion That Is Not a Religion'],
+    reflection: {
+      socraticPrompt: 'Examine your current personal growth habits. Are they lopsided toward one dimension (e.g., all intellectual reading, or all solitary exercise, or all passive meditation)? What complementary practice would balance your ecology?',
+      practice: 'Designing Your Personal Ecology of Practices',
+      practiceDescription: 'Sketch a balanced weekly rhythm that includes at least one practice for each of the four domains: (1) Attentional Stillness (meditation/breath), (2) Embodied Movement (Tai Chi, yoga, mindful walking), (3) Contemplative Study (deep reading/journaling), and (4) Communal Dialogos.'
+    },
+    hasQuiz: false
+  },
+  {
+    id: 50,
     number: 50,
+    roman: 'L',
     title: 'The Religion That Is Not a Religion',
+    subtitle: 'The Ecology of Practices, Dialogos, and Awakening',
     arc: 5,
     duration: '62 min',
     youtubeId: 'iu9fa4TkWE0',
     youtubeUrl: 'https://www.youtube.com/watch?v=iu9fa4TkWE0&list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ&index=50',
     summary: 'The grand finale: assembling an Ecology of Practices, fostering distributed cognition through Dialogos, and awakening from the Meaning Crisis.',
     keyTerms: ['Religion That Is Not a Religion', 'Ecology of Practices', 'Dialogos', 'Awakening'],
+    keyConcepts: ['Religion That Is Not a Religion', 'Ecology of Practices', 'Dialogos', 'Transjectivity', 'Awakening'],
     hasQuiz: true
   }
 ];

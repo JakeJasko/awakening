@@ -30,8 +30,9 @@ function isTermInEpisode(item, episode) {
   if (item.keyEpisodes && item.keyEpisodes.includes(epNum)) {
     return true;
   }
-  if (episode.keyConcepts && Array.isArray(episode.keyConcepts)) {
-    return episode.keyConcepts.some((kc) => matchesConcept(item.term, kc));
+  const concepts = episode.keyConcepts || episode.keyTerms;
+  if (concepts && Array.isArray(concepts)) {
+    return concepts.some((kc) => matchesConcept(item.term, kc));
   }
   return false;
 }
@@ -76,6 +77,18 @@ export default function GlossaryModal({
       }
     }
   }, [isOpen, initialOptions]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose && onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 

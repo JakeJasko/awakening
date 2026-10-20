@@ -5,7 +5,8 @@ import EpisodeHub from './components/EpisodeHub';
 import GlossaryModal from './components/GlossaryModal';
 import SyllabusModal from './components/SyllabusModal';
 import { EPISODES_DATA } from './data/episodesData';
-import { getStoredProgress, saveEpisodeProgress } from './utils/storage';
+import { ALL_EPISODES_CATALOG, toRoman } from './data/syllabusData';
+import { getStoredProgress, saveEpisodeProgress, saveReflection } from './utils/storage';
 import { usePWAInstallPrompt } from './utils/pwa';
 import './App.css';
 
@@ -30,12 +31,31 @@ export default function App() {
     isOpen: false,
     episode: null,
     isPlaying: true,
-    showVideo: false
+    showVideo: false,
+    seekSeconds: null,
+    seekKey: 0
   });
 
+  const normalizeEpisode = (ep) => {
+    if (!ep) return null;
+    const epNum = ep.id || ep.number;
+    const richQuizEp = EPISODES_DATA.find((e) => e.id === epNum);
+    if (richQuizEp) return richQuizEp;
+    const catalogEp = ALL_EPISODES_CATALOG.find((e) => e.number === epNum) || ep;
+    return {
+      ...catalogEp,
+      id: catalogEp.id || catalogEp.number,
+      number: catalogEp.number || catalogEp.id,
+      roman: catalogEp.roman || toRoman(catalogEp.id || catalogEp.number)
+    };
+  };
+
   const handleToggleAudioCompanion = (ep) => {
-    const targetEp = ep || activeEpisode || EPISODES_DATA[0];
-    if (audioState.isOpen && audioState.episode?.id === (targetEp.id || targetEp.number)) {
+    const targetEp = normalizeEpisode(ep || activeEpisode || EPISODES_DATA[0]);
+    const targetId = targetEp.id || targetEp.number;
+    const currentAudioId = audioState.episode?.id || audioState.episode?.number;
+
+    if (audioState.isOpen && currentAudioId === targetId) {
       setAudioState((prev) => ({
         ...prev,
         isPlaying: !prev.isPlaying
@@ -45,9 +65,23 @@ export default function App() {
         isOpen: true,
         episode: targetEp,
         isPlaying: true,
-        showVideo: false
+        showVideo: false,
+        seekSeconds: null,
+        seekKey: 0
       });
     }
+  };
+
+  const handleSeekAudioTimestamp = (ep, seconds) => {
+    const targetEp = normalizeEpisode(ep || activeEpisode || EPISODES_DATA[0]);
+    setAudioState((prev) => ({
+      isOpen: true,
+      episode: targetEp,
+      isPlaying: true,
+      showVideo: prev.isOpen ? prev.showVideo : false,
+      seekSeconds: seconds,
+      seekKey: (prev.seekKey || 0) + 1
+    }));
   };
 
   const handlePlayPauseAudio = () => {
@@ -59,7 +93,13 @@ export default function App() {
   };
 
   const handleCloseAudio = () => {
-    setAudioState((prev) => ({ ...prev, isOpen: false, isPlaying: false, showVideo: false }));
+    setAudioState((prev) => ({
+      ...prev,
+      isOpen: false,
+      isPlaying: false,
+      showVideo: false,
+      seekSeconds: null
+    }));
   };
 
   useEffect(() => {
@@ -72,9 +112,9 @@ export default function App() {
   };
 
   const handleSelectEpisode = (ep) => {
-    // Find rich episode in EPISODES_DATA or fallback
-    const richEp = EPISODES_DATA.find((e) => e.id === (ep.id || ep.number)) || ep;
-    setActiveEpisode(richEp);
+    const normalized = normalizeEpisode(ep);
+    if (!normalized) return;
+    setActiveEpisode(normalized);
     setView('episode');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -101,13 +141,29 @@ export default function App() {
     }
   };
 
+  const handleSaveReflection = (episodeId, reflectionText) => {
+    const updated = saveReflection(episodeId, reflectionText);
+    if (updated) {
+      setProgress(updated);
+    }
+  };
+
   const handleNextEpisode = () => {
     if (!activeEpisode) return;
-    const currentIndex = EPISODES_DATA.findIndex((e) => e.id === activeEpisode.id);
+    const activeId = activeEpisode.id || activeEpisode.number;
+    const currentIndex = EPISODES_DATA.findIndex((e) => e.id === activeId);
     if (currentIndex !== -1 && currentIndex < EPISODES_DATA.length - 1) {
       const nextEp = EPISODES_DATA[currentIndex + 1];
       setActiveEpisode(nextEp);
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (currentIndex === -1) {
+      const nextMilestone = EPISODES_DATA.find((e) => e.id > activeId);
+      if (nextMilestone) {
+        setActiveEpisode(nextMilestone);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        handleBackToHero();
+      }
     } else {
       // Return to hero if finished last
       handleBackToHero();
@@ -163,10 +219,12 @@ export default function App() {
             progress={progress}
             onBack={handleBackToHero}
             onSaveQuizResult={handleSaveQuizResult}
+            onSaveReflection={handleSaveReflection}
             onNextEpisode={handleNextEpisode}
             onOpenGlossary={handleOpenGlossary}
             audioState={audioState}
             onToggleAudioCompanion={handleToggleAudioCompanion}
+            onSeekAudioTimestamp={handleSeekAudioTimestamp}
           />
         )}
       </main>
@@ -178,7 +236,9 @@ export default function App() {
         initialOptions={glossaryOptions}
         onSelectEpisodeFromTerm={(epNum) => {
           handleCloseGlossary();
-          const found = EPISODES_DATA.find((e) => e.id === epNum);
+          const found =
+            EPISODES_DATA.find((e) => e.id === epNum) ||
+            ALL_EPISODES_CATALOG.find((e) => e.number === epNum);
           if (found) handleSelectEpisode(found);
         }}
       />

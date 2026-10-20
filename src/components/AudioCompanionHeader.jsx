@@ -1,30 +1,58 @@
 import React, { useRef, useEffect } from 'react';
-import { Play, Pause, ExternalLink, X, Video, Headphones, ChevronDown, ChevronUp } from 'lucide-react';
+import { Play, Pause, ExternalLink, X, Video, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function AudioCompanionHeader({
   episode,
   isOpen,
   isPlaying,
   showVideo,
+  seekSeconds,
+  seekKey,
   onPlayPause,
   onToggleVideo,
   onClose
 }) {
   const iframeRef = useRef(null);
 
-  // Send play/pause commands to YouTube iframe via postMessage
-  useEffect(() => {
-    if (!iframeRef.current || !isOpen) return;
+  const sendPlayerCommand = (func, args = '') => {
+    if (!iframeRef.current) return;
     try {
-      const command = isPlaying ? 'playVideo' : 'pauseVideo';
       iframeRef.current.contentWindow?.postMessage(
-        JSON.stringify({ event: 'command', func: command, args: '' }),
+        JSON.stringify({ event: 'command', func, args }),
         '*'
       );
     } catch (e) {
       // Ignore cross-origin error before ready
     }
+  };
+
+  // Send play/pause commands to YouTube iframe via postMessage
+  useEffect(() => {
+    if (!iframeRef.current || !isOpen) return;
+    const command = isPlaying ? 'playVideo' : 'pauseVideo';
+    sendPlayerCommand(command, '');
   }, [isPlaying, isOpen, episode?.youtubeId]);
+
+  // Send seekTo command when seekSeconds / seekKey updates
+  useEffect(() => {
+    if (!iframeRef.current || !isOpen || typeof seekSeconds !== 'number') return;
+    sendPlayerCommand('seekTo', [seekSeconds, true]);
+    sendPlayerCommand('playVideo', '');
+    const timer = setTimeout(() => {
+      sendPlayerCommand('seekTo', [seekSeconds, true]);
+      sendPlayerCommand('playVideo', '');
+    }, 350);
+    return () => clearTimeout(timer);
+  }, [seekKey, seekSeconds, isOpen, episode?.youtubeId]);
+
+  const handleIframeLoad = () => {
+    if (typeof seekSeconds === 'number' && seekSeconds > 0) {
+      setTimeout(() => {
+        sendPlayerCommand('seekTo', [seekSeconds, true]);
+        sendPlayerCommand('playVideo', '');
+      }, 300);
+    }
+  };
 
   if (!isOpen || !episode || !episode.youtubeId) return null;
 
@@ -238,6 +266,7 @@ export default function AudioCompanionHeader({
           }}>
             <iframe
               ref={iframeRef}
+              onLoad={handleIframeLoad}
               src={`https://www.youtube.com/embed/${episode.youtubeId}?enablejsapi=1&autoplay=1&rel=0`}
               title={`Awakening from the Meaning Crisis - Episode ${episode.id || episode.number}`}
               style={{
@@ -265,6 +294,7 @@ export default function AudioCompanionHeader({
         }}>
           <iframe
             ref={iframeRef}
+            onLoad={handleIframeLoad}
             src={`https://www.youtube.com/embed/${episode.youtubeId}?enablejsapi=1&autoplay=1&rel=0`}
             title={`Awakening from the Meaning Crisis - Audio ${episode.id || episode.number}`}
             style={{ width: '1px', height: '1px', border: 'none' }}

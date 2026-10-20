@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { 
   ArrowLeft, Headphones, BookOpen, Award, Sparkles, 
-  Clock, Share2, CheckCircle2, RotateCcw, ExternalLink, Save, Check 
+  Clock, Share2, CheckCircle2, ExternalLink, Save, Check 
 } from 'lucide-react';
 import EpisodeQuiz from './EpisodeQuiz';
 import EpisodeScoreModal from './EpisodeScoreModal';
 import ShareCardModal from './ShareCardModal';
-import { ARCS } from '../data/syllabusData';
-import { saveReflection, getStoredProgress } from '../utils/storage';
+import { ARCS, toRoman } from '../data/syllabusData';
+import { saveReflection } from '../utils/storage';
 
 export default function EpisodeHub({
   episode,
   progress,
   onBack,
   onSaveQuizResult,
+  onSaveReflection,
   onNextEpisode,
   onOpenGlossary,
   audioState,
-  onToggleAudioCompanion
+  onToggleAudioCompanion,
+  onSeekAudioTimestamp
 }) {
   const [activeTab, setActiveTab] = useState('primer'); // 'primer' | 'quiz' | 'reflection'
   const [isScoreModalOpen, setIsScoreModalOpen] = useState(false);
@@ -25,14 +27,21 @@ export default function EpisodeHub({
   const [reflectionText, setReflectionText] = useState('');
   const [isSavedNote, setIsSavedNote] = useState(false);
   const [latestResults, setLatestResults] = useState(null);
+  const [quizAttemptKey, setQuizAttemptKey] = useState(0);
+
+  const epId = episode.id || episode.number;
+  const epRoman = episode.roman || toRoman(epId);
+  const hasQuiz = Array.isArray(episode.questions) && episode.questions.length > 0;
+  const conceptsList = episode.keyConcepts || episode.keyTerms || [];
 
   const arcMeta = ARCS.find((a) => a.id === episode.arc) || ARCS[0];
-  const episodeProgress = progress?.completedEpisodes?.[episode.id || episode.number];
+  const episodeProgress = progress?.completedEpisodes?.[epId];
+  const isCurrentAudioEpisode = audioState?.isOpen && (audioState?.episode?.id || audioState?.episode?.number) === epId;
 
-  // Initialize reflection from storage
+  // Initialize reflection from storage when episode changes
   useEffect(() => {
-    if (progress?.reflections?.[episode.id || episode.number]) {
-      setReflectionText(progress.reflections[episode.id || episode.number]);
+    if (progress?.reflections?.[epId]) {
+      setReflectionText(progress.reflections[epId]);
     } else {
       setReflectionText('');
     }
@@ -41,23 +50,28 @@ export default function EpisodeHub({
     setIsScoreModalOpen(false);
     setIsShareModalOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [episode.id]);
+  }, [epId]);
 
   const handleFinishQuiz = (results) => {
     setLatestResults(results);
-    onSaveQuizResult(episode.id || episode.number, results);
+    onSaveQuizResult(epId, results);
     setIsScoreModalOpen(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSaveReflection = () => {
-    saveReflection(episode.id || episode.number, reflectionText);
+    if (onSaveReflection) {
+      onSaveReflection(epId, reflectionText);
+    } else {
+      saveReflection(epId, reflectionText);
+    }
     setIsSavedNote(true);
     setTimeout(() => setIsSavedNote(false), 2000);
   };
 
   const handleRetakeQuiz = () => {
     setIsScoreModalOpen(false);
+    setQuizAttemptKey((k) => k + 1);
     setActiveTab('quiz');
   };
 
@@ -118,7 +132,7 @@ export default function EpisodeHub({
           <button
             onClick={() => onToggleAudioCompanion(episode)}
             className="touch-active"
-            title={audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number) ? (audioState?.isPlaying ? 'Pause audio companion' : 'Resume audio companion') : 'Launch audio companion in header'}
+            title={isCurrentAudioEpisode ? (audioState?.isPlaying ? 'Pause audio companion' : 'Resume audio companion') : 'Launch audio companion in header'}
             aria-label="Audio companion"
             style={{
               display: 'flex',
@@ -127,15 +141,15 @@ export default function EpisodeHub({
               padding: '0.4rem 0.85rem',
               borderRadius: 'var(--radius-pill)',
               border: '1px solid var(--color-terracotta)',
-              backgroundColor: (audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number)) ? 'var(--color-terracotta)' : 'var(--color-terracotta-light)',
-              color: (audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number)) ? 'white' : 'var(--color-terracotta)',
+              backgroundColor: isCurrentAudioEpisode ? 'var(--color-terracotta)' : 'var(--color-terracotta-light)',
+              color: isCurrentAudioEpisode ? 'white' : 'var(--color-terracotta)',
               fontSize: '12.5px',
               fontWeight: 700
             }}
           >
             <Headphones size={15} />
             <span>
-              {audioState?.isOpen && audioState?.episode?.id === (episode.id || episode.number)
+              {isCurrentAudioEpisode
                 ? (audioState?.isPlaying ? 'Audio Playing' : 'Audio Paused')
                 : 'Audio Companion'}
             </span>
@@ -180,7 +194,7 @@ export default function EpisodeHub({
               letterSpacing: '0.12em',
               color: arcMeta.color
             }}>
-              EPISODE {episode.roman || episode.id}
+              EPISODE {epRoman}
             </span>
             <span style={{ color: 'var(--border-strong)' }}>•</span>
             <span style={{
@@ -286,7 +300,7 @@ export default function EpisodeHub({
         )}
       </div>
 
-      {/* 3 Main Navigation Tabs */}
+      {/* Main Navigation Tabs */}
       <div className="tabs-nav" role="tablist" aria-label="Episode Exploration Views">
         <button
           role="tab"
@@ -298,15 +312,17 @@ export default function EpisodeHub({
           <span>Episode Primer & Thesis</span>
         </button>
 
-        <button
-          role="tab"
-          aria-selected={activeTab === 'quiz'}
-          onClick={() => setActiveTab('quiz')}
-          className={`tab-btn ${activeTab === 'quiz' ? 'active' : ''}`}
-        >
-          <Award size={16} />
-          <span>Epistemic Quiz ({episode.questions?.length || 5} Qs)</span>
-        </button>
+        {hasQuiz && (
+          <button
+            role="tab"
+            aria-selected={activeTab === 'quiz'}
+            onClick={() => setActiveTab('quiz')}
+            className={`tab-btn ${activeTab === 'quiz' ? 'active' : ''}`}
+          >
+            <Award size={16} />
+            <span>Epistemic Quiz ({episode.questions?.length || 5} Qs)</span>
+          </button>
+        )}
 
         <button
           role="tab"
@@ -350,7 +366,7 @@ export default function EpisodeHub({
               flexDirection: 'column',
               gap: '0.85rem'
             }}>
-              {(episode.thesis || episode.summary).split('\n\n').map((paragraph, pIdx) => (
+              {(episode.thesis || episode.summary || '').split('\n\n').map((paragraph, pIdx) => (
                 <p key={pIdx}>{paragraph}</p>
               ))}
             </div>
@@ -387,7 +403,7 @@ export default function EpisodeHub({
           </div>
 
           {/* Key Thinkers & Traditions */}
-          {episode.keyThinkers && (
+          {episode.keyThinkers && episode.keyThinkers.length > 0 && (
             <div style={{
               backgroundColor: 'var(--bg-surface)',
               border: '1px solid var(--border-subtle)',
@@ -428,7 +444,7 @@ export default function EpisodeHub({
           )}
 
           {/* Key Concepts Chips */}
-          {episode.keyConcepts && (
+          {conceptsList.length > 0 && (
             <div style={{
               backgroundColor: 'var(--bg-surface)',
               border: '1px solid var(--border-subtle)',
@@ -452,7 +468,7 @@ export default function EpisodeHub({
                 </span>
                 <button
                   type="button"
-                  onClick={() => onOpenGlossary && onOpenGlossary({ episode })}
+                  onClick={() => onOpenGlossary && onOpenGlossary({ episode: { ...episode, id: epId, roman: epRoman } })}
                   className="touch-active"
                   style={{
                     fontSize: '11.5px',
@@ -464,18 +480,18 @@ export default function EpisodeHub({
                     cursor: 'pointer',
                     padding: '0.1rem 0.35rem'
                   }}
-                  title={`View all Episode ${episode.roman || episode.id} concepts in Lexicon`}
+                  title={`View all Episode ${epRoman} concepts in Lexicon`}
                 >
                   View in Lexicon
                 </button>
               </div>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                {episode.keyConcepts.map((concept, i) => (
+                {conceptsList.map((concept, i) => (
                   <button
                     type="button"
                     key={i}
-                    onClick={() => onOpenGlossary && onOpenGlossary({ term: concept, episode })}
+                    onClick={() => onOpenGlossary && onOpenGlossary({ term: concept, episode: { ...episode, id: epId, roman: epRoman } })}
                     className="touch-active"
                     style={{
                       padding: '0.3rem 0.75rem',
@@ -497,40 +513,95 @@ export default function EpisodeHub({
             </div>
           )}
 
-          {/* Primary Action Button: Launch Quiz */}
-          <button
-            onClick={() => {
-              setActiveTab('quiz');
-            }}
-            className="touch-active"
-            style={{
-              width: '100%',
-              minHeight: '54px',
-              borderRadius: 'var(--radius-pill)',
-              backgroundColor: 'var(--color-terracotta)',
-              color: 'white',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '0.5rem',
-              fontSize: '15px',
-              fontWeight: 700,
-              boxShadow: 'var(--shadow-card)',
+          {/* Primary Action Button: Launch Quiz (if milestone episode) or Practice & Audio (if catalog episode) */}
+          {hasQuiz ? (
+            <button
+              onClick={() => {
+                setActiveTab('quiz');
+              }}
+              className="touch-active"
+              style={{
+                width: '100%',
+                minHeight: '54px',
+                borderRadius: 'var(--radius-pill)',
+                backgroundColor: 'var(--color-terracotta)',
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                fontSize: '15px',
+                fontWeight: 700,
+                boxShadow: 'var(--shadow-card)',
+                marginTop: '0.5rem'
+              }}
+            >
+              <span>Begin Epistemic Quiz ({episode.questions?.length || 5} Questions)</span>
+              <Award size={18} />
+            </button>
+          ) : (
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '0.75rem',
               marginTop: '0.5rem'
-            }}
-          >
-            <span>Begin Epistemic Quiz ({episode.questions?.length || 5} Questions)</span>
-            <Award size={18} />
-          </button>
+            }}>
+              <button
+                onClick={() => onToggleAudioCompanion(episode)}
+                className="touch-active"
+                style={{
+                  width: '100%',
+                  minHeight: '52px',
+                  borderRadius: 'var(--radius-pill)',
+                  backgroundColor: 'var(--color-terracotta)',
+                  color: 'white',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.5rem',
+                  fontSize: '14.5px',
+                  fontWeight: 700,
+                  boxShadow: 'var(--shadow-card)'
+                }}
+              >
+                <Headphones size={17} />
+                <span>{isCurrentAudioEpisode ? 'Toggle Lecture Audio' : 'Launch Lecture Audio Companion'}</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab('reflection')}
+                className="touch-active"
+                style={{
+                  width: '100%',
+                  minHeight: '52px',
+                  borderRadius: 'var(--radius-pill)',
+                  backgroundColor: 'var(--bg-surface)',
+                  border: '1.5px solid var(--color-terracotta)',
+                  color: 'var(--color-terracotta)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.5rem',
+                  fontSize: '14.5px',
+                  fontWeight: 700
+                }}
+              >
+                <Sparkles size={17} />
+                <span>Explore Practice & Reflection</span>
+              </button>
+            </div>
+          )}
         </div>
       )}
 
       {/* Tab 2: Epistemic Quiz Engine */}
-      {activeTab === 'quiz' && (
+      {activeTab === 'quiz' && hasQuiz && (
         <EpisodeQuiz
-          episode={episode}
+          key={`${epId}-${quizAttemptKey}`}
+          episode={{ ...episode, id: epId, roman: epRoman }}
           onFinishQuiz={handleFinishQuiz}
           onBackToOverview={() => setActiveTab('primer')}
+          onSeekTimestamp={(seconds) => onSeekAudioTimestamp && onSeekAudioTimestamp(episode, seconds)}
         />
       )}
 
@@ -608,7 +679,7 @@ export default function EpisodeHub({
             </div>
           )}
 
-          {/* Journal Note Box with Autosave */}
+          {/* Journal Note Box with Save */}
           <div style={{
             backgroundColor: 'var(--bg-surface)',
             border: '1px solid var(--border-subtle)',
@@ -691,7 +762,7 @@ export default function EpisodeHub({
       {/* Score Modal */}
       <EpisodeScoreModal
         isOpen={isScoreModalOpen}
-        episode={episode}
+        episode={{ ...episode, id: epId, roman: epRoman }}
         results={latestResults}
         onClose={() => setIsScoreModalOpen(false)}
         onRetake={handleRetakeQuiz}
@@ -706,7 +777,7 @@ export default function EpisodeHub({
       <ShareCardModal
         isOpen={isShareModalOpen}
         onClose={() => setIsShareModalOpen(false)}
-        episode={episode}
+        episode={{ ...episode, id: epId, roman: epRoman }}
         score={latestResults?.score ?? episodeProgress?.score ?? 0}
         total={latestResults?.total ?? episodeProgress?.total ?? 5}
         percentage={latestResults?.percentage ?? episodeProgress?.percentage ?? 0}

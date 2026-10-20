@@ -26,6 +26,18 @@ export default function EpisodeScoreModal({
   }, [isOpen]);
 
   useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose && onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
+  useEffect(() => {
     if (isOpen && results) {
       try {
         if (results.percentage >= 80) {
@@ -305,6 +317,13 @@ export default function EpisodeScoreModal({
                       <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem', lineHeight: 1.4 }}>
                         {q.question}
                       </div>
+
+                      {!isCorrect && userAnswer !== undefined && q.explanation?.optionTraps?.[userAnswer] && (
+                        <div style={{ color: 'var(--color-error)', fontSize: '12px', lineHeight: 1.5, backgroundColor: 'var(--color-error-bg)', padding: '0.45rem 0.5rem', borderRadius: '4px', marginBottom: '0.35rem' }}>
+                          <span style={{ fontWeight: 700 }}>Why Your Selection Was a Trap: </span>
+                          {q.explanation.optionTraps[userAnswer]}
+                        </div>
+                      )}
 
                       <div style={{ color: 'var(--text-secondary)', fontSize: '12px', lineHeight: 1.5, backgroundColor: 'var(--bg-subtle)', padding: '0.5rem', borderRadius: '4px' }}>
                         <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>Vervaeke’s Insight: </span>

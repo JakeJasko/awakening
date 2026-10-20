@@ -1,12 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Check, X, ArrowRight, ArrowLeft, HelpCircle, BookOpen, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Check, X, ArrowRight, ArrowLeft, BookOpen, AlertCircle, CheckCircle2, Headphones } from 'lucide-react';
 
 const ROMAN_NUMERALS = ['I', 'II', 'III', 'IV', 'V', 'VI'];
+
+function parseTimestampSeconds(str) {
+  if (!str || typeof str !== 'string') return null;
+  const match = str.match(/(\d{1,2}):(\d{2})(?::(\d{2}))?/);
+  if (!match) return null;
+  if (match[3] !== undefined) {
+    return parseInt(match[1], 10) * 3600 + parseInt(match[2], 10) * 60 + parseInt(match[3], 10);
+  }
+  return parseInt(match[1], 10) * 60 + parseInt(match[2], 10);
+}
 
 export default function EpisodeQuiz({
   episode,
   onFinishQuiz,
-  onBackToOverview
+  onBackToOverview,
+  onSeekTimestamp
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -23,29 +34,9 @@ export default function EpisodeQuiz({
   const currentQ = questions[currentIndex];
   const totalQuestions = questions.length;
 
-  if (!currentQ) {
-    return (
-      <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-        <p>No questions currently loaded for this episode.</p>
-        <button
-          onClick={onBackToOverview}
-          style={{
-            marginTop: '1rem',
-            padding: '0.6rem 1.2rem',
-            borderRadius: 'var(--radius-pill)',
-            backgroundColor: 'var(--color-terracotta)',
-            color: 'white'
-          }}
-        >
-          Return to Overview
-        </button>
-      </div>
-    );
-  }
-
   const isCurrentSubmitted = isSubmitted;
-  const isCorrect = isCurrentSubmitted && selectedOption === currentQ.correctIndex;
-  const progressPercent = Math.round(((currentIndex + 1) / totalQuestions) * 100);
+  const isCorrect = isCurrentSubmitted && currentQ && selectedOption === currentQ.correctIndex;
+  const progressPercent = totalQuestions > 0 ? Math.round(((currentIndex + 1) / totalQuestions) * 100) : 0;
 
   const scrollToProgressHeader = () => {
     if (!progressBarRef.current) return;
@@ -69,7 +60,7 @@ export default function EpisodeQuiz({
   };
 
   const handleSubmitAnswer = () => {
-    if (selectedOption === null) return;
+    if (selectedOption === null || !currentQ) return;
     shouldScrollToExplanation.current = true;
     setIsSubmitted(true);
     setUserAnswers((prev) => ({
@@ -78,51 +69,8 @@ export default function EpisodeQuiz({
     }));
   };
 
-  // Scroll down smoothly to reveal explanation & next inquiry button upon answer submission
-  useEffect(() => {
-    if (isSubmitted && shouldScrollToExplanation.current) {
-      shouldScrollToExplanation.current = false;
-      const timer = setTimeout(() => {
-        if (!explanationRef.current) return;
-        const header = document.querySelector('header');
-        const headerHeight = header ? header.getBoundingClientRect().height : 60;
-        const offset = headerHeight + 20;
-        const rect = explanationRef.current.getBoundingClientRect();
-        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-        const absoluteElementTop = rect.top + currentScrollY;
-        const targetScrollY = Math.max(0, absoluteElementTop - offset);
-
-        window.scrollTo({
-          top: targetScrollY,
-          behavior: 'smooth'
-        });
-      }, 70);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isSubmitted]);
-
-  // Scroll down smoothly to QUESTION X OF X progress bar when advancing/navigating questions
-  useEffect(() => {
-    if (shouldScrollToProgress.current) {
-      shouldScrollToProgress.current = false;
-      const timer = setTimeout(() => {
-        scrollToProgressHeader();
-      }, 50);
-
-      return () => clearTimeout(timer);
-    }
-  }, [currentIndex]);
-
-  // Align progress bar into view when quiz component mounts
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      scrollToProgressHeader();
-    }, 80);
-    return () => clearTimeout(timer);
-  }, []);
-
   const handleNext = () => {
+    if (!currentQ) return;
     if (currentIndex < totalQuestions - 1) {
       setSlideDirection('next');
       const nextIndex = currentIndex + 1;
@@ -172,6 +120,109 @@ export default function EpisodeQuiz({
     }
   };
 
+  // Keyboard navigation: 1-4 to select option, Enter to submit or advance
+  useEffect(() => {
+    if (!currentQ) return;
+    const handleKeyDown = (e) => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      const tag = e.target?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || e.target?.isContentEditable) {
+        return;
+      }
+      if (document.querySelector('.modal-backdrop')) return;
+
+      if (!isSubmitted && ['1', '2', '3', '4'].includes(e.key)) {
+        const idx = parseInt(e.key, 10) - 1;
+        if (idx >= 0 && idx < currentQ.options.length) {
+          e.preventDefault();
+          handleSelectOption(idx);
+        }
+      } else if (e.key === 'Enter') {
+        if (!isSubmitted && selectedOption !== null) {
+          e.preventDefault();
+          handleSubmitAnswer();
+        } else if (isSubmitted) {
+          e.preventDefault();
+          handleNext();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentQ, isSubmitted, selectedOption, currentIndex, totalQuestions, userAnswers]);
+
+  // Scroll down smoothly to reveal explanation & next inquiry button upon answer submission
+  useEffect(() => {
+    if (isSubmitted && shouldScrollToExplanation.current) {
+      shouldScrollToExplanation.current = false;
+      const timer = setTimeout(() => {
+        if (!explanationRef.current) return;
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.getBoundingClientRect().height : 60;
+        const offset = headerHeight + 20;
+        const rect = explanationRef.current.getBoundingClientRect();
+        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const absoluteElementTop = rect.top + currentScrollY;
+        const targetScrollY = Math.max(0, absoluteElementTop - offset);
+
+        window.scrollTo({
+          top: targetScrollY,
+          behavior: 'smooth'
+        });
+      }, 70);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isSubmitted]);
+
+  // Scroll down smoothly to QUESTION X OF X progress bar when advancing/navigating questions
+  useEffect(() => {
+    if (shouldScrollToProgress.current) {
+      shouldScrollToProgress.current = false;
+      const timer = setTimeout(() => {
+        scrollToProgressHeader();
+      }, 50);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex]);
+
+  // Align progress bar into view when quiz component mounts
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      scrollToProgressHeader();
+    }, 80);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!currentQ) {
+    return (
+      <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
+        <p>No questions currently loaded for this episode.</p>
+        <button
+          onClick={onBackToOverview}
+          style={{
+            marginTop: '1rem',
+            padding: '0.6rem 1.2rem',
+            borderRadius: 'var(--radius-pill)',
+            backgroundColor: 'var(--color-terracotta)',
+            color: 'white'
+          }}
+        >
+          Return to Overview
+        </button>
+      </div>
+    );
+  }
+
+  const selectedOptionTrap =
+    !isCorrect && selectedOption !== null
+      ? currentQ.explanation?.optionTraps?.[selectedOption]
+      : null;
+
+  const timestampSeconds = parseTimestampSeconds(currentQ.explanation?.timestampRef);
+
   return (
     <div className="animate-fade-in" style={{ paddingBottom: '7.5rem' }}>
       {/* Quiz Progress Header */}
@@ -209,7 +260,7 @@ export default function EpisodeQuiz({
               color: 'var(--text-muted)',
               textTransform: 'uppercase'
             }}>
-              EPISODE {episode.roman || episode.id}
+              EPISODE {episode.roman || episode.id || episode.number}
             </span>
           </div>
 
@@ -465,6 +516,32 @@ export default function EpisodeQuiz({
               </p>
             </div>
 
+            {/* Specific Selected Option Trap Callout (if user chose wrong option and optionTraps exists) */}
+            {selectedOptionTrap && (
+              <div style={{
+                marginBottom: '0.85rem',
+                padding: '0.65rem 0.85rem',
+                borderRadius: 'var(--radius-sm)',
+                backgroundColor: 'var(--color-error-bg)',
+                borderLeft: '3px solid var(--color-error)'
+              }}>
+                <span style={{
+                  fontFamily: 'var(--font-roman)',
+                  fontSize: '10px',
+                  fontWeight: 800,
+                  color: 'var(--color-error)',
+                  letterSpacing: '0.08em',
+                  display: 'block',
+                  marginBottom: '0.2rem'
+                }}>
+                  WHY OPTION {ROMAN_NUMERALS[selectedOption]} IS A COUNTERFEIT
+                </span>
+                <p style={{ fontSize: '13.5px', color: 'var(--text-primary)', lineHeight: 1.55 }}>
+                  {selectedOptionTrap}
+                </p>
+              </div>
+            )}
+
             {/* Common Trap explanation */}
             {currentQ.explanation.commonTrap && (
               <div style={{ marginBottom: '0.85rem' }}>
@@ -485,19 +562,52 @@ export default function EpisodeQuiz({
               </div>
             )}
 
-            {/* Timestamp reference */}
+            {/* Timestamp reference (interactive seek button if timestamp is parsable) */}
             {currentQ.explanation.timestampRef && (
               <div style={{
                 paddingTop: '0.6rem',
                 borderTop: '1px solid var(--border-subtle)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.35rem',
-                fontSize: '12px',
-                color: 'var(--text-muted)'
+                justifyContent: 'space-between',
+                gap: '0.5rem',
+                flexWrap: 'wrap'
               }}>
-                <BookOpen size={13} color="var(--color-terracotta)" />
-                <span>{currentQ.explanation.timestampRef}</span>
+                {onSeekTimestamp && timestampSeconds !== null ? (
+                  <button
+                    type="button"
+                    onClick={() => onSeekTimestamp(timestampSeconds)}
+                    className="touch-active"
+                    title="Jump Audio Companion to this lecture timestamp"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      padding: '0.25rem 0.65rem',
+                      borderRadius: 'var(--radius-pill)',
+                      backgroundColor: 'var(--color-terracotta-light)',
+                      border: '1px solid var(--color-terracotta-border)',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      color: 'var(--color-terracotta)',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <Headphones size={13} color="var(--color-terracotta)" />
+                    <span>{currentQ.explanation.timestampRef}</span>
+                  </button>
+                ) : (
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                    fontSize: '12px',
+                    color: 'var(--text-muted)'
+                  }}>
+                    <BookOpen size={13} color="var(--color-terracotta)" />
+                    <span>{currentQ.explanation.timestampRef}</span>
+                  </div>
+                )}
               </div>
             )}
           </div>

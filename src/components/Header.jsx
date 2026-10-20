@@ -227,6 +227,8 @@ export default function Header({
           isOpen={audioState.isOpen}
           isPlaying={audioState.isPlaying}
           showVideo={audioState.showVideo}
+          seekSeconds={audioState.seekSeconds}
+          seekKey={audioState.seekKey}
           onPlayPause={onPlayPauseAudio}
           onToggleVideo={onToggleAudioVideo}
           onClose={onCloseAudio}
