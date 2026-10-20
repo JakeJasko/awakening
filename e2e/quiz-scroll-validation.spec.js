@@ -93,4 +93,28 @@ test.describe('Quiz Answer Scroll-Down Validation', () => {
     expect(progressRectQ3.y).toBeGreaterThanOrEqual(50);
     expect(progressRectQ3.y).toBeLessThanOrEqual(100);
   });
+
+  test('renders all three EpisodeHub tabs on mobile without horizontal scrolling', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/');
+
+    await page.click('h3:has-text("Introduction to the Meaning Crisis")');
+    await expect(page.locator('h1')).toHaveText(/Introduction to the Meaning Crisis/i);
+
+    const tabsNav = page.locator('.tabs-nav');
+    await expect(tabsNav).toBeVisible();
+
+    const overflowInfo = await tabsNav.evaluate((el) => ({
+      scrollWidth: el.scrollWidth,
+      clientWidth: el.clientWidth,
+    }));
+    expect(overflowInfo.scrollWidth).toBeLessThanOrEqual(overflowInfo.clientWidth + 1);
+
+    const reflectionTab = page.locator('button[role="tab"]:has-text("Practice & Reflection")');
+    await expect(reflectionTab).toBeVisible();
+    const box = await reflectionTab.boundingBox();
+    expect(box).not.toBeNull();
+    expect(box.x).toBeGreaterThanOrEqual(0);
+    expect(box.x + box.width).toBeLessThanOrEqual(375);
+  });
 });

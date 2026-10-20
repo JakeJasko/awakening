@@ -21,6 +21,7 @@
   max-width: var(--max-content-width);
   margin: 0 auto;
   padding: 1.25rem 1rem;
+  container-type: inline-size;
 }
 
 .wide-container {
@@ -84,25 +85,67 @@
   border-bottom: 1px solid var(--border-subtle);
   gap: 0.5rem;
   margin-bottom: 1.25rem;
-  overflow-x: auto;
+  width: 100%;
 }
 
 .tab-btn {
-  padding: 0.65rem 1rem;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0.65rem 0.75rem;
   font-size: 13.5px;
   font-weight: 600;
   color: var(--text-secondary);
   border-bottom: 2px solid transparent;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
+  text-align: center;
   white-space: nowrap;
   transition: all 0.15s ease;
+}
+
+.tab-btn svg {
+  flex-shrink: 0;
 }
 
 .tab-btn.active {
   color: var(--color-terracotta);
   border-bottom-color: var(--color-terracotta);
+}
+
+@media (max-width: 560px) {
+  .tabs-nav {
+    gap: 0.15rem;
+    overflow-x: hidden;
+  }
+
+  .tab-btn {
+    flex-direction: column;
+    padding: 0.5rem 0.25rem 0.6rem;
+    font-size: clamp(11px, 3.1vw, 12.5px);
+    line-height: 1.2;
+    gap: 0.28rem;
+    white-space: normal;
+    text-wrap: balance;
+  }
+}
+
+@container (max-width: 530px) {
+  .tabs-nav {
+    gap: 0.15rem;
+    overflow-x: hidden;
+  }
+
+  .tab-btn {
+    flex-direction: column;
+    padding: 0.5rem 0.25rem 0.6rem;
+    font-size: clamp(11px, 3.1cqi, 12.5px);
+    line-height: 1.2;
+    gap: 0.28rem;
+    white-space: normal;
+    text-wrap: balance;
+  }
 }
 
 @media (max-width: 480px) {

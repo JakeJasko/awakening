@@ -309,7 +309,7 @@ export default function EpisodeHub({
           className={`tab-btn ${activeTab === 'primer' ? 'active' : ''}`}
         >
           <BookOpen size={16} />
-          <span>Episode Primer & Thesis</span>
+          <span><span className="hide-on-mobile">Episode </span>Primer & Thesis</span>
         </button>
 
         {hasQuiz && (
